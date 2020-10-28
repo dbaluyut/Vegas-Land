@@ -34,7 +34,6 @@ async function main() {
     table.increments("id")
     table.string("title", 50)
     table.text("desc")
-    table.string("salt", 50)
     table.integer("location_id").unsigned()
     table.foreign("location_id").references("locations.id")
     table.enu("type", ["bar", "restaurant", "shop", "experience"])
@@ -494,6 +493,221 @@ async function main() {
     state: "NV",
     zip: "89101",
   })
+
+  //DB INSERT VENUES
+
+  //RESTAURANTS
+  await conn("venues").insert({
+    title: "The Goodwich Downtown",
+    desc: null,
+    location_id: 1,
+    type: "restaurant",
+    link: "https://thegoodwich.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Esther's Kitchen",
+    desc: null,
+    location_id: 2,
+    type: "restaurant",
+    link: "https://www.estherslv.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Cornish Pasty Co.",
+    desc: null,
+    location_id: 3,
+    type: "restaurant",
+    link: "https://www.cornishpastyco.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Makers & Finders Coffee",
+    desc: null,
+    location_id: 4,
+    type: "restaurant",
+    link: "https://www.makerslv.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Carson Kitchen",
+    desc: null,
+    location_id: 5,
+    type: "restaurant",
+    link: "https://www.carsonkitchen.com/las/index.html",
+  })
+
+  await conn("venues").insert({
+    title: "eat.",
+    desc: null,
+    location_id: 6,
+    type: "restaurant",
+    link: "https://eatdtlv.chefnatalieyoung.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Le Thai",
+    desc: null,
+    location_id: 7,
+    type: "restaurant",
+    link: "https://lethaivegas.com/",
+  })
+
+  await conn("venues").insert({
+    title: "PublicUs",
+    desc: null,
+    location_id: 8,
+    type: "restaurant",
+    link: "http://www.publicuslv.com/",
+  })
+
+  await conn("venues").insert({
+    title: "D E Thai Kitchen",
+    desc: null,
+    location_id: 9,
+    type: "restaurant",
+    link: "https://www.dethaikitchen.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Vesta Coffee Roasters",
+    desc: null,
+    location_id: 10,
+    type: "restaurant",
+    link: "https://vestacoffee.com/",
+  })
+
+  await conn("venues").insert({
+    title: "7th & Carson",
+    desc: null,
+    location_id: 11,
+    type: "restaurant",
+    link: "https://www.7thandcarson.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Pizza Rock",
+    desc: null,
+    location_id: 12,
+    type: "restaurant",
+    link: "https://pizzarocklasvegas.com/",
+  })
+
+  await conn("venues").insert({
+    title: "MTO Café",
+    desc: null,
+    location_id: 13,
+    type: "restaurant",
+    link: "https://mtocafe.com/",
+  })
+
+
+  //BARS
+
+  await conn("venues").insert({
+    title: "Velveteen Rabbit",
+    desc: null,
+    location_id: 14,
+    type: "bar",
+    link: "https://velveteenrabbitlv.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Hop Nuts Brewing",
+    desc: null,
+    location_id: 15,
+    type: "bar",
+    link: "http://www.hopnutsbrewing.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Atomic Liquors",
+    desc: null,
+    location_id: 16,
+    type: "bar",
+    link: "http://atomic.vegas/",
+  })
+
+  await conn("venues").insert({
+    title: "Nevada Brew Works",
+    desc: null,
+    location_id: 17,
+    type: "bar",
+    link: "https://nevadabrewworks.com/",
+  })
+
+  await conn("venues").insert({
+    title: "ReBAR",
+    desc: null,
+    location_id: 18,
+    type: "bar",
+    link: "https://rebarlv.com/",
+  })
+
+  await conn("venues").insert({
+    title: "CraftHaus Brewery",
+    desc: null,
+    location_id: 19,
+    type: "bar",
+    link: "https://www.crafthausbrewery.com/home",
+  })
+
+  await conn("venues").insert({
+    title: "Jammyland Cocktail Bar & Reggae Kitchen",
+    desc: null,
+    location_id: 20,
+    type: "bar",
+    link: "https://jammy.land/",
+  })
+
+  await conn("venues").insert({
+    title: "Garagiste Wine Room & Merchant",
+    desc: null,
+    location_id: 21,
+    type: "bar",
+    link: "http://garagistelv.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Banger Brewing",
+    desc: null,
+    location_id: 22,
+    type: "bar",
+    link: "http://bangerbrewing.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Bunkhouse Saloon",
+    desc: null,
+    location_id: 23,
+    type: "bar",
+    link: "https://bunkhousedowntown.com/",
+  })
+
+  await conn("venues").insert({
+    title: "The NERD",
+    desc: null,
+    location_id: 24,
+    type: "bar",
+    link: "https://thenerd.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Artifice",
+    desc: null,
+    location_id: 25,
+    type: "bar",
+    link: "https://www.artificebarlv.com/",
+  })
+
+  await conn("venues").insert({
+    title: "Dino's Lounge",
+    desc: null,
+    location_id: 26,
+    type: "bar",
+    link: "https://www.facebook.com/DinosLV/",
+  })
+
 
   process.exit()
 }
