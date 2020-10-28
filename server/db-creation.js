@@ -77,6 +77,15 @@ async function main() {
     table.string("image", 255);
   });
 
+  await conn('labels').insert({desc: 'Masks Required', icon: ''})
+  await conn('labels').insert({desc: 'Takeout', icon: ''})
+  await conn('labels').insert({desc: 'Sit-down', icon: ''})
+  await conn('labels').insert({desc: 'Curbside Pickup', icon: ''})
+  await conn('labels').insert({desc: 'Limited Capacity', icon: ''})
+  await conn('labels').insert({desc: 'Social Distancing Enforced', icon: ''})
+  await conn('labels').insert({desc: 'Sanitize', icon: ''})
+  await conn('labels').insert({desc: 'Outdoor Seating', icon: ''})
+  await conn('labels').insert({desc: 'Pet-Friendly', icon: ''})
   //   const salt = createSalt(20)
   //   await conn('users').insert({username: 'test', password: sha512('test' + salt), salt: salt})
 
