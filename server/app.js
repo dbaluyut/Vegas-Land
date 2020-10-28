@@ -1,21 +1,16 @@
-const express = require('express')
-const app = express()
-const knex = require('knex')({
-  client: 'pg',
-  version: '7.2',
-  connection: {
-    host: '127.0.0.1',
-    user: 'postgres',
-    password: '',
-    database: 'NAME_OF_THE_DATABASE_YOU_CREATED',
-  },
-})
-app.use(express.urlencoded({extended: false}))
-app.use(express.json())
+require('dotenv').config()
+console.log(process.env.USERNAME || process)
 
-app.get('/', async (req, res) => {
-  res.json({message: 'test'})
-})
-app.listen(3001, () => {
-  console.log('running on port 3001')
-})
+const express = require("express");
+const jwtMiddleware = require('express-jwt')
+const jwtToken = require('jsonwebtoken')
+const app = express();
+const PORT = 3001;
+const exampleRoutes = require("./routes/example");
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+const authRoutes = require('./routes/auth')
+app.use("/api", exampleRoutes);
+app.listen(PORT, () => {
+  console.log("running on port 3001");
+});
