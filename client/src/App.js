@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,36 +7,58 @@ import {
   useHistory,
   useRouteMatch,
   useParams,
-} from "react-router-dom";
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+} from "react-router-dom"
+import logo from "./logo.svg"
+import { Counter } from "./features/counter/Counter"
+import "./App.css"
 
+import Login from "./features/login/Login"
+import AuthRoute from "./features/authentication/AuthRoute"
+
+import WelcomeScreen from "./views/WelcomeScreen"
+import About from "./views/About"
+import Home from "./views/Home"
+import Bars from "./views/Bars"
+import Restaurants from "./views/Restaurants"
+import Experiences from "./views/Experiences"
 
 function Dashboard() {
-  return (
-    <h1>dash</h1>
-  )
+  return <h1>dash</h1>
 }
 
 function App() {
   return (
-    <div >
-      
-    </div>
-  );
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <WelcomeScreen />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/bars">
+          <Bars />
+        </Route>
+        <Route path="/restaurants">
+          <Restaurants />
+        </Route>
+        <Route path="/experiences">
+          <Experiences />
+        </Route>
+
+        {/* admin */}
+        <Route path="/login">
+          <Login />
+        </Route>
+        <AuthRoute path="/dashboard">
+          <Dashboard />
+        </AuthRoute>
+      </Switch>
+    </Router>
+  )
 }
 
-<Router>
-  <Switch>
-    <Route exact path="/login">
-      <Login />
-    </Route>
-    <AuthRoute path="/dashboard">
-      <Dashboard />
-    </AuthRoute>
-  </Switch>
-</Router>
-
-
-export default App;
+export default App

@@ -5,7 +5,7 @@ const knex = require("knex")({
     host: "127.0.0.1",
     user: "postgres",
     password: "",
-    database: "vegasland_app",
+    database: "vegas_land_app",
   },
 })
 

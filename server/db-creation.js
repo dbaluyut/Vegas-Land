@@ -1,7 +1,7 @@
-require("dotenv").config();
-const conn = require("./db");
-const sha512 = require("js-sha512");
-const { createSalt } = require("./utils/salt");
+require("dotenv").config()
+const conn = require("./db")
+const sha512 = require("js-sha512")
+const { createSalt } = require("./utils/salt")
 
 const tables = [
   "galleries",
@@ -11,24 +11,24 @@ const tables = [
   "locations",
   "labels",
   "admins",
-];
+]
 
 async function main() {
   for (let table of tables) {
-    const hasTable = await conn.schema.hasTable(table);
+    const hasTable = await conn.schema.hasTable(table)
     if (hasTable) {
-      await conn.schema.dropTable(table);
+      await conn.schema.dropTable(table)
     }
   }
 
   await conn.schema.createTable(`locations`, (table) => {
-    table.increments("id");
-    table.string("street_1", 50);
-    table.string("street_2", 50);
-    table.string("city", 50);
-    table.string("state", 50);
-    table.integer("zip");
-  });
+    table.increments("id")
+    table.string("street_1", 50)
+    table.string("street_2", 50)
+    table.string("city", 50)
+    table.string("state", 50)
+    table.integer("zip")
+  })
 
   await conn.schema.createTable(`venues`, (table) => {
     table.increments("id");
@@ -41,24 +41,24 @@ async function main() {
   });
 
   await conn.schema.createTable(`labels`, (table) => {
-    table.increments("id");
-    table.string("desc", 255);
-    table.string("icon", 255);
-  });
+    table.increments("id")
+    table.string("desc", 255)
+    table.string("icon", 255)
+  })
 
   await conn.schema.createTable(`admins`, (table) => {
-    table.increments("id");
-    table.string("username", 50);
-    table.string("password", 255);
-    table.string("salt", 50);
-  });
+    table.increments("id")
+    table.string("username", 50)
+    table.string("password", 255)
+    table.string("salt", 50)
+  })
 
   await conn.schema.createTable(`venue_labels`, (table) => {
-    table.integer("venue_id").unsigned();
-    table.foreign("venue_id").references("venues.id");
-    table.integer("label_id").unsigned();
-    table.foreign("label_id").references("labels.id");
-  });
+    table.integer("venue_id").unsigned()
+    table.foreign("venue_id").references("venues.id")
+    table.integer("label_id").unsigned()
+    table.foreign("label_id").references("labels.id")
+  })
 
   await conn.schema.createTable(`happy_hr`, (table) => {
     table.increments("id");
@@ -70,42 +70,42 @@ async function main() {
   });
 
   await conn.schema.createTable(`galleries`, (table) => {
-    table.increments("id");
-    table.integer("venue_id").unsigned();
-    table.foreign("venue_id").references("venues.id");
-    table.string("image", 255);
-  });
+    table.increments("id")
+    table.integer("venue_id").unsigned()
+    table.foreign("venue_id").references("venues.id")
+    table.string("image", 255)
+  })
 
 
   //DB INSERT LABELS
 
-  await conn("labels").insert({ desc: "Masks Required", icon: "" });
-  await conn("labels").insert({ desc: "Takeout", icon: "" });
-  await conn("labels").insert({ desc: "Sit-down", icon: "" });
-  await conn("labels").insert({ desc: "Curbside Pickup", icon: "" });
-  await conn("labels").insert({ desc: "Limited Capacity", icon: "" });
-  await conn("labels").insert({ desc: "Social Distancing Enforced", icon: "" });
-  await conn("labels").insert({ desc: "Sanitize", icon: "" });
-  await conn("labels").insert({ desc: "Outdoor Seating", icon: "" });
-  await conn("labels").insert({ desc: "Pet-Friendly", icon: "" });
-  const salt = createSalt(20);
+  await conn("labels").insert({ desc: "Masks Required", icon: "" })
+  await conn("labels").insert({ desc: "Takeout", icon: "" })
+  await conn("labels").insert({ desc: "Sit-down", icon: "" })
+  await conn("labels").insert({ desc: "Curbside Pickup", icon: "" })
+  await conn("labels").insert({ desc: "Limited Capacity", icon: "" })
+  await conn("labels").insert({ desc: "Social Distancing Enforced", icon: "" })
+  await conn("labels").insert({ desc: "Sanitize", icon: "" })
+  await conn("labels").insert({ desc: "Outdoor Seating", icon: "" })
+  await conn("labels").insert({ desc: "Pet-Friendly", icon: "" })
+  const salt = createSalt(20)
 
   //DB INSERT ADMINS
   await conn("admins").insert({
     username: "will_stoddard",
     password: sha512("password1" + salt),
     salt: salt,
-  });
+  })
   await conn("admins").insert({
     username: "derrique_baluyut",
     password: sha512("password2" + salt),
     salt: salt,
-  });
+  })
   await conn("admins").insert({
     username: "bereket_girma",
     password: sha512("password3" + salt),
     salt: salt,
-  });
+  })
 
   //DB INSERT LOCATIONS
 
@@ -116,7 +116,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1130 S Casino Center Blvd",
@@ -124,7 +124,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "10 E Charleston Blvd",
@@ -132,7 +132,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1120 S Main St",
@@ -140,7 +140,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "124 S 6th St",
@@ -148,7 +148,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "707 E Carson Ave",
@@ -156,7 +156,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "523 Fremont St",
@@ -164,7 +164,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1126 Fremont St",
@@ -172,7 +172,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1108 S 3rd St",
@@ -180,7 +180,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1114 S Casino Center Blvd",
@@ -188,7 +188,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "616 E Carson Ave",
@@ -196,7 +196,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "201 N 3rd St",
@@ -204,7 +204,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "500 S Main St",
@@ -212,7 +212,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   //BARS
 
@@ -222,7 +222,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1120 S Main St",
@@ -230,7 +230,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "917 Fremont St",
@@ -238,7 +238,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1327 S Main St",
@@ -246,7 +246,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1225 S Main St",
@@ -254,7 +254,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "197 E California Ave",
@@ -262,7 +262,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1121 S Main St",
@@ -270,7 +270,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "197 E California Ave",
@@ -278,7 +278,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "450 Fremont St",
@@ -286,7 +286,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "124 S 11th St",
@@ -294,7 +294,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "450 Fremont St",
@@ -302,7 +302,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1025 S 1st St",
@@ -310,7 +310,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1516 S Las Vegas Blvd",
@@ -318,7 +318,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   //EXPERIENCES AND SHOPS
   await conn("locations").insert({
@@ -327,7 +327,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "450 Fremont St",
@@ -335,7 +335,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "450 Fremont St",
@@ -343,7 +343,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "300 Stewart Ave",
@@ -351,7 +351,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "770 Las Vegas Blvd N",
@@ -359,7 +359,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1031 Fremont St",
@@ -367,7 +367,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1031 Fremont St",
@@ -375,7 +375,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "725 S Las Vegas Blvd",
@@ -383,7 +383,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "713 S Las Vegas Blvd",
@@ -391,7 +391,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "600 E Charlseton Blvd",
@@ -399,7 +399,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1023 Fremont St",
@@ -407,7 +407,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   //this is fremont street experience
   await conn("locations").insert({
@@ -416,7 +416,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "425 Fremont St",
@@ -424,7 +424,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "Fremont St",
@@ -432,7 +432,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "450 Fremont St",
@@ -440,7 +440,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "450 Fremont St",
@@ -448,7 +448,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "450 Fremont St",
@@ -456,7 +456,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1028 NV-582",
@@ -464,7 +464,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "450 Fremont St",
@@ -472,7 +472,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1229 S Main St",
@@ -480,7 +480,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1131 S Main St",
@@ -488,7 +488,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1001 S 1st St",
@@ -496,7 +496,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "818 S Main St",
@@ -504,7 +504,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "723 S 1st St",
@@ -512,7 +512,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   await conn("locations").insert({
     street_1: "1 N Main St",
@@ -520,7 +520,7 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
-  });
+  })
 
   //DB INSERT VENUES
 
@@ -1138,4 +1138,4 @@ async function main() {
   process.exit();
 }
 
-main();
+main()
