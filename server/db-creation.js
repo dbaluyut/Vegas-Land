@@ -734,8 +734,6 @@ async function main() {
     link: "https://www.facebook.com/DinosLV/",
   })
 
-<<<<<<< HEAD
-=======
 // SHOPS AND EXPERIENCES INSERTS
 
 await conn("venues").insert({
@@ -939,7 +937,6 @@ await conn("venues").insert({
 })
 
 
->>>>>>> 9a915932bfbd30ae5a32b987cc8b1c3f7b28c689
   process.exit()
 }
 
