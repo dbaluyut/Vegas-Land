@@ -734,6 +734,212 @@ async function main() {
     link: "https://www.facebook.com/DinosLV/",
   })
 
+<<<<<<< HEAD
+=======
+// SHOPS AND EXPERIENCES INSERTS
+
+await conn("venues").insert({
+  title: "Downtown Container Park",
+  desc: null,
+  location_id: 27,
+  type: "experience",
+  link: "https://downtowncontainerpark.com/",
+})
+
+await conn("venues").insert({
+  title: "Neonopolis",
+  desc: null,
+  location_id: 28,
+  type: "experience",
+  link: "https://www.neonopolislv.com/",
+})
+
+await conn("venues").insert({
+  title: "Toy Shack",
+  desc: null,
+  location_id: 29,
+  type: "shop",
+  link: "https://www.facebook.com/lasvegastoyshack/",
+})
+
+await conn("venues").insert({
+  title: "Mob Museum",
+  desc: null,
+  location_id: 30,
+  type: "experience",
+  link: "https://themobmuseum.org/",
+})
+
+await conn("venues").insert({
+  title: "Neon Museum",
+  desc: null,
+  location_id: 31,
+  type: "experience",
+  link: "https://www.neonmuseum.org/",
+})
+
+await conn("venues").insert({
+  title: "Pour in the Alley",
+  desc: null,
+  location_id: 32,
+  type: "experience",
+  link: "https://www.fergusonsdowntown.com/pour-in-the-alley",
+})
+
+await conn("venues").insert({
+  title: "Market in the Alley",
+  desc: null,
+  location_id: 33,
+  type: "experience",
+  link: "https://www.fergusonsdowntown.com/market-in-the-alley",
+})
+
+await conn("venues").insert({
+  title: "Pawn Plaza",
+  desc: null,
+  location_id: 34,
+  type: "experience",
+  link: "https://pawnplaza.com/",
+})
+
+await conn("venues").insert({
+  title: "Gold & Silver Pawn Shop",
+  desc: null,
+  location_id: 35,
+  type: "shop",
+  link: "https://gspawn.com/",
+})
+
+await conn("venues").insert({
+  title: "Zak Bagan's The Haunted Museum",
+  desc: null,
+  location_id: 36,
+  type: "experience",
+  link: "https://thehauntedmuseum.com/",
+})
+
+await conn("venues").insert({
+  title: "11th St Records",
+  desc: null,
+  location_id: 37,
+  type: "shop",
+  link: "http://www.11thstreetrecords.com/",
+})
+
+await conn("venues").insert({
+  title: "Fremont Street Experience",
+  desc: null,
+  location_id: 38,
+  type: "experience",
+  link: "https://vegasexperience.com/",
+})
+
+await conn("venues").insert({
+  title: "Slotzilla Zipline",
+  desc: null,
+  location_id: 39,
+  type: "experience",
+  link: "https://vegasexperience.com/slotzilla-zip-line/?utm_source=google&utm_medium=organic",
+})
+
+await conn("venues").insert({
+  title: "Viva Vision Lightshow",
+  desc: null,
+  location_id: 40,
+  type: "experience",
+  link: "https://vegasexperience.com/viva-vision-light-show/",
+})
+
+await conn("venues").insert({
+  title: "Metropolitan Gallery/Art Museum",
+  desc: null,
+  location_id: 41,
+  type: "experience",
+  link: "https://www.mglv.org/",
+})
+
+await conn("venues").insert({
+  title: "Axehole",
+  desc: null,
+  location_id: 42,
+  type: "experience",
+  link: "https://axeholevegas.com/",
+})
+
+await conn("venues").insert({
+  title: "Cannabition Cannabis Museum",
+  desc: null,
+  location_id: 43,
+  type: "experience",
+  link: "https://cannabition.com/visit/",
+})
+
+await conn("venues").insert({
+  title: "Big Rig Jig",
+  desc: null,
+  location_id: 44,
+  type: "experience",
+  link: null,
+})
+
+await conn("venues").insert({
+  title: "Southern Nevada Museum of Fine Art",
+  desc: null,
+  location_id: 45,
+  type: "experience",
+  link: "http://snmfa.com/",
+})
+
+await conn("venues").insert({
+  title: "Vintage Vegas Antiques and Collectibles",
+  desc: null,
+  location_id: 46,
+  type: "shop",
+  link: "https://vintagevegas.com/",
+})
+
+await conn("venues").insert({
+  title: "Retro Vegas LLC",
+  desc: null,
+  location_id: 47,
+  type: "shop",
+  link: "http://www.retro-vegas.com/",
+})
+
+await conn("venues").insert({
+  title: "Art District",
+  desc: null,
+  location_id: 48,
+  type: "experience",
+  link: "https://www.18b.org/",
+})
+
+await conn("venues").insert({
+  title: "Fabrizio Banquet Hall",
+  desc: null,
+  location_id: 49,
+  type: "experience",
+  link: "https://www.fabriziovegas.com/",
+})
+
+await conn("venues").insert({
+  title: "Las Vegas Dream Factory",
+  desc: null,
+  location_id: 50,
+  type: "experience",
+  link: "https://lasvegasdreamfactory.com/",
+})
+
+await conn("venues").insert({
+  title: "Bender Jamboree",
+  desc: null,
+  location_id: 51,
+  type: "experience",
+  link: "http://benderjamboree.com/",
+})
+
+
+>>>>>>> 9a915932bfbd30ae5a32b987cc8b1c3f7b28c689
   process.exit()
 }
 
