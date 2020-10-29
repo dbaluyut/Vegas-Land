@@ -3,9 +3,9 @@ const knex = require("knex")({
   version: "7.2",
   connection: {
     host: "127.0.0.1",
-    user: "postgres",
+    user: process.env.DB_USER,
     password: "",
-    database: "vegas_land_app",
+    database: process.env.DB_NAME,
   },
 })
 
