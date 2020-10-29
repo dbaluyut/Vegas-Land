@@ -12,7 +12,7 @@ import logo from "./logo.svg"
 import { Counter } from "./features/counter/Counter"
 import "./App.css"
 
-import Login from "./features/login/Login"
+import Login from "./views/admin/Login"
 import AuthRoute from "./features/authentication/AuthRoute"
 
 import WelcomeScreen from "./views/WelcomeScreen"
@@ -21,10 +21,7 @@ import Home from "./views/Home"
 import Bars from "./views/Bars"
 import Restaurants from "./views/Restaurants"
 import Experiences from "./views/Experiences"
-
-function Dashboard() {
-  return <h1>dash</h1>
-}
+import Dashboard from "./views/admin/Dashboard"
 
 function App() {
   return (
