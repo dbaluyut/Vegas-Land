@@ -1,13 +1,11 @@
-import React from "react";
-import { Navbar } from "../ui/Navbar";
+import React from "react"
+import { Navbar } from "../ui/Navbar"
 import styles from "./Restaurants.module.css"
 
 export default function Restaurants() {
   return (
-
     <div className={styles.fullContainer}>
-        <Navbar />
-      <div className={styles.header}></div>
+      <Navbar />
 
       <div className={styles.container}>
         <div className={styles.box1}>
