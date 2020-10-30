@@ -20,7 +20,7 @@ const labelsRoutes = require('./routes/labels')
 const happy_hrRoutes = require('./routes/happy_hr')
 const galleriesRoutes = require('./routes/galleries')
 
-app.use("/api", exampleRoutes);
+
 app.use("/api/", venuesRoutes);
 app.use("/api/", venue_labelsRoutes);
 app.use("/api/", locationRoutes);

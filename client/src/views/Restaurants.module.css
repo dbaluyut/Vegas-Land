@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.backgroundContainer {
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://i.pinimg.com/originals/fb/13/89/fb1389e54ab5d6bb57ca2054415fdc3d.png');
+  position: fixed;
+}
+
+.container {
+  height: 100vh;
+  width: 70%;
+  margin: auto;
+  overflow: auto;
+  border-left: solid 5px black;
+  border-right: solid 5px black;
+}
+
+.box1 {
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://i.pinimg.com/originals/61/e7/8b/61e78b08a8dd18779132812218a9f2a8.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: table;
+}
+
+.box2 {
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://i.pinimg.com/originals/d9/1a/92/d91a92581c3e0209d7080c96000c5912.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: table;
+}
+
+.box3 {
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://www.desktopbackground.org/download/1920x1080/2010/04/10/29_ultra-hd-4k-rain-wallpapers-hd-desktop-backgrounds-3840x2400_3840x2400_h.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: table;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  display: table-cell;
+  position: sticky;
+  z-index: 1;
+}
