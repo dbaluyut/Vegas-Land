@@ -1,11 +1,14 @@
 import React from "react"
 import Highlights from "../features/highlights/Highlights"
 
+import { Navbar } from "../ui/Navbar"
+
 export default function Home() {
   return (
-    <>
-      <h1>Home Page</h1>
+    <div>
+      <Navbar />
+      <h1>Homepage</h1>
       <Highlights></Highlights>
-    </>
+    </div>
   )
 }

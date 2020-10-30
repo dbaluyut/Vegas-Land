@@ -1,5 +1,13 @@
 import React from "react"
 
+import { Navbar } from "../ui/Navbar";
+
 export default function Experiences() {
-  return <h1>Experiences Page</h1>
+  return (
+  <div>
+    <Navbar />
+   <h1>Experiences page</h1> 
+   </div>
+   );
 }
+
