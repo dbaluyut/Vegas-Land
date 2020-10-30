@@ -4,20 +4,21 @@
   box-sizing: border-box;
 }
 
-.backgroundContainer {
-  height: 100vh;
+.header {
   width: 100%;
-  background-image: url('https://i.pinimg.com/originals/fb/13/89/fb1389e54ab5d6bb57ca2054415fdc3d.png');
-  position: fixed;
+  height: 100px;
+  background: black;
+  position: sticky; 
+  opacity: 0.5;
+  position: relative;
 }
 
 .container {
   height: 100vh;
-  width: 70%;
-  margin: auto;
-  overflow: auto;
-  border-left: solid 5px black;
-  border-right: solid 5px black;
+  width: 100%;
+  overflow-y: scroll;
+  position: absolute;
+  top: 100px;
 }
 
 .box1 {
@@ -31,13 +32,29 @@
 }
 
 .box2 {
-  height: 100vh;
+  height: 50vh;
   width: 100%;
-  background-image: url('https://i.pinimg.com/originals/d9/1a/92/d91a92581c3e0209d7080c96000c5912.jpg');
+  
+  /* background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/06/13/45323/mid-century-modern-27.jpg'); */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   display: table;
+  position: relative;
+}
+
+.box2::after {
+  content: "";
+  background-image: url('https://i.pinimg.com/originals/0a/59/17/0a5917be17d3602f6aa078bd02381972.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 .box3 {
@@ -51,9 +68,8 @@
 }
 
 h1 {
-  color: #fff;
-  text-align: center;
+  color: black;
+  text-align: right;
   display: table-cell;
-  position: sticky;
-  z-index: 1;
+  /* z-index: 2; */
 }
