@@ -15,7 +15,7 @@ export default function Restaurants() {
           <h1>Restaurant Description</h1>
         </div>
         <div className={styles.box3}>
-          <h1>Parallax Effect 3</h1>
+          <h1>Parallax 3</h1>
         </div>
       </div>
     </div>
