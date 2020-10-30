@@ -1,5 +1,12 @@
-import React from "react"
+import React from "react";
+
+import { Navbar } from "../ui/Navbar";
 
 export default function Restaurants() {
-  return <h1>Restaturants Page</h1>
+  return (
+    <div>
+      <Navbar />
+     <h1>Restaturants Page</h1>
+    </div>
+  );
 }
