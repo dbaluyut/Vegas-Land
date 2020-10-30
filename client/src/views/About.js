@@ -1,5 +1,12 @@
-import React from "react"
+import React from "react";
+
+import { Navbar } from "../ui/Navbar";
 
 export default function About() {
-  return <h1>About Page</h1>
+  return (
+    <div>
+      <Navbar />
+      <h1>About page</h1>
+    </div>
+  );
 }

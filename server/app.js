@@ -10,8 +10,7 @@ app.use(express.urlencoded({ extended: false }))
 const authRoutes = require("./routes/auth")
 const adminsRoutes = require("./routes/admins")
 // app.use("/api", exampleRoutes)
-app.use("/api", adminsRoutes)
-app.use("/api", authRoutes)
+
 
 const venuesRoutes = require('./routes/venues')
 const venue_labelsRoutes = require('./routes/venue_labels')
@@ -20,7 +19,9 @@ const labelsRoutes = require('./routes/labels')
 const happy_hrRoutes = require('./routes/happy_hr')
 const galleriesRoutes = require('./routes/galleries')
 
-
+app.use("/api", adminsRoutes)
+app.use("/api", authRoutes)
+// app.use("/api", exampleRoutes);
 app.use("/api/", venuesRoutes);
 app.use("/api/", venue_labelsRoutes);
 app.use("/api/", locationRoutes);

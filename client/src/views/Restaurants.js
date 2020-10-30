@@ -1,9 +1,12 @@
-import React from "react"
+import React from "react";
+import { Navbar } from "../ui/Navbar";
 import styles from "./Restaurants.module.css"
 
 export default function Restaurants() {
   return (
+
     <div className={styles.fullContainer}>
+        <Navbar />
       <div className={styles.header}></div>
 
       <div className={styles.container}>
