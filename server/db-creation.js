@@ -64,9 +64,9 @@ async function main() {
     table.increments("id")
     table.integer("venue_id").unsigned()
     table.foreign("venue_id").references("venues.id")
-    table.string("happy_hr_start", 255)
-    table.string("happy_hr_stop", 255)
-    table.string("day", 255)
+    table.integer("happy_hr_start", 255)
+    table.integer("happy_hr_stop", 255)
+    table.integer("day")
   })
 
   await conn.schema.createTable(`galleries`, (table) => {
@@ -943,199 +943,528 @@ async function main() {
 
   await conn("happy_hr").insert({
     venue_id: 1,
-    happy_hr_start: "3pm",
-    happy_hr_stop: "6pm",
-    day: "Mon-Fri",
+    happy_hr_start: 1200,
+    happy_hr_stop: 1400,
+    day: 6,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 1,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 1,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 1,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 2,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 1,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 1,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 1,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 5,
   })
 
   await conn("happy_hr").insert({
     venue_id: 2,
-    happy_hr_start: "5pm",
-    happy_hr_stop: "7pm",
-    // happy_hr_start: "9pm",
-    // happy_hr_stop: "11pm",
-    day: "Mon-Sun",
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 1,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 2,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 5,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 6,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 7,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 1,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 2,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 5,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 6,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 2,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 7,
   })
 
   await conn("happy_hr").insert({
     venue_id: 3,
-    happy_hr_start: "3pm",
-    happy_hr_stop: "6pm",
-    day: "Mon-Fri",
-    // happy_hr_start: "9pm",
-    // happy_hr_stop: "11pm",
-    // day: "Sun-Thur",
-    // happy_hr_start: "9pm",
-    // happy_hr_stop: "12am",
-    // day: "Fri-Sat",
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 1,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 2,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 5,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 7,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 1,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 2,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 2100,
+    happy_hr_stop: 0000,
+    day: 5,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 2100,
+    happy_hr_stop: 0000,
+    day: 6,
   })
 
   await conn("happy_hr").insert({
     venue_id: 4,
-    happy_hr_start: "4pm",
-    happy_hr_stop: "6pm",
-    day: "Mon-Sun",
+    happy_hr_start: 1600,
+    happy_hr_stop: 1800,
+    day: 1,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 5,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 4,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1800,
+    day: 2,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 6,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 4,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1800,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 4,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1800,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 4,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1800,
+    day: 5,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 4,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1800,
+    day: 6,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 4,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1800,
+    day: 7,
   })
 
   await conn("happy_hr").insert({
     venue_id: 7,
-    happy_hr_start: "3pm",
-    happy_hr_stop: "6pm",
-    day: "Mon-Fri",
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 1,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 8,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 7,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 2,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 9,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 7,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 3,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 10,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 7,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 4,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 11,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 7,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 5,
   })
 
   await conn("happy_hr").insert({
     venue_id: 12,
-    happy_hr_start: "3pm",
-    happy_hr_stop: "6pm",
-    day: "Mon-Fri",
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 1,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 13,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 12,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 2,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 12,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 12,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 12,
+    happy_hr_start: 1500,
+    happy_hr_stop: 1800,
+    day: 5,
   })
 
   await conn("happy_hr").insert({
     venue_id: 14,
-    happy_hr_start: "5pm",
-    happy_hr_stop: "7pm",
-    day: "Daily",
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 1,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 14,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 2,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 14,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 14,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 14,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 5,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 14,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 6,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 14,
+    happy_hr_start: 1700,
+    happy_hr_stop: 1900,
+    day: 7,
   })
 
   await conn("happy_hr").insert({
     venue_id: 15,
-    happy_hr_start: "4pm",
-    happy_hr_stop: "7pm",
-    day: "Daily",
+    happy_hr_start: 1600,
+    happy_hr_stop: 1900,
+    day: 1,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 16,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 15,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1900,
+    day: 2,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 17,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 15,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1900,
+    day: 3,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 18,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 15,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1900,
+    day: 4,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 19,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 15,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1900,
+    day: 5,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 20,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 15,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1900,
+    day: 6,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 21,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 15,
+    happy_hr_start: 1600,
+    happy_hr_stop: 1900,
+    day: 7,
   })
 
   await conn("happy_hr").insert({
     venue_id: 22,
-    happy_hr_start: "3pm",
-    happy_hr_stop: "9pm",
-    day: "Mon-Sun ",
-    // happy_hr_start: "1pm",
-    // happy_hr_stop: "3pm",
-    // happy_hr_start: "9pm",
-    // happy_hr_stop: "11pm",
-    // day: "Wed-Sun",
+    happy_hr_start: 1800,
+    happy_hr_stop: 2100,
+    day: 1,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 23,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 22,
+    happy_hr_start: 1800,
+    happy_hr_stop: 2100,
+    day: 2,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 24,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 22,
+    happy_hr_start: 1300,
+    happy_hr_stop: 1500,
+    day: 3,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 25,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 22,
+    happy_hr_start: 1300,
+    happy_hr_stop: 1500,
+    day: 4,
   })
 
   await conn("happy_hr").insert({
-    venue_id: 26,
-    happy_hr_start: null,
-    happy_hr_stop: null,
-    day: null,
+    venue_id: 22,
+    happy_hr_start: 1300,
+    happy_hr_stop: 1500,
+    day: 5,
   })
 
+  await conn("happy_hr").insert({
+    venue_id: 22,
+    happy_hr_start: 1300,
+    happy_hr_stop: 1500,
+    day: 6,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 22,
+    happy_hr_start: 1300,
+    happy_hr_stop: 1500,
+    day: 7,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 22,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 22,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 4,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 22,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 5,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 22,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 6,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 22,
+    happy_hr_start: 2100,
+    happy_hr_stop: 2300,
+    day: 7,
+  })
   // DB INSERT VENUE_LABELS
 
   // RESTAURANTS INSERT
