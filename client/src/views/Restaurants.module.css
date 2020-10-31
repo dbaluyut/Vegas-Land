@@ -9,9 +9,14 @@
   width: 100%;
 }
 
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
 .wrapper {
-  /* The height needs to be set to a fixed value for the effect to work.
-   * 100vh is the full height of the viewport. */
+  /* The height needs to be set to a fixed value for the effect to work. */
   height: 100vh;
   /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
   overflow-x: hidden;
@@ -49,7 +54,7 @@
   text-shadow: 0 0 5px #000;
 }
 
-.section2::after {
+/* .section2::after {
   opacity: 0.2;
   content: "";
   z-index: -1;
@@ -58,7 +63,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-}
+} */
 
 .parallax::after {
   /* Display and position the pseudo-element */
@@ -84,7 +89,7 @@
   background-image: url('https://i.pinimg.com/originals/0a/59/17/0a5917be17d3602f6aa078bd02381972.jpg');
 }
 
-/* Sets the actual background images to adorable kitties. This part is crucial. */
+/* Sets the actual background images */
 .bg1::after {
   background-image: url("https://i.pinimg.com/originals/61/e7/8b/61e78b08a8dd18779132812218a9f2a8.jpg");
 }
