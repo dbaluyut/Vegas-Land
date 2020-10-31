@@ -7,17 +7,17 @@ export default function Restaurants() {
     <div className={styles.fullContainer}>
       <Navbar />
 
-      <div className={styles.container}>
-        <div className={styles.box1}>
-          <h1>Restaurant Title</h1>
-        </div>
-        <div className={styles.box2}>
-          <h1>Restaurant Description</h1>
-        </div>
-        <div className={styles.box3}>
-          <h1>Parallax 3</h1>
-        </div>
+      <main className={styles.wrapper}>
+      <section className={`${styles.section} ${styles.parallax} ${styles.bg1}`}>
+        <h1>Restaurant 1</h1>
+      </section>
+      <section className={`${styles.section2} ${styles.static}`}>
+        <h1>Restaurant 1 Description</h1>
+      </section>
+      <section className={`${styles.section} ${styles.parallax} ${styles.bg2}`}>
+        <h1>Restaurant 2</h1>
+      </section>
+      </main>
       </div>
-    </div>
   )
 }
