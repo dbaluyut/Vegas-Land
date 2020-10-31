@@ -28,9 +28,13 @@ export default function HappyHrList() {
   console.log(filtered)
   return (
     <div>
+      <h1>
+        current time {hr}:{min}
+      </h1>
       {filtered.map((item) => {
         return (
           <div className={styles.hhrBox} key={item.id}>
+            <img className={styles.venueThumb} src={item.image}></img>
             <h1>{item.venue_id}</h1>
             <h1>{item.title}</h1>
             <h1>{item.happy_hr_start}</h1>
