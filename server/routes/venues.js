@@ -20,5 +20,11 @@ router.get("/venues/experiences", async (req, res) => {
   res.json(venues.rows)
 })
 
+router.get("/venues/restaurants", async (req, res) => {
+  const venues = await conn.raw(`select * from venues
+    where type='restaurant'`)
+  res.json(venues.rows)
+})
+
 
 module.exports = router
