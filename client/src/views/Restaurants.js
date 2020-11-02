@@ -1,5 +1,6 @@
 import React from "react"
 import { Navbar } from "../ui/Navbar"
+import { Footer } from "../ui/Footer";
 import styles from "./Restaurants.module.css"
 
 export default function Restaurants() {
@@ -17,6 +18,9 @@ export default function Restaurants() {
         <div className={styles.box3}>
           <h1>Parallax 3</h1>
         </div>
+      </div>
+      <div className={styles.footer}>
+      <Footer />
       </div>
     </div>
   )

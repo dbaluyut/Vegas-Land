@@ -1,0 +1,146 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.footerContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* display:inline-block; */
+  height: 0px;
+}
+
+.footerItem {
+  margin: auto;
+  width: 30%;
+}
+.social_links {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 30%;
+  font-size: 15px;
+}
+
+.navbar_links {
+  display: flex;
+  justify-content: space-around;
+  padding: 7px 70px;
+}
+.navbar_links a {
+  text-decoration: none;
+  font-size: 15px;
+  font-family: oregano;
+  color: #000;
+  letter-spacing: 1px;
+}
+i {
+  /* font-size: 15px;
+    border-radius: 50px; */
+
+  background: #c3dedf;
+  padding: 13px 16px;
+  border-radius: 50%;
+}
+li {
+  list-style: none;
+}
+.agreements {
+    font-size: 15px;
+  display: flex;
+  justify-content: space-around;
+  padding: 7px 25%;
+}
+
+.trademark {
+  display: flex;
+  padding: 7px 35%;
+  font-size: 15px;
+}
+
+/*  */
+
+.recommendation {
+  width: 50%;
+}
+
+.form_title {
+  font-size: 20px;
+  margin: 5px 0;
+  font-weight: 500;
+  text-align: center;
+}
+.subtitle {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.name_input {
+  height: 50px;
+}
+
+.email_input {
+  height: 50px;
+}
+textarea {
+  resize: none;
+}
+textarea:focus,
+input:focus {
+  color: #535353;
+  font-size: 15px;
+  font-family: helvetica, arial;
+}
+
+.email {
+  max-width: 420px;
+}
+
+.js-hiddenform {
+  display: none;
+}
+
+p a {
+  color: #2badd9;
+  text-decoration: none;
+}
+
+.label {
+  /* display: none; */
+  font-size: 15px;
+  margin: 2px 10px;
+}
+
+.form_field,
+.textarea {
+  color: #c5c5c5;
+  width: calc(40% - 20px);
+  padding: 10px 0 10px 10px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 3px #c5c5c5;
+  border: 0px;
+  margin-bottom: 10px;
+  position: absolute;
+  left: 100px;
+  outline: none;
+}
+
+.submit {
+  padding: 3px 20px;
+  height: 37px;
+  border-radius: 3px;
+  background: #d1624d;
+  border: 1px solid #2badd9;
+  border-color: #d1624d;
+  cursor: pointer;
+  color: #fff;
+  margin: 55px 43%;
+  outline: none;
+}
+
+.submit:hover {
+  color: #d1624d;
+  background: #fff;
+  outline: none;
+}

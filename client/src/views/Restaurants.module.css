@@ -72,3 +72,10 @@ h1 {
   display: table-cell;
   /* z-index: 2; */
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display:inline-block;
+}
