@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import styles from "./Experiences.module.css"
 import { Navbar } from "../ui/Navbar"
+import { Footer } from "../ui/Footer";
 import { selectExperiences, getExperiences } from "./experiencesSlice"
 import { useSelector, useDispatch } from "react-redux"
 
@@ -29,6 +30,7 @@ export default function Experiences() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   )
 }

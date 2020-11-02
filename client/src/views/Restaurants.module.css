@@ -94,6 +94,12 @@
   background-image: url("https://i.pinimg.com/originals/61/e7/8b/61e78b08a8dd18779132812218a9f2a8.jpg");
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display:inline-block;
+}
 .bg2::after {
   background-image: url("https://www.desktopbackground.org/download/1920x1080/2010/04/10/29_ultra-hd-4k-rain-wallpapers-hd-desktop-backgrounds-3840x2400_3840x2400_h.jpg");
 }
