@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  grid-gap: 1rem; /* To define the gap between rows/columns */
+  /* gap: 0.75rem; */
+  padding: 0.75rem;
+  background-color: #3D8D7D; 
+  color: #fff;
+  padding-top: 9vh;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.card {
+  
+  position: relative;
+
+}
+
+.card:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.card .content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center;
+  justify-content: center; */
+  text-align: center;
+  border-radius: 0.75rem;
+  background-size: cover;
+  background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80');
+  /* border: solid 1px white; */
+}
+
+.center h3 {
+  opacity: 0;
+  transition: opacity .25s;
+  margin-left: 5px;
+}
+
+.center:hover h3 {
+  opacity: 1;
+  /* transition: 0.5s; */
+}
