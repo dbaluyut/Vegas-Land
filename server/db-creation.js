@@ -4,6 +4,7 @@ const sha512 = require("js-sha512")
 const { createSalt } = require("./utils/salt")
 
 const tables = [
+  "recommendations",
   "galleries",
   "venue_labels",
   "happy_hr",
@@ -2058,7 +2059,16 @@ async function main() {
     image:
       "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
   })
+
+  await conn.schema.createTable(`recommendations`, (table) => {
+    table.increments("id")
+    table.string("name", 50)
+    table.string("desc", 255)
+  })
+
   process.exit()
 }
+
+
 
 main()

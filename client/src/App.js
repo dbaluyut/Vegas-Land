@@ -22,6 +22,9 @@ import Bars from "./views/Bars"
 import Restaurants from "./views/Restaurants"
 import Experiences from "./views/Experiences"
 import Dashboard from "./views/admin/Dashboard"
+import Recommendations from "./views/Recommendations"
+
+
 
 function App() {
   return (
@@ -44,6 +47,10 @@ function App() {
         </Route>
         <Route path="/experiences">
           <Experiences />
+        </Route>
+
+        <Route path="/recommendations">
+          <Recommendations />
         </Route>
 
         {/* admin */}
