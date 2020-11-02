@@ -1,9 +1,18 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Navbar } from "../ui/Navbar"
 import { Footer } from "../ui/Footer";
 import styles from "./Restaurants.module.css"
+import { selectRestaurants, getRestaurants } from "./restaurantsSlice"
+import { useSelector, useDispatch } from "react-redux"
 
 export default function Restaurants() {
+  const restaurants = useSelector(selectRestaurants)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getRestaurants())
+  }, [])
+  console.log(restaurants)
   return (
     <div className={styles.fullContainer}>
       <div className={styles.header}>
