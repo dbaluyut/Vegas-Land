@@ -9,9 +9,10 @@ export default function HappyHrList() {
   const dispatch = useDispatch()
   let currentDate = new Date()
   let hr = currentDate.getHours().toString()
-  let min = currentDate.getMinutes().toString()
+  let min = currentDate.getMinutes()
+  let minStr = min < 10 ? "0" + min.toString() : min.toString()
   let day = currentDate.getDay()
-  let currentTime = Number(hr + min)
+  let currentTime = Number(hr + minStr)
 
   //IF CURRENT TIME IS BETWEEN VHSTART AND STOP RETURN VENUE
   let filtered = list.filter(
@@ -31,17 +32,30 @@ export default function HappyHrList() {
       <h1>
         current time {hr}:{min}
       </h1>
-      {filtered.map((item) => {
-        return (
-          <div className={styles.hhrBox} key={item.id}>
-            <img className={styles.venueThumb} src={item.image}></img>
-            <h1>{item.venue_id}</h1>
-            <h1>{item.title}</h1>
-            <h1>{item.happy_hr_start}</h1>
-            <h1>{item.happy_hr_stop}</h1>
-          </div>
-        )
-      })}
+      <div className={styles.wrapper}>
+        <div className={styles.mapContainer}></div>
+        <div className={styles.listContainer}>
+          {filtered.map((item) => {
+            return (
+              <div className={styles.hhrBox} key={item.id}>
+                <div
+                  className={styles.venueThumb}
+                  style={{
+                    backgroundImage: `url(${item.image})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+                <h1>{item.venue_id}</h1>
+                <h1>{item.title}</h1>
+                <h1>{item.happy_hr_start}</h1>
+                <h1>{item.happy_hr_stop}</h1>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }
