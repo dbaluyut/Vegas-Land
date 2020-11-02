@@ -145,7 +145,7 @@
   width: 100%;
   display:inline-block;
 }
-.bg2::after {
+/* .bg2::after {
   background-image: url("https://www.desktopbackground.org/download/1920x1080/2010/04/10/29_ultra-hd-4k-rain-wallpapers-hd-desktop-backgrounds-3840x2400_3840x2400_h.jpg");
   background-size: cover;
-}
+} */
