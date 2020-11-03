@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { Navbar } from "../ui/Navbar"
-import { Footer } from "../ui/Footer";
+import { Footer } from "../ui/Footer"
 import styles from "./Restaurants.module.css"
 import { selectRestaurants, getRestaurants } from "./restaurantsSlice"
 import { useSelector, useDispatch } from "react-redux"
@@ -16,22 +16,52 @@ export default function Restaurants() {
   return (
     <div className={styles.fullContainer}>
       <div className={styles.header}>
-      <Navbar />
+        <Navbar />
       </div>
-      <main className={styles.wrapper}>
-      <section className={`${styles.section} ${styles.parallax} ${styles.bg1}`}>
-        <h1>Restaurant 1</h1>
-      </section>
-      <section className={`${styles.section2} ${styles.static}`}>
-        <h1>Restaurant 1 Description</h1>
-      </section>
-      <section className={`${styles.section} ${styles.parallax} ${styles.bg2}`}>
-        <h1>Restaurant 2</h1>
-      </section>
-      </main>
-      <div className={styles.footer}>
-      <Footer />
+      <div className={styles.contentContainer}>
+        <ul
+          style={{
+            backgroundImage: `url(${"./assets/assets-04.png"})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+          className={styles.sidebar}
+        >
+          {restaurants.map((item) => (
+            <li className={styles.sidebarItem}>
+              <div className={styles.sidebarItemTitle}>{item.title}</div>
+            </li>
+          ))}
+        </ul>
+        <main className={styles.wrapper}>
+          {restaurants.map((item) => (
+            <div>
+            <section
+            className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
+            style={{
+              backgroundImage: `url(${item.image})`,
+              
+            }}
+          >
+            <h1>{item.title}</h1>
+          </section>
+          <section className={`${styles.section2} ${styles.static}`}>
+            <h1>Restaurant 1 Description</h1>
+          </section>
+          {/* <section
+            className={`${styles.section} ${styles.parallax} ${styles.bg2}`}
+          >
+            <h1>Restaurant 2</h1>
+          </section> */}
+          </div>
+          ))}
+          
+        </main>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
       </div>
-      </div>
+    </div>
   )
 }
