@@ -2,7 +2,12 @@ import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { selectHappyHrList, getHappyHrList } from "./happyHrListSlice"
 import styles from "./HappyHrList.module.css"
-import { current } from "@reduxjs/toolkit"
+import {
+  GoogleMap,
+  withScriptjs,
+  withGoogleMap,
+  Marker,
+} from "react-google-maps"
 
 export default function HappyHrList() {
   const list = useSelector(selectHappyHrList)
@@ -26,14 +31,44 @@ export default function HappyHrList() {
     dispatch(getHappyHrList())
   }, [])
   console.log(currentTime)
-  console.log(filtered)
+  console.log(list[0])
+
+  function Map() {
+    return (
+      <GoogleMap
+        defaultZoom={14}
+        defaultCenter={{ lat: 36.165459, lng: -115.143837 }}
+      >
+        {filtered.map((item) => {
+          return (
+            <Marker
+              position={{ lat: Number(item.lat), lng: Number(item.lng) }}
+              label={item.title}
+            />
+          )
+        })}
+      </GoogleMap>
+    )
+  }
+
+  const WrappedMap = withScriptjs(withGoogleMap(Map))
+
   return (
     <div>
       <h1>
         current time {hr}:{min}
       </h1>
       <div className={styles.wrapper}>
-        <div className={styles.mapContainer}></div>
+        <div className={styles.mapContainer}>
+          <WrappedMap
+            googleMapURL={
+              "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDuSYxMht_3bQ95VKJVdKQTgYl3r3XWXqQ"
+            }
+            loadingElement={<div style={{ height: "100%" }} />}
+            containerElement={<div style={{ height: "100%" }} />}
+            mapElement={<div style={{ height: "100%" }} />}
+          />
+        </div>
         <div className={styles.listContainer}>
           {filtered.map((item) => {
             return (

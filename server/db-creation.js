@@ -28,6 +28,8 @@ async function main() {
     table.string("city", 50)
     table.string("state", 50)
     table.integer("zip")
+    table.decimal("lat", 9, 6)
+    table.decimal("lng", 9, 6)
   })
 
   await conn.schema.createTable(`venues`, (table) => {
@@ -117,6 +119,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.15995,
+    lng: -115.14746,
   })
 
   await conn("locations").insert({
@@ -943,8 +947,8 @@ async function main() {
 
   await conn("happy_hr").insert({
     venue_id: 1,
-    happy_hr_start: 1200,
-    happy_hr_stop: 1400,
+    happy_hr_start: 900,
+    happy_hr_stop: 2300,
     day: 6,
   })
 
