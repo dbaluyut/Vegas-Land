@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,48 @@
   z-index: 1;
 }
 
+.contentContainer {
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 25%;
+  overflow: scroll;
+  cursor: pointer;
+  padding-top: 13vh;
+}
+
+.sidebarItem {
+  width: 90%;
+  height: 20vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 3px rgb(185, 182, 182);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.sidebarItemTitle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: 'Life Savers', cursive;
+  font-weight: 600;
+}
+
+.sidebar li {
+  transition: all 0.4s linear;
+  text-decoration: none;
+  backdrop-filter: brightness(1);
+  font-size: 20px;
+}
+
+.contentContainer ul:hover li:not(:hover) { 
+  backdrop-filter: brightness(0.5);
+}
+
 .wrapper {
   /* The height needs to be set to a fixed value for the effect to work. */
   height: 100vh;
@@ -24,6 +67,7 @@
   overflow-y: auto;
   /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
   perspective: 2px;
+  width: 75%;
 }
 
 .section {
@@ -91,7 +135,8 @@
 
 /* Sets the actual background images */
 .bg1::after {
-  background-image: url("https://i.pinimg.com/originals/61/e7/8b/61e78b08a8dd18779132812218a9f2a8.jpg");
+  /* background-image: url("https://i.pinimg.com/originals/61/e7/8b/61e78b08a8dd18779132812218a9f2a8.jpg"); */
+  background-size: cover;
 }
 
 .footer {
@@ -102,4 +147,5 @@
 }
 .bg2::after {
   background-image: url("https://www.desktopbackground.org/download/1920x1080/2010/04/10/29_ultra-hd-4k-rain-wallpapers-hd-desktop-backgrounds-3840x2400_3840x2400_h.jpg");
+  background-size: cover;
 }

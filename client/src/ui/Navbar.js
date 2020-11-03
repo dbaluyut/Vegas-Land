@@ -11,8 +11,8 @@ import styles from "./Navbar.module.css";
 export function Navbar() {
   return (
     <nav>
-      <div className="logo">
-        <p>Vegas Land</p>
+      <div className={styles.logo}>
+        <img className={styles.logoImage} src={"./assets/logo-06.svg"} ></img>
       </div>
       <ul className={styles.nav_links}>
         <li>

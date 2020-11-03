@@ -15,8 +15,32 @@ router.get("/venues/highlights", async (req, res) => {
 })
 
 router.get("/venues/experiences", async (req, res) => {
-  const venues = await conn.raw(`select * from venues
+  const venues = await conn.raw(`select galleries.image, venues.title from venues
+  inner join galleries on galleries.venue_id=venues.id
     where type='experience'`)
+  res.json(venues.rows)
+})
+
+router.get("/venues/restaurants", async (req, res) => {
+  const venues = await conn.raw(`select galleries.image, venues.title from venues
+  inner join galleries on galleries.venue_id=venues.id
+    where type='restaurant'`)
+  res.json(venues.rows)
+})
+
+
+
+// router.get("/happy_hr", async (req, res) => {
+//   const happy_hr = await conn.raw(`select galleries.image, happy_hr.day, happy_hr.id, happy_hr.happy_hr_start, happy_hr.happy_hr_stop, venues.title from happy_hr 
+//   inner join venues on happy_hr.venue_id=venues.id
+//   inner join galleries on happy_hr.venue_id=galleries.venue_id
+//   ;`)
+//   res.json(happy_hr.rows)
+// })
+
+router.get("/venues/restaurants", async (req, res) => {
+  const venues = await conn.raw(`select * from venues
+    where type='restaurant'`)
   res.json(venues.rows)
 })
 

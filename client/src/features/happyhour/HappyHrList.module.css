@@ -1,0 +1,28 @@
+.hhrBox {
+  border: 1px solid red;
+  width: fit-content;
+}
+
+.venueThumb {
+  height: 150px;
+  width: 150px;
+}
+
+.listContainer {
+  display: flex;
+  width: 65%;
+  border: 1px solid red;
+  /* margin: 0 auto; */
+}
+
+.mapContainer {
+  width: 25%;
+  height: 400px;
+  border: 1px solid red;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

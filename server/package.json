@@ -19,5 +19,6 @@
     "knex": "^0.21.8",
     "nodemon": "^2.0.6",
     "pg": "^8.4.2"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

@@ -1,33 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
 
-export const restaurantsSlice = createSlice({
-  name: "restaurants",
+export const happyHrListSlice = createSlice({
+  name: "hhlist",
   initialState: {
-    restaurants: [],
+    hhlist: [],
   },
   reducers: {
-    setRestaurants: (state, action) => {
-      state.restaurants = action.payload
+    setHappyHrList: (state, action) => {
+      state.hhlist = action.payload
     },
   },
 })
 
-export const { setRestaurants } = restaurantsSlice.actions
+export const { setHappyHrList } = happyHrListSlice.actions
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched
-export const getRestaurants = () => (dispatch) => {
-  axios
-    .get("/api/venues/restaurants")
-    .then((r) => dispatch(setRestaurants(r.data)))
+export const getHappyHrList = () => (dispatch) => {
+  axios.get("/api/happy_hr").then((r) => dispatch(setHappyHrList(r.data)))
 }
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state) => state.counter.value)`
-export const selectRestaurants = (state) => state.restaurants.restaurants
+export const selectHappyHrList = (state) => state.hhlist.hhlist
 
-export default restaurantsSlice.reducer
+export default happyHrListSlice.reducer
