@@ -39,21 +39,17 @@ export default function Restaurants() {
             <div>
             <section
             className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
-            style={{
-              backgroundImage: `url(${item.image})`,
+            // style={{
+            //   backgroundImage: `url(${item.image})`,
               
-            }}
+            // }}
           >
             <h1>{item.title}</h1>
           </section>
           <section className={`${styles.section2} ${styles.static}`}>
-            <h1>Restaurant 1 Description</h1>
+            <h1>{item.desc}</h1>
           </section>
-          {/* <section
-            className={`${styles.section} ${styles.parallax} ${styles.bg2}`}
-          >
-            <h1>Restaurant 2</h1>
-          </section> */}
+          
           </div>
           ))}
           
