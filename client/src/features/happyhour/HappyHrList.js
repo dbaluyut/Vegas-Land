@@ -1,8 +1,16 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { selectHappyHrList, getHappyHrList } from "./happyHrListSlice"
 import styles from "./HappyHrList.module.css"
-import { current } from "@reduxjs/toolkit"
+import {
+  GoogleMap,
+  withScriptjs,
+  withGoogleMap,
+  Marker,
+  InfoWindow,
+  Polygon,
+} from "react-google-maps"
+import mapStyles from "./mapStyles"
 
 export default function HappyHrList() {
   const list = useSelector(selectHappyHrList)
@@ -26,14 +34,78 @@ export default function HappyHrList() {
     dispatch(getHappyHrList())
   }, [])
   console.log(currentTime)
-  console.log(filtered)
+  console.log(list)
+
+  // MAP SECTION
+  const [selectedVenue, setSelectedVenue] = useState(null)
+
+  function Map() {
+    return (
+      <GoogleMap
+        defaultZoom={15.1}
+        defaultCenter={{ lat: 36.162329, lng: -115.142906 }}
+        defaultOptions={{ styles: mapStyles }}
+      >
+        {filtered.map((item) => {
+          return (
+            <Marker
+              position={{ lat: Number(item.lat), lng: Number(item.lng) }}
+              icon={{
+                // url: "./assets/bar-pin.svg",
+                scaledSize: new window.google.maps.Size(100, 100),
+                // size: new window.google.maps.Size(50, 50),
+                // origin: new window.google.maps.Point(0, 0),
+                // anchor: new window.google.maps.Point(10, 10),
+              }}
+              onClick={() => {
+                setSelectedVenue(item)
+              }}
+            />
+          )
+        })}
+        {selectedVenue && (
+          <InfoWindow
+            position={{
+              lat: Number(selectedVenue.lat),
+              lng: Number(selectedVenue.lng),
+            }}
+            onCloseClick={() => setSelectedVenue(null)}
+          >
+            <div>
+              <div className={styles.hhrBox} key={selectedVenue.id}>
+                <div
+                  className={styles.venueThumb}
+                  style={{
+                    backgroundImage: `url(${selectedVenue.image})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+                <div>
+                  <h3>{selectedVenue.title}</h3>
+                  <li>{selectedVenue.street_1}</li>
+                  <li>
+                    {selectedVenue.happy_hr_start} to{" "}
+                    {selectedVenue.happy_hr_stop}
+                  </li>
+                </div>
+              </div>
+            </div>
+          </InfoWindow>
+        )}
+      </GoogleMap>
+    )
+  }
+
+  const WrappedMap = withScriptjs(withGoogleMap(Map))
+
   return (
     <div>
-      <h1>
+      {/* <h1>
         current time {hr}:{min}
-      </h1>
+      </h1> */}
       <div className={styles.wrapper}>
-        <div className={styles.mapContainer}></div>
         <div className={styles.listContainer}>
           {filtered.map((item) => {
             return (
@@ -47,13 +119,29 @@ export default function HappyHrList() {
                     backgroundRepeat: "no-repeat",
                   }}
                 ></div>
-                <h1>{item.venue_id}</h1>
-                <h1>{item.title}</h1>
-                <h1>{item.happy_hr_start}</h1>
-                <h1>{item.happy_hr_stop}</h1>
+                <div>
+                  <h3>{item.title}</h3>
+                  <li>{item.street_1}</li>
+                  <li>
+                    {item.happy_hr_start} to {item.happy_hr_stop}
+                  </li>
+                </div>
               </div>
             )
           })}
+        </div>
+
+        <div className={styles.mapContainer}>
+          <WrappedMap
+            googleMapURL={
+              "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDuSYxMht_3bQ95VKJVdKQTgYl3r3XWXqQ"
+            }
+            loadingElement={<div style={{ height: "100%" }} />}
+            containerElement={<div style={{ height: "100%" }} />}
+            mapElement={<div style={{ height: "100%" }} />}
+          />
+
+          <img className={styles.mapLogo} src={"./assets/logo-06.svg"}></img>
         </div>
       </div>
     </div>

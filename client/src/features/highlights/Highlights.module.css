@@ -74,6 +74,7 @@
   height: auto;
   color: white;
   padding: 0.5rem;
+  text-shadow: 0 0 5px #000;
 }
 
 .gridItem1:hover .venueTitle {
