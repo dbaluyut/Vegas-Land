@@ -9,6 +9,19 @@ export default function Restaurants() {
   const restaurants = useSelector(selectRestaurants)
   const dispatch = useDispatch()
 
+  function NameMe(acc, current) {
+    acc[current.id] = React.createRef()
+    return acc
+  }
+  const refs = restaurants.reduce(NameMe, {})
+
+  function scrollTo(id) {
+    console.log(refs[id].current)
+    refs[id].current?.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+
   useEffect(() => {
     dispatch(getRestaurants())
   }, [])
@@ -29,30 +42,29 @@ export default function Restaurants() {
           className={styles.sidebar}
         >
           {restaurants.map((item) => (
-            <li className={styles.sidebarItem}>
-              <div className={styles.sidebarItemTitle}>{item.title}</div>
+            <li className={styles.sidebarItem} onClick={() => scrollTo(item.id)}>
+             <div className={styles.sidebarItemTitle}>{item.title}</div>
             </li>
           ))}
         </ul>
         <main className={styles.wrapper}>
           {restaurants.map((item) => (
-            <div>
-            <section
-            className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
-            // style={{
-            //   backgroundImage: `url(${item.image})`,
-              
-            // }}
-          >
-            <h1>{item.title}</h1>
-          </section>
-          <section className={`${styles.section2} ${styles.static}`}>
-            <h1>{item.desc}</h1>
-          </section>
-          
-          </div>
+            <div id={item.id} ref={refs[item.id]}>
+              {console.log(item.id)}
+              <section
+                className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
+                style={{
+                  backgroundImage: `url(${item.image})`,
+
+                }}
+              >
+                <h1>{item.title}</h1>
+              </section>
+              <section className={`${styles.section2} ${styles.static}`}>
+                <h1>{item.desc}</h1>
+              </section>
+            </div>
           ))}
-          
         </main>
         <div className={styles.footer}>
           <Footer />
