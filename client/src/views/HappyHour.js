@@ -7,7 +7,7 @@ export default function HappyHour() {
   return (
     <div>
       <Navbar />
-      <h1>Happy Hour</h1>
+
       <HappyHrList></HappyHrList>
     </div>
   )

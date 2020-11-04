@@ -12,7 +12,7 @@ export default function Highlights() {
   useEffect(() => {
     dispatch(getHighlights())
   }, [])
-  console.log(venues)
+  // console.log(venues[0].image)
   return (
     <div>
       {venues.length > 0 ? (
@@ -20,10 +20,7 @@ export default function Highlights() {
           <div
             className={styles.gridItem1}
             style={{
-              backgroundImage:
-                "url(" +
-                "https://www.reviewjournal.com/wp-content/uploads/2019/09/12686846_web1_LIB-DOWNTOWN-IMPACT_091319cs_002.jpg" +
-                ")",
+              backgroundImage: `url(${venues[0].image})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -34,10 +31,7 @@ export default function Highlights() {
           <div
             className={styles.gridItem2}
             style={{
-              backgroundImage:
-                "url(" +
-                "https://www.reviewjournal.com/wp-content/uploads/2019/09/12686846_web1_LIB-DOWNTOWN-IMPACT_091319cs_002.jpg" +
-                ")",
+              backgroundImage: `url(${venues[1].image})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -49,10 +43,7 @@ export default function Highlights() {
           <div
             className={styles.gridItem3}
             style={{
-              backgroundImage:
-                "url(" +
-                "https://www.reviewjournal.com/wp-content/uploads/2019/09/12686846_web1_LIB-DOWNTOWN-IMPACT_091319cs_002.jpg" +
-                ")",
+              backgroundImage: `url(${venues[2].image})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -63,10 +54,7 @@ export default function Highlights() {
           <div
             className={styles.gridItem4}
             style={{
-              backgroundImage:
-                "url(" +
-                "https://www.reviewjournal.com/wp-content/uploads/2019/09/12686846_web1_LIB-DOWNTOWN-IMPACT_091319cs_002.jpg" +
-                ")",
+              backgroundImage: `url(${venues[3].image})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -77,10 +65,7 @@ export default function Highlights() {
           <div
             className={styles.gridItem5}
             style={{
-              backgroundImage:
-                "url(" +
-                "https://www.reviewjournal.com/wp-content/uploads/2019/09/12686846_web1_LIB-DOWNTOWN-IMPACT_091319cs_002.jpg" +
-                ")",
+              backgroundImage: `url(${venues[4].image})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -91,10 +76,7 @@ export default function Highlights() {
           <div
             className={styles.gridItem6}
             style={{
-              backgroundImage:
-                "url(" +
-                "https://www.reviewjournal.com/wp-content/uploads/2019/09/12686846_web1_LIB-DOWNTOWN-IMPACT_091319cs_002.jpg" +
-                ")",
+              backgroundImage: `url(${venues[5].image})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -105,10 +87,7 @@ export default function Highlights() {
           <div
             className={styles.gridItem7}
             style={{
-              backgroundImage:
-                "url(" +
-                "https://www.reviewjournal.com/wp-content/uploads/2019/09/12686846_web1_LIB-DOWNTOWN-IMPACT_091319cs_002.jpg" +
-                ")",
+              backgroundImage: `url(${venues[6].image})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",

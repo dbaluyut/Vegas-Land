@@ -1,18 +1,18 @@
-import React from "react";
+import React from "react"
 
-import Bars from "../views/Bars";
-import Restaurants from "../views/Restaurants";
-import Experiences from "../views/Experiences";
-import About from "../views/About";
-import Recommendations from "../views/Recommendations";
+import Bars from "../views/Bars"
+import Restaurants from "../views/Restaurants"
+import Experiences from "../views/Experiences"
+import About from "../views/About"
+import Recommendations from "../views/Recommendations"
 
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.css"
 
 export function Navbar() {
   return (
     <nav>
       <div className={styles.logo}>
-        <img className={styles.logoImage} src={"./assets/logo-06.svg"} ></img>
+        <img className={styles.logoImage} src={"./assets/logo-06.svg"}></img>
       </div>
       <ul className={styles.nav_links}>
         <li>
@@ -37,5 +37,5 @@ export function Navbar() {
         <div className={styles.line3}></div>
       </div>
     </nav>
-  );
+  )
 }

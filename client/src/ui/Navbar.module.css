@@ -8,8 +8,8 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 12vh;
-  background-color: #e0a97d;
+  min-height: 18vh;
+  background-color: #ffeeca;
 }
 
 .logo {
@@ -18,8 +18,8 @@ nav {
 }
 
 .logoImage {
-height: 120px;
-width: 120px;
+  height: 120px;
+  width: 120px;
 }
 
 .nav_links {
