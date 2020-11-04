@@ -21,11 +21,12 @@ export const getRecommendations = () => (dispatch) => {
 };
 
 export const addRecommendations = (name, email, text) => (dispatch) => {
-  axios.post("api/recommendations", { desc: text, email: email, name: name }).then((r) => {
-      dispatch(getRecommendations())
-    })
-}
-
+  axios
+    .post("api/recommendations", {name: name, email: email, desc: text })
+    .then((r) => {
+      dispatch(getRecommendations());
+    });
+};
 
 // export const addTodo = (text) => (dispatch) => {
 //     axios.post("api/todos", {content: text}).then((resp) => {
@@ -33,7 +34,6 @@ export const addRecommendations = (name, email, text) => (dispatch) => {
 //       dispatch(fetchTodos())
 //     })
 //   }
-
 
 export const selectRecommendations = (state) => state.form.recommendations;
 export const selectNewRecommendations = (state) => state.form.recommendations;

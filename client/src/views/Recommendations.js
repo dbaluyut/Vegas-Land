@@ -18,8 +18,8 @@ export default function Recommendations() {
   const recommendations = useSelector(selectRecommendations);
 
   const [name, setName] = useState("");
-  const [email, setEmail] = useState('')
-  const [text, setText] = useState('')
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
 
   useEffect(() => {
     dispatch(getRecommendations());
@@ -29,8 +29,8 @@ export default function Recommendations() {
     e.preventDefault();
     dispatch(addRecommendations(text, name, email));
 
-    setName('')
-    setEmail('')
+    setName("");
+    setEmail("");
     setText("");
   }
 
@@ -54,9 +54,7 @@ export default function Recommendations() {
             </div>
             <div className={`${styles.face} ${styles.face2}`}>
               <div className={styles.content}>
-
-
-                <form className={styles.form} >
+                <form className={styles.form} onSubmit={handleSubmit}>
                   <div className={styles.name_input}>
                     <label className={styles.label} for="name">
                       Name
@@ -69,8 +67,6 @@ export default function Recommendations() {
                       placeholder="Name"
                     />
                   </div>
-
-
 
                   {/* <!--      email input              --> */}
                   <div className={styles.email_input}>
@@ -91,8 +87,8 @@ export default function Recommendations() {
                       Message
                     </label>
                     <textarea
-                    onChange={(e) => setText(e.target.value)}
-                    value={text}
+                      onChange={(e) => setText(e.target.value)}
+                      value={text}
                       className={styles.textarea}
                       name="comment"
                       form="usrform"
@@ -101,11 +97,12 @@ export default function Recommendations() {
 
                   <div className={styles.submitDiv}>
                     <button
-                    onSubmit={handleSubmit}
                       className={styles.submit}
                       type="submit"
                       value="Submit"
-                    >Submit</button>
+                    >
+                      Submit
+                    </button>
                   </div>
                 </form>
               </div>

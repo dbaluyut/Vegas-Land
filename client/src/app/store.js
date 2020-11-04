@@ -6,6 +6,7 @@ import happyHrListReducer from "../features/happyhour/happyHrListSlice"
 import experiencesReducer from "../views/experiencesSlice"
 import restaurantsReducer from "../views/restaurantsSlice"
 import formReducer from "../views/recommendationsSlice"
+import dashboardReducer from "../views/admin/dashboardSlice"
 
 export default configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export default configureStore({
     experiences: experiencesReducer,
     restaurants: restaurantsReducer,
     form: formReducer,
+    dashboard: dashboardReducer,
   },
 })
