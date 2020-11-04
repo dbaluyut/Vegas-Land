@@ -36,10 +36,10 @@ export default function About() {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-                <i  class="fa fa-linkedin-square" aria-hidden="true"></i>
-                <i  class="fa fa-github-square" aria-hidden="true"></i>
-                 <i  class="fa fa-twitter-square" aria-hidden="true"></i>
-                 <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                <i class="fa fa-github-square" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
               </div>
             </div>
           </div>
@@ -69,10 +69,10 @@ export default function About() {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-                <i  class="fa fa-linkedin-square" aria-hidden="true"></i>
-                <i  class="fa fa-github-square" aria-hidden="true"></i>
-                 <i  class="fa fa-twitter-square" aria-hidden="true"></i>
-                 <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                <i class="fa fa-github-square" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
               </div>
             </div>
           </div>
@@ -81,7 +81,6 @@ export default function About() {
             <div className={`${styles.face} ${styles.face1}`}>
               <div className={styles.content}>
                 <div className={styles.icon}>
-                
                   <img
                     src="https://images.unsplash.com/photo-1571772805064-207c8435df79?ixlib=rb-1.2.1&auto=format&fit=crop&w=977&q=80"
                     className={styles.img}
@@ -103,10 +102,13 @@ export default function About() {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-                <i class="fa fa-linkedin-square social_media_icons" aria-hidden="true"></i>
-                <i  class="fa fa-github-square" aria-hidden="true"></i>
-                 <i  class="fa fa-twitter-square" aria-hidden="true"></i>
-                 <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i
+                  class="fa fa-linkedin-square social_media_icons"
+                  aria-hidden="true"
+                ></i>
+                <i class="fa fa-github-square" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
               </div>
             </div>
           </div>
