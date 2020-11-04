@@ -130,6 +130,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.157650,
+    lng: -115.152700,
   })
 
   await conn("locations").insert({
@@ -138,6 +140,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.158480,
+    lng: -115.152910,
   })
 
   await conn("locations").insert({
@@ -146,6 +150,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.701120,
+    lng: -86.572190,
   })
 
   await conn("locations").insert({
@@ -154,6 +160,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 44.016030,
+    lng: -107.961530,
   })
 
   await conn("locations").insert({
@@ -162,6 +170,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.166720,
+    lng: -115.138940,
   })
 
   await conn("locations").insert({
@@ -170,6 +180,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.168749,
+    lng: -115.139889,
   })
 
   await conn("locations").insert({
@@ -178,6 +190,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.1656872,
+    lng: -115.1329606,
   })
 
   await conn("locations").insert({
@@ -186,6 +200,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.15855641,
+    lng: -115.15109192,
   })
 
   await conn("locations").insert({
@@ -194,6 +210,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.1581397,
+    lng: -115.1525377,
   })
 
   await conn("locations").insert({
@@ -202,6 +220,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    // lat: ,
+    // lng: ,
   })
 
   await conn("locations").insert({
@@ -210,6 +230,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.1715961,
+    lng: -115.1422478,
   })
 
   await conn("locations").insert({
@@ -218,6 +240,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.16633751,
+    lng: -115.14996694,
   })
 
   //BARS
@@ -228,6 +252,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.15712074,
+    lng: -115.15377702,
   })
 
   await conn("locations").insert({
@@ -236,6 +262,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.1578377,
+    lng: -115.1538468,
   })
 
   await conn("locations").insert({
@@ -244,6 +272,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.16678455,
+    lng: -115.13552457,
   })
 
   await conn("locations").insert({
@@ -252,6 +282,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.15569585,
+    lng: -115.15367944,
   })
 
   await conn("locations").insert({
@@ -260,6 +292,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.15704425,
+    lng: -115.15357815,
   })
 
   await conn("locations").insert({
@@ -268,6 +302,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.15745858,
+    lng: -115.15252884,
   })
 
   await conn("locations").insert({
@@ -276,6 +312,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.15842477,
+    lng: -115.153474,
   })
 
   await conn("locations").insert({
@@ -284,6 +322,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.15745858,
+    lng: -115.15252884,
   })
 
   await conn("locations").insert({
@@ -292,6 +332,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.1695185,
+    lng: -115.1409447,
   })
 
   await conn("locations").insert({
@@ -300,6 +342,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.16599216,
+    lng: -115.1341177,
   })
 
   await conn("locations").insert({
@@ -308,6 +352,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.1695185,
+    lng: -115.1409447,
   })
 
   await conn("locations").insert({
@@ -316,6 +362,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89101",
+    lat: 36.16033625,
+    lng: -115.15218837,
   })
 
   await conn("locations").insert({
@@ -324,6 +372,8 @@ async function main() {
     city: "Las Vegas",
     state: "NV",
     zip: "89104",
+    lat: 36.15303935,
+    lng: 115.15150266,
   })
 
   //EXPERIENCES AND SHOPS
