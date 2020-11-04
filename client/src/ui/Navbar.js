@@ -4,6 +4,7 @@ import Bars from "../views/Bars"
 import Restaurants from "../views/Restaurants"
 import Experiences from "../views/Experiences"
 import About from "../views/About"
+import Recommendations from "../views/Recommendations"
 
 import styles from "./Navbar.module.css"
 
@@ -25,6 +26,9 @@ export function Navbar() {
         </li>
         <li>
           <a href="http://localhost:3000/about">Our Team</a>
+        </li>
+        <li>
+          <a href="http://localhost:3000/recommendations">Recommendations</a>
         </li>
       </ul>
       <div className={styles.burger}>

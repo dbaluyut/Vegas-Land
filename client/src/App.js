@@ -22,6 +22,8 @@ import Bars from "./views/Bars"
 import Restaurants from "./views/Restaurants"
 import Experiences from "./views/Experiences"
 import Dashboard from "./views/admin/Dashboard"
+import Recommendations from "./views/Recommendations"
+
 import HappyHour from "./views/HappyHour"
 
 function App() {
@@ -48,6 +50,10 @@ function App() {
         </Route>
         <Route path="/happyhour">
           <HappyHour />
+        </Route>
+
+        <Route path="/recommendations">
+          <Recommendations />
         </Route>
 
         {/* admin */}
