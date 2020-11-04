@@ -35,21 +35,4 @@ router.post("/recommendations", async (req, res) => {
 //     });
 // });
 
-//   app.delete("/api/todos/:id", (req, res) => {
-//     knex.raw(`DELETE FROM todos WHERE id = ?`, [req.params.id]).then((result) => {
-//       res.json(result.rows);
-//     });
-//   });
-
-//   app.patch("/api/todos/:id", (req, res) => {
-//     // let status ="active"
-//     const id = req.params.id;
-//     const { status } = req.body;
-//     knex
-//       .raw(`UPDATE todos SET status = ? WHERE id = ?`, [status, id])
-//       .then((result) => {
-//         res.json(result.rows);
-//       });
-//   });
-
 module.exports = router;

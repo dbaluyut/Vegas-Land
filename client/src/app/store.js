@@ -7,6 +7,7 @@ import experiencesReducer from "../views/experiencesSlice"
 import restaurantsReducer from "../views/restaurantsSlice"
 import barsReducer from "../views/barsSlice"
 import formReducer from "../views/recommendationsSlice"
+import dashboardReducer from "../views/admin/dashboardSlice"
 
 export default configureStore({
   reducer: {
@@ -18,5 +19,6 @@ export default configureStore({
     restaurants: restaurantsReducer,
     bars: barsReducer,
     form: formReducer,
+    dashboard: dashboardReducer,
   },
 })
