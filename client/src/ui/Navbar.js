@@ -12,7 +12,7 @@ export function Navbar() {
   return (
     <nav>
       <div className={styles.logo}>
-        <img className={styles.logoImage} src={"./assets/logo-06.svg"}></img>
+        <img className={styles.logoImage} src={"./assets/logo-062.svg"}></img>
       </div>
       <ul className={styles.nav_links}>
         <li>
