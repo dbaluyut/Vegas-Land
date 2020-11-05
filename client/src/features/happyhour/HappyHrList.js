@@ -51,11 +51,10 @@ export default function HappyHrList() {
             <Marker
               position={{ lat: Number(item.lat), lng: Number(item.lng) }}
               icon={{
-                // url: "./assets/bar-pin.svg",
-                scaledSize: new window.google.maps.Size(100, 100),
-                // size: new window.google.maps.Size(50, 50),
-                // origin: new window.google.maps.Point(0, 0),
-                // anchor: new window.google.maps.Point(10, 10),
+                scaledSize: new window.google.maps.Size(200, 200),
+                // size: new window.google.maps.Size(100, 100),
+                origin: new window.google.maps.Point(0, 0),
+                anchor: new window.google.maps.Point(50, 50),
               }}
               onClick={() => {
                 setSelectedVenue(item)
@@ -109,7 +108,13 @@ export default function HappyHrList() {
         <div className={styles.listContainer}>
           {filtered.map((item) => {
             return (
-              <div className={styles.hhrBox} key={item.id}>
+              <div
+                className={styles.hhrBox}
+                key={item.id}
+                onClick={() => {
+                  setSelectedVenue(item)
+                }}
+              >
                 <div
                   className={styles.venueThumb}
                   style={{
