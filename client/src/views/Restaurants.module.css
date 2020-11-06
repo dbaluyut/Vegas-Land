@@ -86,9 +86,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  text-shadow: 0 0 5px #000;
-  background-image: url("https://i.pinimg.com/originals/0a/59/17/0a5917be17d3602f6aa078bd02381972.jpg");
+  color: black;
+  font-family: "Life Savers", cursive;
+
+  /* text-shadow: 0 0 5px #000; */
+  /* background-image: url("https://i.pinimg.com/originals/0a/59/17/0a5917be17d3602f6aa078bd02381972.jpg"); */
 }
 
 /* .parallax::after {

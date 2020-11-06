@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { Navbar } from "../ui/Navbar"
 import { Footer } from "../ui/Footer"
 import styles from "./Restaurants.module.css"
-import { selectBars, getBars } from "./barsSlice"
+import { selectBars, getBars, getBarImages } from "./barsSlice"
 import { useSelector, useDispatch } from "react-redux"
 
 export default function Bars() {
@@ -24,6 +24,7 @@ export default function Bars() {
 
   useEffect(() => {
     dispatch(getBars())
+    dispatch(getBarImages())
   }, [])
   console.log(bars)
   return (
@@ -53,15 +54,18 @@ export default function Bars() {
               {console.log(item.id)}
               <section
                 className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
-                // style={{
-                //   backgroundImage: `url(${item.image})`,
+                style={{
+                  backgroundImage: `url(${item.image})`,
 
-                // }}
+                }}
               >
                 <h1>{item.title}</h1>
               </section>
               <section className={`${styles.section2} ${styles.static}`}>
-                <h1>{item.desc}</h1>
+                <p>{item.desc}</p>
+                {item.labels.map((label) => (
+                  <p>{label.desc}</p>
+                ))}
               </section>
             </div>
           ))}
