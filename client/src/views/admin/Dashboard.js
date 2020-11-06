@@ -25,7 +25,7 @@ export default function Dashboard() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(addVenue(title, desc, location_id, type, link));
+    dispatch(addVenue({title, desc, location_id, type, link}));
 
     setTitle("");
     setDesc("");
