@@ -18,7 +18,7 @@ export default function Restaurants() {
   function scrollTo(id) {
     console.log(refs[id].current)
     refs[id].current?.scrollIntoView({
-      behavior: 'smooth'
+      behavior: "smooth",
     })
   }
 
@@ -42,29 +42,35 @@ export default function Restaurants() {
           className={styles.sidebar}
         >
           {restaurants.map((item) => (
-            <li className={styles.sidebarItem} onClick={() => scrollTo(item.id)}>
-             <div className={styles.sidebarItemTitle}>{item.title}</div>
+            <li
+              className={styles.sidebarItem}
+              onClick={() => scrollTo(item.id)}
+            >
+              <div className={styles.sidebarItemTitle}>{item.title}</div>
             </li>
           ))}
         </ul>
         <main className={styles.wrapper}>
           {restaurants.map((item) => (
             <div id={item.id} ref={refs[item.id]}>
-              {console.log(item.desc)}
               <section
                 className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
                 style={{
                   backgroundImage: `url(${item.image})`,
-                  backgroundPosition: 'center'
-
+                  backgroundPosition: "center",
                 }}
               >
                 <h1>{item.title}</h1>
               </section>
               <section className={`${styles.section2} ${styles.static}`}>
-                <p>{item.desc}</p>
+                <div className={styles.descContainer}>
+                  <p>{item.desc}</p>
+                </div>
+
                 {item.labels.map((label) => (
-                  <p>{label.desc}</p>
+                  <div className={styles.labelsContainer}>
+                    <p>{label.desc}</p>
+                  </div>
                 ))}
               </section>
             </div>

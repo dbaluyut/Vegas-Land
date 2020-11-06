@@ -84,13 +84,37 @@
   position: relative;
   height: 50vh;
   display: flex;
-  align-items: center;
+  
+  /* align-items: center; */
   justify-content: center;
   color: black;
   font-family: "Life Savers", cursive;
+  border: solid 3px black;
 
   /* text-shadow: 0 0 5px #000; */
   /* background-image: url("https://i.pinimg.com/originals/0a/59/17/0a5917be17d3602f6aa078bd02381972.jpg"); */
+}
+
+.section2 p {
+  font-family: "Life Savers", cursive;
+  font-weight: 600;
+}
+
+.descContainer {
+  line-height: 3;
+  background-color: #969499;
+  color: white;
+}
+
+.labelsContainer {
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+  height: 100px;
+  width: 20%;
+  bottom: 0;
+  right: 0;
+  /* border: solid 1px black; */
 }
 
 /* .parallax::after {
