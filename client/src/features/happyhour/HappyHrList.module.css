@@ -21,7 +21,7 @@
   /* display: flex; */
   width: 25%;
   /* border: 1px solid red; */
-  height: 100vh;
+  height: 80vh;
   overflow: scroll;
   padding: 1rem;
   /* margin: 0 auto; */
@@ -29,7 +29,7 @@
 
 .mapContainer {
   width: 75%;
-  height: 100vh;
+  height: 80vh;
   /* border: 1px solid red; */
 }
 

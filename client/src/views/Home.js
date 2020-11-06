@@ -10,10 +10,9 @@ export default function Home() {
     <>
       <div className={styles.splashContainer}>
         <div classNAme={styles.splash}>
+          {/* <div className={styles.overlay}></div> */}
+
           <div className={styles.welcome}></div>
-
-          <div className={styles.overlay}></div>
-
           <img className={styles.wlogo} src={"./assets/logo-062.svg"}></img>
         </div>
       </div>
