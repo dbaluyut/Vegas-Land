@@ -55,6 +55,7 @@ export default function Restaurants() {
                 className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
                 style={{
                   backgroundImage: `url(${item.image})`,
+                  backgroundPosition: 'center'
 
                 }}
               >

@@ -58,7 +58,7 @@ async function main() {
 
   await conn.schema.createTable(`venue_labels`, (table) => {
     table.integer("venue_id").unsigned()
-    table.foreign("venue_id").references("venues.id")
+    table.foreign("venue_id").references("venues.id").onDelete("cascade")
     table.integer("label_id").unsigned()
     table.foreign("label_id").references("labels.id")
   })
@@ -66,7 +66,7 @@ async function main() {
   await conn.schema.createTable(`happy_hr`, (table) => {
     table.increments("id")
     table.integer("venue_id").unsigned()
-    table.foreign("venue_id").references("venues.id")
+    table.foreign("venue_id").references("venues.id").onDelete("cascade")
     table.integer("happy_hr_start", 255)
     table.integer("happy_hr_stop", 255)
     table.integer("day")
@@ -75,8 +75,8 @@ async function main() {
   await conn.schema.createTable(`galleries`, (table) => {
     table.increments("id")
     table.integer("venue_id").unsigned()
-    table.foreign("venue_id").references("venues.id")
-    table.string("image", 255)
+    table.foreign("venue_id").references("venues.id").onDelete("cascade")
+    table.text("image")
   })
 
   //DB INSERT LABELS
@@ -2141,306 +2141,306 @@ async function main() {
   await conn("galleries").insert({
     venue_id: 1,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://roadfood.com/wp-content/uploads/2018/06/The-Goodwhich-Reubenish.jpeg",
   })
 
   await conn("galleries").insert({
     venue_id: 2,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://bestoflasvegas.com/custom/domain_1/image_files/sitemgr_photo_9883.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 3,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://www.cornishpastyco.com/wp-content/uploads/2018/11/home2.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 4,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://media.lasvegassun.com/media/img/photos/2014/11/24/1124MakersFindersCoffee10.JPG",
   })
 
   await conn("galleries").insert({
     venue_id: 5,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://media-cdn.tripadvisor.com/media/photo-s/0d/84/77/5d/devil-s-eggs.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 6,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://media.cntraveler.com/photos/5a81c39286e4b63c297d479e/4:5/w_767,c_limit/Eat-Downtown-Las-Vegas__2018_2015_05_28_Eat_Again-143-Killer_Grilled_Cheese_Tomato_Soup_Photo_By_Brad_Swonetz.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 7,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://secureservercdn.net/198.71.233.51/wkd.2a2.myftpupload.com/wp-content/uploads/2020/06/le_thai_awesome_noodles_15_1310x1287-750x750.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 8,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://media.lasvegassun.com/media/img/photos/2015/04/08/IMG_9736_t1000.jpg?c76bf34eada957f64a0b14990027a576ff9bf379",
   })
 
   await conn("galleries").insert({
     venue_id: 9,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://s3-media0.fl.yelpcdn.com/bphoto/nuLnbCe6E3chgGPuqJSULg/o.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 10,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://www.reviewjournal.com/wp-content/uploads/2017/01/web1_matcha-latte_7760993.jpg?crop=1",
   })
 
   await conn("galleries").insert({
     venue_id: 11,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://media.lasvegasweekly.com/img/photos/2019/10/22/_7thCarson-by-Christopher-DeVargas_t1000.png?c76bf34eada957f64a0b14990027a576ff9bf379",
   })
 
   await conn("galleries").insert({
     venue_id: 12,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://pizzarocklasvegas.com/wp-content/uploads/sites/2/2019/10/pr-food-6.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 13,
     image:
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80",
+      "https://img1.10bestmedia.com/Images/Photos/372846/MTO-Cafe-Blueberry-Pancakes_55_660x440.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 14,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://assets.bonappetit.com/photos/578e48fd0150278b02e3920c/2:1/w_880,c_limit/VELVETEEN-RABBIT-vegas-restaurant-communion-wafer-cocktail.jpg?mbid=social_retweet",
   })
 
   await conn("galleries").insert({
     venue_id: 15,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://cdn.vox-cdn.com/thumbor/zZLUTnhiNpsFfSAuR546eLq3Nx0=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18971656/Hop_Nuts_open.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 16,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://modtraveler.net/wp-content/uploads/2015/06/Atomic-Liquors-Twilight1.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 17,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://media.lasvegasweekly.com/img/photos/2020/10/28/1029_FoodDrink2_Nevad-Brew-Works_Credit_Christopher-DeVargas_Staff_t1000.jpg?c76bf34eada957f64a0b14990027a576ff9bf379",
   })
 
   await conn("galleries").insert({
     venue_id: 18,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://img1.wsimg.com/isteam/ip/50965b5b-baf0-4de5-81f7-1cc9ffa0792f/ReBar%20(32%20of%2051)-0001.jpg/:/rs=w:1300,h:800",
   })
 
   await conn("galleries").insert({
     venue_id: 19,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://cdn.vox-cdn.com/thumbor/mOHsi3jh9nZJNjcGw7V-77HtXEA=/0x0:5796x3870/1200x675/filters:focal(2435x1472:3361x2398)/cdn.vox-cdn.com/uploads/chorus_image/image/65287834/Victa_CRAFTHAUS_WIDE_SHOT_Top.0.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 20,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://cdn.usarestaurants.info/assets/uploads/4a634f39a89e9ebc5b5722263a8a8a39_-united-states-nevada-clark-county-las-vegas-jammyland-cocktail-bar-reggae-kitchen-702-800-9098htm.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 21,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://cdn.vox-cdn.com/thumbor/qpdgZ4FprigPdA97zMeKnuhSki4=/0x0:1500x838/1200x800/filters:focal(630x299:870x539)/cdn.vox-cdn.com/uploads/chorus_image/image/65310784/Garagiste.0.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 22,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://cdn.usarestaurants.info/assets/uploads/0e7518c24067a061cd0a5509440eb1fe_-united-states-nevada-clark-county-las-vegas-banger-brewing-702-456-2739htm.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 23,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://bunkhousedowntown.com/wp-content/uploads/2019/05/SocialShare-Bunkhouse1200630.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 24,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://media.lasvegasweekly.com/img/photos/2017/04/05/0406_Intersection_TheNerd.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 25,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://thingstodoinlasvegas.com/wp-content/uploads/2016/10/Artifice_nightlife.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 26,
     image:
-      "https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+      "https://media.lasvegasweekly.com/img/photos/2009/09/30/scaled.dinos_by_clay_heximer_01.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 27,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://i.pinimg.com/originals/d9/1b/03/d91b03f8955c140a26eef6667e75fd30.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 28,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://media.lasvegasweekly.com/img/photos/2012/09/12/neonopolis_by_steve_marcus.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 29,
     image:
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2304&q=80",
+      "https://i.ytimg.com/vi/Lbcvb6sUeE4/maxresdefault.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 30,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://themobmuseum.org/wp-content/themes/newmob/assets/insidethemuseum.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 31,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://asuevents.asu.edu/sites/default/files/styles/asu_event_image/public/neonmus1.jpg?itok=iiezF4In",
   })
 
   await conn("galleries").insert({
     venue_id: 32,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://images.squarespace-cdn.com/content/v1/5dcd930ca512176033fed49d/1603141280749-31R3ZYK2MIP0HI6HGGSR/ke17ZwdGBToddI8pDm48kB6N0s8PWtX2k_eW8krg04V7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UUPKOmO-J47BDGPeAjKBgw7xgmaTgorvVRLpehS4Q8s3pC969RuPXvt2ZwyzUXQf7Q/POUR+GIFT+CARD+FINAL.png?format=1000w",
   })
 
   await conn("galleries").insert({
     venue_id: 33,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://i.pinimg.com/originals/ea/2c/9b/ea2c9b9f34230dea55b7737e70e358ac.png",
   })
 
   await conn("galleries").insert({
     venue_id: 34,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://nevadamagazine.com/wp-content/uploads/PP10.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 35,
     image:
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2304&q=80",
+      "https://www.reviewjournal.com/wp-content/uploads/2018/06/10743989_web1_PAWN-STAR-MEMORIAL-JUN26-18bt03.jpg?crop=1",
   })
 
   await conn("galleries").insert({
     venue_id: 36,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://findgeekspots.com/wp-content/uploads/2018/12/Zak-Bagans%E2%80%99-The-Haunted-Museum.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 37,
     image:
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2304&q=80",
+      "https://lh3.googleusercontent.com/proxy/Cl2_tjKM2kR-tEaOA-Ac7UC_l--vgjupLKazNey2-2H2nGP0pxZYgdnvjNFCCjghcmnsPKXkYyD0g1iySdVbLiyvj9_APq8yjRnc9c_RD9Hjxtu9Rki-UhYkBrRgLXhiWYzuMbYkrNTx",
   })
 
   await conn("galleries").insert({
     venue_id: 38,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://www.casino.org/news/wp-content/uploads/2018/03/rawImage-2.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 39,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://i1.wp.com/wanderlustyle.com/wp-content/uploads/2016/09/48539620221_f2f4f36cdd_k.jpg?fit=2048%2C1365&ssl=1",
   })
 
   await conn("galleries").insert({
     venue_id: 40,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://1pg6x1158j2c3wpy0512zgcs-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/viva-vision-flower@2x.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 41,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://miro.medium.com/max/2000/1*Ca88KGqNZUpd1orpL6Xo1g.jpeg",
   })
 
   await conn("galleries").insert({
     venue_id: 42,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://pbs.twimg.com/media/DevNRZ1UcAAP1KI.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 43,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://cannabition-staging.firebaseapp.com/images/jpg/harvest-4.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 44,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://images.squarespace-cdn.com/content/v1/56cf54142fe1312f24f8f04d/1458231806566-F5GO4UM3T2XSDL9YVPPS/ke17ZwdGBToddI8pDm48kFmKdAJFcOk5fsAfzma6oat7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ro8siOxa7KOjEXaZRk24Q56mUDAg7BAm91VGqgkLdX3NOdT9hRlG3rX4NNR3uCrgw/bigrigjig_01.jpg?format=1500w",
   })
 
   await conn("galleries").insert({
     venue_id: 45,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://lh3.googleusercontent.com/p/AF1QipMvFdsg662-ZqqhteXMYjNXkUoRbIkFssGBcVo-=s1600-w1600",
   })
 
   await conn("galleries").insert({
     venue_id: 46,
     image:
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2304&q=80",
+      "https://travelnevada.com/wp-content/uploads/2020/04/original-vintagevegas9-sm.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 47,
     image:
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2304&q=80",
+      "https://modtraveler.net/wp-content/uploads/2015/06/IMG_1257.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 48,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://sawebfilesprod001.blob.core.windows.net/images/18b.jpg?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=VwnDYOp4jLQDrt3QZcEp46hfmoB5QReSw%2B8Yt2ph8kE%3D",
   })
   await conn("galleries").insert({
     venue_id: 49,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://i.pinimg.com/originals/21/e7/8a/21e78a4059c852713cb16af2b8754595.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 50,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://www.factoryofdreams.com/galeria/big/3.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 51,
     image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+      "https://2ab9pu2w8o9xpg6w26xnz04d-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/bender-jamboree-2018-glory-1480x832.jpg",
   })
 
   await conn.schema.createTable(`recommendations`, (table) => {
