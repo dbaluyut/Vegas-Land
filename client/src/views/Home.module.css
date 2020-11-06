@@ -1,6 +1,7 @@
 .welcome {
   height: 100vh;
   width: 100vw;
+  filter: brightness(70%);
   background-image: url("https://img.sunset02.com/sites/default/files/styles/medium_2x/public/image/2016/09/main/las-vegas-nv-downtown-fremont-east-0213.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -8,7 +9,7 @@
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.9);
   height: 100vh;
   width: 100vw;
 }

@@ -125,7 +125,7 @@ export default function HappyHrList() {
                     backgroundRepeat: "no-repeat",
                   }}
                 ></div>
-                <div>
+                <div className={styles.infoContainer}>
                   <h3>{item.title}</h3>
                   <li>{item.street_1}</li>
                   <li>

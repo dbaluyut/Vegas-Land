@@ -13,6 +13,7 @@ export default function Home() {
           {/* <div className={styles.overlay}></div> */}
 
           <div className={styles.welcome}></div>
+
           <img className={styles.wlogo} src={"./assets/logo-062.svg"}></img>
         </div>
       </div>
