@@ -12,7 +12,7 @@ export function Navbar() {
   return (
     <nav>
       <div className={styles.logo}>
-        <img className={styles.logoImage} src={"./assets/logo-06.svg"}></img>
+        <img className={styles.logoImage} src={"./assets/logo-062.svg"}></img>
       </div>
       <ul className={styles.nav_links}>
         <li>
@@ -31,11 +31,11 @@ export function Navbar() {
           <a href="http://localhost:3000/recommendations">Recommendations</a>
         </li>
       </ul>
-      <div className={styles.burger}>
+      {/* <div className={styles.burger}>
         <div className={styles.line1}></div>
         <div className={styles.line2}></div>
         <div className={styles.line3}></div>
-      </div>
+      </div> */}
     </nav>
   )
 }

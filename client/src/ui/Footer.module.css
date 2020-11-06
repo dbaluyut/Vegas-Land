@@ -10,10 +10,10 @@
   height: 0px; */
 
   /* display: grid;  */
-  height: 0px;
+  height: fit-content;
   position: relative;
-
-  top: 145px;
+  bottom: 0px;
+  background: white;
 }
 
 /* .footerItem {

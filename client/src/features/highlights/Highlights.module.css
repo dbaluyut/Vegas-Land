@@ -5,14 +5,12 @@
 }
 
 .gridItem1 {
-  border: 1px solid red;
   grid-row-start: 1;
   grid-column-start: 1;
   grid-row-end: 2;
   grid-column-end: 3;
 }
 .gridItem2 {
-  border: 1px solid red;
   grid-row-start: 1;
   grid-column-start: 3;
   grid-row-end: 3;
@@ -20,14 +18,12 @@
 }
 
 .gridItem3 {
-  border: 1px solid red;
   grid-row-start: 2;
   grid-column-start: 1;
   grid-row-end: 3;
   grid-column-end: 2;
 }
 .gridItem4 {
-  border: 1px solid red;
   grid-row-start: 2;
   grid-column-start: 2;
   grid-row-end: 3;
@@ -35,14 +31,12 @@
 }
 
 .gridItem5 {
-  border: 1px solid red;
   grid-row-start: 3;
   grid-column-start: 1;
   grid-row-end: 4;
   grid-column-end: 3;
 }
 .gridItem6 {
-  border: 1px solid red;
   grid-row-start: 3;
   grid-column-start: 3;
   grid-row-end: 4;
@@ -50,7 +44,6 @@
 }
 
 .gridItem7 {
-  border: 1px solid red;
   grid-row-start: 3;
   grid-column-start: 4;
   grid-row-end: 4;
@@ -59,12 +52,11 @@
 .hlContainer {
   width: fit-content;
   height: auto;
-  border: 1px solid red;
   display: grid;
   grid-template-rows: 200px 200px 200px;
-  grid-template-columns: 200px 200px 200px 200px;
-  grid-gap: 0.5rem;
-  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin: 4rem 4rem;
 }
 
 .venueTitle {
