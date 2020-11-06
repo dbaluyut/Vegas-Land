@@ -44,3 +44,7 @@
   left: 30rem;
   height: 8rem;
 }
+
+.infoContainer {
+  display: flex;
+}
