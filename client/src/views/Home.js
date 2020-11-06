@@ -1,9 +1,9 @@
-import React from "react"
-import Highlights from "../features/highlights/Highlights"
+import React from "react";
+import Highlights from "../features/highlights/Highlights";
 
-import { Navbar } from "../ui/Navbar"
-import { Footer } from "../ui/Footer"
-import styles from "./Home.module.css"
+import { Navbar } from "../ui/Navbar";
+import { Footer } from "../ui/Footer";
+import styles from "./Home.module.css";
 
 export default function Home() {
   return (
@@ -23,5 +23,5 @@ export default function Home() {
         <Footer />
       </div>
     </>
-  )
+  );
 }
