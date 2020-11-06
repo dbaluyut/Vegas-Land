@@ -20,17 +20,17 @@ export const getVenue = () => (dispatch) => {
   axios.get("api/venues").then((r) => dispatch(display(r.data)));
 };
 
-export const addVenue = (title, desc, location_id, link) => (dispatch) => {
+export const addVenue = (venue) => (dispatch) => {
+    console.log(venue)
   axios
     .post("api/venues", {
-      title: title,
-      desc: desc,
-      location_id: location_id,
-    //   type: type,
-      link: link,
+      title: venue.title,
+      desc: venue.desc,
+      location_id: venue.location_id,
+      type: venue.type,
+      link: venue.link,
     })
     .then((r) => {
-        console.log(title)
       dispatch(getVenue());
     });
 };

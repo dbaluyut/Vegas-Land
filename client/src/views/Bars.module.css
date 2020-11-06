@@ -130,7 +130,7 @@
 
 /* Sets the actual background images */
 .bg1::after {
-  background-image: url("https://i.pinimg.com/originals/61/e7/8b/61e78b08a8dd18779132812218a9f2a8.jpg");
+  /* background-image: url("https://i.pinimg.com/originals/61/e7/8b/61e78b08a8dd18779132812218a9f2a8.jpg"); */
   background-size: cover;
 }
 
