@@ -53,10 +53,10 @@ export default function Bars() {
               {console.log(item.id)}
               <section
                 className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
-                // style={{
-                //   backgroundImage: `url(${item.image})`,
+                style={{
+                  backgroundImage: `url(${item.image})`,
 
-                // }}
+                }}
               >
                 <h1>{item.title}</h1>
               </section>

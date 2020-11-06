@@ -8,6 +8,7 @@ import restaurantsReducer from "../views/restaurantsSlice"
 import barsReducer from "../views/barsSlice"
 import formReducer from "../views/recommendationsSlice"
 import dashboardReducer from "../views/admin/dashboardSlice"
+import dashboardTableReducer from "../ui/dashboardTableSlice"
 
 export default configureStore({
   reducer: {
@@ -20,5 +21,6 @@ export default configureStore({
     bars: barsReducer,
     form: formReducer,
     dashboard: dashboardReducer,
+    dashboardTable: dashboardTableReducer,
   },
 })

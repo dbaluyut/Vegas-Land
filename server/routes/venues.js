@@ -90,6 +90,7 @@ router.patch("/venues/:id", async (req, res) => {
 
 // VENUES DELETE REQUEST
 router.delete("/venues/:id", async (req, res) => {
+  console.log("works")
   await conn("venues").where({ id: req.params.id }).del();
   res.json({ message: "venue deleted" });
 });
