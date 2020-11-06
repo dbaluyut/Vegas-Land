@@ -2225,7 +2225,7 @@ async function main() {
   await conn("galleries").insert({
     venue_id: 15,
     image:
-      "https://cdn.vox-cdn.com/thumbor/zZLUTnhiNpsFfSAuR546eLq3Nx0=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18971656/Hop_Nuts_open.jpg",
+      "https://media.lasvegasweekly.com/img/photos/2015/01/27/Hop_Nuts_by_Steve_Marcus_2_t1000.jpg?c76bf34eada957f64a0b14990027a576ff9bf379",
   })
 
   await conn("galleries").insert({
@@ -2243,13 +2243,13 @@ async function main() {
   await conn("galleries").insert({
     venue_id: 18,
     image:
-      "https://img1.wsimg.com/isteam/ip/50965b5b-baf0-4de5-81f7-1cc9ffa0792f/ReBar%20(32%20of%2051)-0001.jpg/:/rs=w:1300,h:800",
+      "https://static01.nyt.com/images/2019/02/17/travel/17vegas-arts-district2/merlin_149473734_1c764407-491d-419e-8ef7-dd1341274217-jumbo.jpg",
   })
 
   await conn("galleries").insert({
     venue_id: 19,
     image:
-      "https://cdn.vox-cdn.com/thumbor/mOHsi3jh9nZJNjcGw7V-77HtXEA=/0x0:5796x3870/1200x675/filters:focal(2435x1472:3361x2398)/cdn.vox-cdn.com/uploads/chorus_image/image/65287834/Victa_CRAFTHAUS_WIDE_SHOT_Top.0.jpg",
+      "https://assets.simpleviewcms.com/simpleview/image/fetch/c_fill,g_center,h_610,q_75,w_814/https://lasvegas.simpleviewcrm.com/images/listings/original_crafthaus-brewery.jpg",
   })
 
   await conn("galleries").insert({
@@ -2261,7 +2261,7 @@ async function main() {
   await conn("galleries").insert({
     venue_id: 21,
     image:
-      "https://cdn.vox-cdn.com/thumbor/qpdgZ4FprigPdA97zMeKnuhSki4=/0x0:1500x838/1200x800/filters:focal(630x299:870x539)/cdn.vox-cdn.com/uploads/chorus_image/image/65310784/Garagiste.0.jpg",
+      "https://www.reviewjournal.com/wp-content/uploads/2020/08/14017554_web1_RJ-MAG-WINE-BAR_072420cs_010.jpg",
   })
 
   await conn("galleries").insert({
