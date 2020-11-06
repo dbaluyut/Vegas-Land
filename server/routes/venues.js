@@ -12,9 +12,9 @@ router.get("/venues/highlights", async (req, res) => {
   const venues = await conn.raw(`select galleries.image, venues.title from venues
   inner join galleries on galleries.venue_id=venues.id
   where venues.id in(1,21,14,2,7,3,42)
- `)
-  res.json(venues.rows)
-})
+ `);
+  res.json(venues.rows);
+});
 
 router.get("/venues/experiences", async (req, res) => {
   const venues = await conn.raw(`select galleries.image, venues.title from venues
@@ -24,18 +24,55 @@ router.get("/venues/experiences", async (req, res) => {
 });
 
 router.get("/venues/restaurants", async (req, res) => {
-  const venues = await conn.raw(`select galleries.image, venues.title, venues.id from venues
+  const venues = await conn.raw(`select galleries.image, venues.title, venues.desc, venues.id from venues
   inner join galleries on galleries.venue_id=venues.id
-    where type='restaurant'`)
-  res.json(venues.rows)
-})
+    where type='restaurant'`);
+    const venuesList = venues.rows;
 
-router.get("/venues/bars", async (req, res) => {
-  const venues = await conn.raw(`select galleries.image, venues.title, venues.id from venues
-  inner join galleries on galleries.venue_id=venues.id
-    where type='bar'`)
-  res.json(venues.rows)
-})
+  for (let venue of venuesList) {
+    const labels = await conn.raw(
+      `select labels.desc from venues
+      inner join venue_labels on venue_labels.venue_id=venues.id
+      inner join labels on venue_labels.label_id=labels.id
+      where venues.id = ?`,
+      [venue.id]
+    );
+    console.log(labels.rows);
+    // const venueWithLabels = {labels: labels.rows, ...venue}
+    venue.labels = labels.rows;
+    console.log(venue);
+  }
+
+  res.json(venuesList);
+});
+
+
+
+// router.get("/venues/bars", async (req, res) => {
+//   const venues = await conn.raw(`select galleries.image, venues.title, venues.desc, venues.id from venues
+//   inner join galleries on galleries.venue_id=venues.id
+//     where type='bar'`);
+
+  // const venuesList = venues.rows;
+
+  // for (let venue of venuesList) {
+  //   const labels = await conn.raw(
+  //     `select labels.desc from venues
+  //     inner join venue_labels on venue_labels.venue_id=venues.id
+  //     inner join labels on venue_labels.label_id=labels.id
+  //     where venues.id = ?`,
+  //     [venue.id]
+  //   );
+  //   console.log(labels.rows);
+  //   // const venueWithLabels = {labels: labels.rows, ...venue}
+  //   venue.labels = labels.rows;
+  //   console.log(venue);
+  // }
+
+//   res.json(venuesList);
+// });
+
+
 
 
 
@@ -47,18 +84,42 @@ router.get("/venues/bars", async (req, res) => {
 //   res.json(happy_hr.rows)
 // })
 
-router.get("/venues/restaurants", async (req, res) => {
-  const venues = await conn.raw(`select * from venues
-    where type='restaurant'`);
-  res.json(venues.rows);
-});
+// router.get("/venues/restaurants", async (req, res) => {
+//   const venues = await conn.raw(`select * from venues
+//     where type='restaurant'`);
+//   res.json(venues.rows);
+// });
 
 // BARS GET REQUEST
 
+// router.get("/venues/bars", async (req, res) => {
+//   const venues = await conn.raw(`select * from venues
+//     where type='bar'`);
+//   res.json(venues.rows);
+// });
+
 router.get("/venues/bars", async (req, res) => {
-  const venues = await conn.raw(`select * from venues
+  const venues = await conn.raw(`select galleries.image, venues.title, venues.desc, venues.id from venues
+  inner join galleries on galleries.venue_id=venues.id
     where type='bar'`);
-  res.json(venues.rows);
+
+  const venuesList = venues.rows;
+
+  for (let venue of venuesList) {
+    const labels = await conn.raw(
+      `select labels.desc from venues
+      inner join venue_labels on venue_labels.venue_id=venues.id
+      inner join labels on venue_labels.label_id=labels.id
+      where venues.id = ?`,
+      [venue.id]
+    );
+    console.log(labels.rows);
+    // const venueWithLabels = {labels: labels.rows, ...venue}
+    venue.labels = labels.rows;
+    console.log(venue);
+  }
+
+  res.json(venuesList);
 });
 
 // VENUES POST REQUEST
@@ -90,6 +151,7 @@ router.patch("/venues/:id", async (req, res) => {
 
 // VENUES DELETE REQUEST
 router.delete("/venues/:id", async (req, res) => {
+  console.log("works")
   await conn("venues").where({ id: req.params.id }).del();
   res.json({ message: "venue deleted" });
 });

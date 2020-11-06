@@ -50,18 +50,22 @@ export default function Restaurants() {
         <main className={styles.wrapper}>
           {restaurants.map((item) => (
             <div id={item.id} ref={refs[item.id]}>
-              {console.log(item.id)}
+              {console.log(item.desc)}
               <section
                 className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
                 style={{
                   backgroundImage: `url(${item.image})`,
+                  backgroundPosition: 'center'
 
                 }}
               >
                 <h1>{item.title}</h1>
               </section>
               <section className={`${styles.section2} ${styles.static}`}>
-                <h1>{item.desc}</h1>
+                <p>{item.desc}</p>
+                {item.labels.map((label) => (
+                  <p>{label.desc}</p>
+                ))}
               </section>
             </div>
           ))}

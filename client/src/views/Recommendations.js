@@ -41,75 +41,55 @@ export default function Recommendations() {
   return (
     <div>
       <Navbar />
-      <h2>Bars</h2>
-      <div className={styles.recommendation}>
-        <div className={styles.container}>
-          <div className={styles.card}>
-            <div className={`${styles.face} ${styles.face1}`}>
-              <div className={styles.content}>
-                <div className={styles.icon}>
-                  <p className={styles.recommendation_title}>Recommendation?</p>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.face} ${styles.face2}`}>
-              <div className={styles.content}>
-                <form className={styles.form} onSubmit={handleSubmit}>
-                  <div className={styles.name_input}>
-                    <label className={styles.label} for="name">
-                      Name
-                    </label>
-                    <input
-                      onChange={(e) => setName(e.target.value)}
-                      value={name}
-                      type="text"
-                      className={styles.form_field}
-                      placeholder="Name"
-                    />
-                  </div>
 
-                  {/* <!--      email input              --> */}
-                  <div className={styles.email_input}>
-                    <label className={styles.label} for="email">
-                      Email
-                    </label>
-                    <input
-                      onChange={(e) => setEmail(e.target.value)}
-                      value={email}
-                      type="email"
-                      className={styles.form_field}
-                      placeholder="Email"
-                    />
-                  </div>
+      <div className={styles.container}>
+        <form className={styles.contact} onSubmit={handleSubmit}>
+          <h3>VegasLand Contact Form</h3>
 
-                  <div className={styles.textarea_input}>
-                    <label className={styles.label} for="email">
-                      Message
-                    </label>
-                    <textarea
-                      onChange={(e) => setText(e.target.value)}
-                      value={text}
-                      className={styles.textarea}
-                      name="comment"
-                      form="usrform"
-                    ></textarea>
-                  </div>
-
-                  <div className={styles.submitDiv}>
-                    <button
-                      className={styles.submit}
-                      type="submit"
-                      value="Submit"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+          <fieldset>
+            <input
+              input
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              placeholder="Your name"
+              type="text"
+              tabindex="1"
+              required
+              autofocus
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              placeholder="Email"
+              type="email"
+              tabindex="2"
+              required
+            />
+          </fieldset>
+          <fieldset>
+            <textarea
+              onChange={(e) => setText(e.target.value)}
+              value={text}
+              placeholder="Type your message here...."
+              tabindex="5"
+              required
+            ></textarea>
+          </fieldset>
+          <fieldset>
+            <button
+              name="submit"
+              type="submit"
+              className={styles.contact_submit}
+              data-submit="...Sending"
+            >
+              Submit
+            </button>
+          </fieldset>
+        </form>
       </div>
+
       <Footer />
     </div>
   );

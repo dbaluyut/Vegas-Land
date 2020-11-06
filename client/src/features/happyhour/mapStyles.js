@@ -13,7 +13,7 @@ export default [
     elementType: "labels",
     stylers: [
       {
-        visibility: "off",
+        visibility: "on",
       },
       {
         saturation: "-100",
@@ -25,16 +25,16 @@ export default [
     elementType: "labels.text.fill",
     stylers: [
       {
-        saturation: 36,
+        saturation: 0,
       },
       {
-        color: "#000000",
+        color: "#white",
       },
       {
         lightness: 40,
       },
       {
-        visibility: "off",
+        visibility: "on",
       },
     ],
   },
