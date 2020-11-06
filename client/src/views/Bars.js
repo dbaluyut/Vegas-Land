@@ -70,9 +70,9 @@ export default function Bars() {
             </div>
           ))}
         </main>
-        <div className={styles.footer}>
+        {/* <div className={styles.footer}>
           <Footer />
-        </div>
+        </div> */}
       </div>
     </div>
   )

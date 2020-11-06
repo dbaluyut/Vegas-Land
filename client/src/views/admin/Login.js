@@ -25,6 +25,7 @@ export default function Login() {
     //   />
     //   <button type="submit">submit</button>
     // </form>
+    <div className={styles.container}>
     <div className={styles.card}>
       <h2>Log-In</h2>
 
@@ -55,6 +56,7 @@ export default function Login() {
           Log In
         </button>
       </form>
+    </div>
     </div>
   );
 }

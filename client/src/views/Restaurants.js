@@ -76,9 +76,9 @@ export default function Restaurants() {
             </div>
           ))}
         </main>
-        <div className={styles.footer}>
+        {/* <div className={styles.footer}>
           <Footer />
-        </div>
+        </div> */}
       </div>
     </div>
   )
