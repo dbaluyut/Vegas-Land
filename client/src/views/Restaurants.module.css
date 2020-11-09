@@ -46,7 +46,8 @@
 .sidebarItemTitle {
   display: flex;
   width: 100%;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 10px;
   font-family: "Life Savers", cursive;
   font-weight: 600;
 }
