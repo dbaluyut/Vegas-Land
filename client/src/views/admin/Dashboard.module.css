@@ -10,12 +10,28 @@
   display: flex;
 }
 
-.dashboardSidebar {
-  height: 100vh;
+.dashSideBar {
+  height: auto;
   width: 20%;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.dashSideBar a {
+  color: white;
+}
+
+.dashLogo {
+  /* background-image: url("./assets/logo-062.svg"); */
 }
 
 .dashTable {
   height: 100vh;
   width: 80%;
+  overflow: scroll;
 }

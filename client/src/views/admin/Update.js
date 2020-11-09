@@ -25,6 +25,7 @@ export default function Update() {
   }, [venues]);
 
   const [title, setTitle] = useState("");
+  const [id, setId] = useState("");
   const [desc, setDesc] = useState("");
   const [location_id, setLocation_id] = useState("");
   const [type, setType] = useState("");
@@ -51,11 +52,15 @@ export default function Update() {
     /// select venue from map
     const id = e.target.value;
     console.log(venueMap[id]);
-    setActiveVenue(e.target.value);
+    setTitle(venueMap[id].title);
+    setId(id);
+
+    setActiveVenue(venueMap[id]);
   };
+  console.log(activeVenue);
 
   function handleUpdateVenue(venue) {
-    dispatch(updateVenue({ title, desc, type, link }));
+    dispatch(updateVenue(venue));
   }
 
   // function handleUpdate(name, desc) {
@@ -66,7 +71,7 @@ export default function Update() {
     <div className={styles.dashContainer}>
       <div className={styles.dashboardSidebar}>
         <h1>update page view</h1>
-        <form className={styles.form} onSubmit={handleUpdateVenue}>
+        <form className={styles.form} onSubmit={handleUpdateVenue(activeVenue)}>
           {/* dropdown */}
           <div
             className={styles.dropdown}
@@ -90,8 +95,13 @@ export default function Update() {
           {/* title form */}
           <div className={styles.title}>
             <label for="title">Title</label>
-            <input type="text" value={activeVenue.title} />
+            <input
+              type="text"
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
           </div>
+          <h1>{activeVenue.title}</h1>
           {/* description form */}
           <div className={styles.desc}>
             <label for="desc">Desc</label>

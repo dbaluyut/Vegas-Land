@@ -37,12 +37,12 @@ export const getVenue = () => (dispatch) => {
 
 export const updateVenue = (venue) => (dispatch) => {
   axios
-    .patch("/api/venues/:id", {
+    .patch("/api/venues/" + venue.id,  {
       title: venue.title,
-      desc: venue.desc,
-      location_id: venue.location_id,
-      type: venue.type,
-      link: venue.link,
+      desc: "venue.desc",
+      location_id: 1,
+      type: "venue.type",
+      link: "venue.link",
     })
     .then((r) => dispatch(getVenue()));
 };
