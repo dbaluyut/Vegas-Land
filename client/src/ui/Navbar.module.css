@@ -26,9 +26,10 @@ nav {
 }
 
 .logo {
-  position: absolute;
-  left: 142px;
-  top: 3.3rem;
+  position: absolute !important;
+  left: 142px !important;
+  /* top: 1.3rem ; */
+
 }
 
 .logoImage {
