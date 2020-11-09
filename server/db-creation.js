@@ -821,7 +821,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Downtown Container Park",
-    desc: null,
+    desc:
+      "Downtown Container Park is an open-air shopping and entertainment venue featuring 38 unique retail shops, restaurants, and bars. Located in Las Vegas’ flourishing Downtown neighborhood, the innovative center is built from 43 repurposed shipping containers and 41 locally manufactured Xtreme cubes. Upon arrival, guests are greeted by a 35-foot-tall praying mantis sculpture that shoots flames from its antennae. After entering the park, guests discover a whimsical world of one-of-a-kind boutiques, restaurants, and bars. The park also includes a stage for presentations and live music performances, as well as The Treehouse, an interactive play area featuring a 33-foot-tall slide, NEOS play system, oversized foam building blocks and much more. Container Park is a 21+ facility after 9 p.m. daily.",
     location_id: 27,
     type: "experience",
     link: "https://downtowncontainerpark.com/",
@@ -829,7 +830,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Neonopolis",
-    desc: null,
+    desc:
+      "The Neonopolis is a one-of-a-kind dining, entertainment, and shopping experience located in the heart of Downtown Las Vegas.  Featuring everything from axe-throwing to vibrant video-game nightlife, everyone can find something at the Neonopolis.",
     location_id: 28,
     type: "experience",
     link: "https://www.neonopolislv.com/",
@@ -837,7 +839,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Toy Shack",
-    desc: null,
+    desc:
+      "Probably the only reason to visit Neonopolis (besides parking), The Toy Shack is where Jimmy Jiminez, a toy expert who makes frequent appearance on the History Channel’s Pawn Stars, actually works. The story carries everything from pristine collectibles to new-fangled toys, dolls, and action figures. Comic book nerds (and the people who love them) use the goods here for superhero cosplay parties; the country’s biggest collection of Hot Wheels is a big draw for those sorts of aficionados. Who says you can’t play with toys when you’re an adult? The Toy Shack is open Mondays through Saturdays from 11am until 10pm.",
     location_id: 29,
     type: "shop",
     link: "https://www.facebook.com/lasvegastoyshack/",

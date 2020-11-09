@@ -22,6 +22,7 @@ import Bars from "./views/Bars"
 import Restaurants from "./views/Restaurants"
 import Experiences from "./views/Experiences"
 import Dashboard from "./views/admin/Dashboard"
+import Update from "./views/admin/Update"
 import Recommendations from "./views/Recommendations"
 
 import HappyHour from "./views/HappyHour"
@@ -62,6 +63,9 @@ function App() {
         </Route>
         <AuthRoute path="/dashboard">
           <Dashboard />
+        </AuthRoute>
+        <AuthRoute path="/update">
+          <Update />
         </AuthRoute>
       </Switch>
     </Router>
