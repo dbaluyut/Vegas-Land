@@ -38,12 +38,12 @@ export function DashboardTable() {
   <tbody>
     {dashboardTable.map((item) => (
       <tr>
-      <td data-column="Title">{item.title}</td>
-      <td data-column="Description">{item.desc}</td>
-      <td data-column="Location I.D.">{item.location_id}</td>
-      <td data-column="Type">{item.type}</td>
-      <td data-column="Link"><a href={item.link}>{item.link}</a></td>
-      <td data-column="Remove"><button onClick={() => handleDelete(item)}>x</button></td>
+      <td className={styles.tableTitle} data-column="Title">{item.title}</td>
+      <td className={styles.tableDesc} data-column="Description">{item.desc}</td>
+      <td className={styles.tableLocation} data-column="Location I.D.">{item.location_id}</td>
+      <td className={styles.tableType} data-column="Type">{item.type}</td>
+      <td className={styles.tableLink} data-column="Link"><a href={item.link}>{item.link}</a></td>
+      <td className={styles.tableRemove} data-column="Remove"><button onClick={() => handleDelete(item)}>x</button></td>
     </tr>
     ))}
   </tbody>
