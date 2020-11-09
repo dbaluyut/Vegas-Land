@@ -5,9 +5,10 @@
 }
 
 table { 
-	width: 750px; 
+	width: 1000px; 
 	border-collapse: collapse; 
 	margin:50px auto;
+	table-layout: fixed;
 	}
 
 /* Zebra striping */
@@ -26,7 +27,31 @@ td, th {
 	border: 1px solid #ccc; 
 	text-align: left; 
 	font-size: 18px;
+	white-space: nowrap;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;
 	}
+
+.tableTitle {
+	width: 30%;
+}
+
+.tableDesc {
+	width: 30%;
+}
+
+.tableLocation {
+	width: 10%;
+}
+
+.tableType {
+	width: 15%;
+}
+
+.tableRemove {
+	width: 10%;
+}
 
 /* 
 Max width before this PARTICULAR table gets nasty
