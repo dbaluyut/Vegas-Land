@@ -70,8 +70,8 @@ h2:before {
   width: 100%;
 }
 
-label {
-  /* position: absolute; */
+.input_border label {
+  position: absolute;
   top: 8px;
   left: 14px;
   color: silver;
