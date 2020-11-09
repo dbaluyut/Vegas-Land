@@ -88,6 +88,7 @@ export default function Recommendations() {
             </button>
           </fieldset>
         </form>
+        
       </div>
 
       <Footer />
