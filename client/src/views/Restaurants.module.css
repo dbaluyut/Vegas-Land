@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -46,7 +48,8 @@
 .sidebarItemTitle {
   display: flex;
   width: 100%;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 10px;
   font-family: "Life Savers", cursive;
   font-weight: 600;
 }
@@ -78,6 +81,12 @@
   justify-content: center;
   color: white;
   text-shadow: 0 0 5px #000;
+}
+
+.imageTitle {
+  font-family: Yesteryear;
+  font-size: 68px;
+  text-shadow: 0 0 10px #000;
 }
 
 .section2 {

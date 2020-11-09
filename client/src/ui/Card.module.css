@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -32,6 +34,10 @@
   justify-content: center; */
   text-align: center;
   border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 10px #000;
+
 
   /* border: solid 1px white; */
 }
@@ -40,6 +46,8 @@
   opacity: 0;
   transition: opacity 0.25s;
   margin-left: 5px;
+  font-family: Yesteryear;
+  font-size: 40px;
 }
 
 .center:hover h3 {

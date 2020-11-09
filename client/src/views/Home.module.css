@@ -16,6 +16,15 @@
 
 .wlogo {
   width: 50vw;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+}
+
+.chevron {
+  height: 150px;
+  width: 150px;
+  z-index: 2;
 }
 
 .sticky {

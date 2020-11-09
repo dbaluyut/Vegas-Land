@@ -60,7 +60,7 @@ export default function Restaurants() {
                   backgroundPosition: "center",
                 }}
               >
-                <h1>{item.title}</h1>
+                <h1 className={styles.imageTitle}>{item.title}</h1>
               </section>
               <section className={`${styles.section2} ${styles.static}`}>
                 <div className={styles.descContainer}>

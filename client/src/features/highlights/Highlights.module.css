@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -66,7 +68,13 @@
   height: auto;
   color: white;
   padding: 0.5rem;
-  text-shadow: 0 0 5px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 10px #000;
+  font-family: Yesteryear;
+  font-size: 40px;
+  text-align: center;
 }
 
 .gridItem1:hover .venueTitle {

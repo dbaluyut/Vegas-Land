@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -49,6 +51,9 @@
   justify-content: center;
   font-family: 'Life Savers', cursive;
   font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .sidebar li {
@@ -86,6 +91,12 @@
   justify-content: center;
   color: white;
   text-shadow: 0 0 5px #000;
+}
+
+.imageTitle {
+  font-family: Yesteryear;
+  font-size: 48px;
+  text-shadow: 0 0 10px #000;
 }
 
 .section2 {

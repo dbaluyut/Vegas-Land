@@ -23,7 +23,7 @@ export function Card(props) {
         }}>
             <div className={styles.content}>
               <div className={styles.center}>
-                <h3>{props.title}</h3>
+                <h3 classname={styles.cardTitle}>{props.title}</h3>
               </div>
             </div>
           </div>
