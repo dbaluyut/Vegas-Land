@@ -71,7 +71,7 @@ h2:before {
 }
 
 label {
-  position: absolute;
+  /* position: absolute; */
   top: 8px;
   left: 14px;
   color: silver;
