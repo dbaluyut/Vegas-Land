@@ -27,7 +27,7 @@ export default function Recommendations() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(addRecommendations(text, name, email));
+    dispatch(addRecommendations({text, name, email}));
 
     setName("");
     setEmail("");

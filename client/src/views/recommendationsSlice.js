@@ -20,7 +20,7 @@ export const getRecommendations = () => (dispatch) => {
   axios.get("api/recommendations").then((r) => dispatch(display(r.data)));
 };
 
-export const addRecommendations = (name, email, text) => (dispatch) => {
+export const addRecommendations = ({name, email, text}) => (dispatch) => {
   axios
     .post("api/recommendations", {name: name, email: email, desc: text })
     .then((r) => {
