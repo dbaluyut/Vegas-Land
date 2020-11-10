@@ -20,9 +20,14 @@ export const getRecommendationsTable = () => (dispatch) => {
   axios.get("api/recommendations").then((r) => dispatch(setRecommendationsTable(r.data)));
 };
 
-export const addRecommendationsTable = (name, email, text) => (dispatch) => {
+export const addRecommendationsTable = (recommendation) => (dispatch) => {
+ console.log(recommendation)
   axios
-    .post("api/recommendations", {name: name, email: email, desc: text })
+    .post("api/recommendations", {
+      name: recommendation.name, 
+      email: recommendation.email, 
+      desc: recommendation.text 
+    })
     .then((r) => {
       dispatch(setRecommendationsTable());
     });
