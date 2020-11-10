@@ -24,8 +24,6 @@ export default function RecommendationsTable() {
   //   }
 
   return (
-    <div>
-     
     <table>
       <thead>
         <tr>
@@ -53,6 +51,5 @@ export default function RecommendationsTable() {
         ))}
       </tbody>
     </table>
-    </div>
   )
 }
