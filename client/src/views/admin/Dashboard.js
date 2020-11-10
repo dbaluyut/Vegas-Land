@@ -16,19 +16,19 @@ export default function Dashboard() {
     dispatch(getVenue());
   }, []);
 
-  const history  = useHistory();
-    const { logout } = useAuth();
-    // function handle(e) {
-    //   e.preventDefault();
-    //   history.push("/login");
-    // }
-  
+  const history = useHistory();
+  const { logout } = useAuth();
+  // function handle(e) {
+  //   e.preventDefault();
+  //   history.push("/login");
+  // }
+
   function handleClick() {
-      logout().then((resp) => {
-        console.log("test");
-        history.push("/logout");
-      });
-    }
+    logout().then((resp) => {
+      console.log("test");
+      history.push("/logout");
+    });
+  }
 
   return (
     <div className={styles.dashContainer}>
@@ -36,12 +36,16 @@ export default function Dashboard() {
         <div className={styles.dashLogo}>
           <img src={"./assets/logo-062.svg"}></img>
         </div>
-        <a href="http://localhost:3000/dashboard">Venues</a>
-        <a href="http://localhost:3000/update">Update</a>
-        <a href="http://localhost:3000/RecommendationsTable">Recommendations</a>
-        <button className={styles.logOutBtn}
-        onClick={handleClick}
-        >
+        <Link to="dashboard">
+          <span>Venues</span>
+        </Link>
+        <Link to="/update">
+          <span>Update</span>
+        </Link>
+        <Link to="RecommendationsTable">
+          <span>Recommendations</span>
+        </Link>
+        <button className={styles.logOutBtn} onClick={handleClick}>
           Log Out
         </button>
       </div>

@@ -1,4 +1,5 @@
 import { React } from "react"
+import { Link } from 'react-router-dom'
 
 import styles from "./Navbar.module.css"
 
@@ -12,35 +13,40 @@ export function Navbar() {
       }}
     >
       <nav>
-        <a className={styles.logo} href="http://localhost:3000/home">
+        <Link to="/home">
+        <div className={styles.logo}>
           <img className={styles.logoImage} src={"./assets/logo-062.svg"}></img>
-        </a>
+        </div>
+        </Link>
         <ul className={styles.nav_links}>
           <li>
-            <a href='#'>Food {`&`} Drink</a>
+            <span>Food {`&`} Drink</span>
               <ul>
-                <li className={styles.barsDropdown}><a href="http://localhost:3000/bars">Bars</a></li>
-                <li className={styles.restaurantDropdown}><a href="http://localhost:3000/restaurants">Restaurants</a></li>
+                <li className={styles.barsDropdown}><Link to="/bars"><span>Bars</span></Link></li>
+                <li className={styles.restaurantDropdown}><Link to="/restaurants"><span>Restaurants</span></Link></li>
               </ul>
           </li>
           <li>
-            <a href="http://localhost:3000/experiences">Experiences</a>
+            <Link to="/experiences">
+            <span>Experiences</span>
+            </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/happyhour">Happy Hours</a>
+            <Link to="/happyhour">
+            <span>Happy Hours</span>
+            </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/about">Our Team</a>
+            <Link to="/about">
+            <span>Our Team</span>
+            </Link>
           </li>
           <li>
-            <a href="http://localhost:3000/recommendations">Recommendations</a>
+            <Link to="/recommendations">
+            <span>Recommendations</span>
+            </Link>
           </li>
         </ul>
-        {/* <div className={styles.burger}>
-        <div className={styles.line1}></div>
-        <div className={styles.line2}></div>
-        <div className={styles.line3}></div>
-      </div> */}
       </nav>
     </div>
   )
