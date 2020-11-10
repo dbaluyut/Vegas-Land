@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smythe&display=swap');
 
 * {
   margin: 0;
@@ -20,11 +21,12 @@
 
 .contentContainer {
   display: flex;
+  /* height: 100vh; */
 }
 
 .sidebar {
   height: 100vh;
-  width: 25%;
+  width: 20%;
   overflow: scroll;
   cursor: pointer;
   padding-top: 12vh;
@@ -43,6 +45,10 @@
   color: #3B8979;
   padding-top: .87rem;
   padding-bottom: .87rem;
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .sidebarItemTitle {
@@ -76,7 +82,7 @@
   overflow-y: auto;
   /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
   perspective: 2px;
-  width: 75%;
+  width: 80%;
 }
 
 .section {
@@ -94,20 +100,40 @@
 }
 
 .imageTitle {
-  font-family: Yesteryear;
+  font-family: Smythe;
   font-size: 48px;
   text-shadow: 0 0 10px #000;
 }
 
 .section2 {
-  /* Needed for children to be absolutely positioned relative to the parent. */
   position: relative;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: black;
+  border: solid 3px black;
+}
+
+.descContainer {
+  line-height: 2;
+  background-color: #75A99A;
   color: white;
-  text-shadow: 0 0 5px #000;
+  padding: 5%;
+  text-align: justify;
+  width: 100%;
+}
+
+.descContainer p {
+  font-weight: 300;
+}
+
+.labelsContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 3%;
+}
+
+.labels {
+  display: flex;
+  padding-right: 1.1rem;
+
 }
 
 /* .section2::after {
@@ -145,10 +171,10 @@
   background-size: cover;
 }
 
-.footer {
+/* .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   display:inline-block;
-}
+} */
 
