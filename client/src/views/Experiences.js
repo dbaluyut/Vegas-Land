@@ -10,7 +10,7 @@ export default function Experiences() {
   const experiences = useSelector(selectExperiences)
   const dispatch = useDispatch()
   const [activeItem, setActiveItem] = useState(null)
-
+console.log(activeItem)
   useEffect(() => {
     dispatch(getExperiences())
   }, [])
@@ -23,9 +23,11 @@ export default function Experiences() {
       {activeItem ? (
         <div className={styles.modalContainer}>
           <div className={styles.modal}>
-            <button onClick={() => setActiveItem(null)}>x</button>
+            <button onClick={() => setActiveItem(null)}>&times;</button>
             <h3 className={styles.modalLabel}>{activeItem.title}</h3>
-            <p>{activeItem.desc}</p>
+            <p className={styles.modalDesc}>{activeItem.desc}</p>
+            <p className={styles.address} >{activeItem.street_1} {activeItem.city}, {activeItem.state} {activeItem.zip}</p>
+            <a className={styles.modalLink}href={activeItem.link}>{activeItem.link}</a>
           </div>
         </div>
       ) : null}

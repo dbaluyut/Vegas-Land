@@ -24,6 +24,7 @@ import Experiences from "./views/Experiences"
 import Dashboard from "./views/admin/Dashboard"
 import Update from "./views/admin/Update"
 import Recommendations from "./views/Recommendations"
+import RecommendationsTable from "./views/admin/RecommendationsTable"
 
 import HappyHour from "./views/HappyHour"
 
@@ -66,6 +67,9 @@ function App() {
         </AuthRoute>
         <AuthRoute path="/update">
           <Update />
+        </AuthRoute>
+        <AuthRoute path="/RecommendationsTable">
+          <RecommendationsTable />
         </AuthRoute>
       </Switch>
     </Router>

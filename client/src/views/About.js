@@ -26,7 +26,7 @@ export default function About() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <section className={styles.icons}>
+            <section className={styles.aboutIcons}>
               <a href="#">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
@@ -66,7 +66,7 @@ export default function About() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <section  className={styles.icons}>
+            <section  className={styles.aboutIcons}>
               <a href="#">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
@@ -94,7 +94,7 @@ export default function About() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <section  className={styles.icons}>
+            <section  className={styles.aboutIcons}>
               <a href="#">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
