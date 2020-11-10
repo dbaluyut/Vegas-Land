@@ -8,7 +8,6 @@ import {
   withGoogleMap,
   Marker,
   InfoWindow,
-  Polygon,
 } from "react-google-maps"
 import mapStyles from "./mapStyles"
 
@@ -54,8 +53,8 @@ export default function HappyHrList() {
                 url: "./assets/vmarker.svg",
                 scaledSize: new window.google.maps.Size(70, 70),
                 // size: new window.google.maps.Size(50, 50),
-                origin: new window.google.maps.Point(0, 0),
-                anchor: new window.google.maps.Point(10, 10),
+                origin: new window.google.maps.Point(20, 0),
+                // anchor: new window.google.maps.Point(0, 70),
               }}
               onClick={() => {
                 setSelectedVenue(item)

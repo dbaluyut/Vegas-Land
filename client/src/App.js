@@ -1,15 +1,6 @@
 import React from "react"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useHistory,
-  useRouteMatch,
-  useParams,
-} from "react-router-dom"
-import logo from "./logo.svg"
-import { Counter } from "./features/counter/Counter"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+
 import "./App.css"
 
 import Login from "./views/admin/Login"

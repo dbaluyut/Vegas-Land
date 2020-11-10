@@ -29,7 +29,7 @@
 
 .mapContainer {
   width: 75%;
-  height: 80vh;
+  height: 88vh;
   /* border: 1px solid red; */
 }
 
@@ -37,6 +37,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 
 .mapLogo {
@@ -47,4 +48,6 @@
 
 .infoContainer {
   display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
