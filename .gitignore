@@ -1,8 +1,5 @@
 node_modules
 node_modules
-<<<<<<< HEAD
 .env
 DS_Store
-=======
 yarn.lock
->>>>>>> aeeaae2c1d752eefa54322039ddef03b3ce21967

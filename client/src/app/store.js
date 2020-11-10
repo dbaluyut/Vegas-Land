@@ -9,6 +9,8 @@ import barsReducer from "../views/barsSlice"
 import formReducer from "../views/recommendationsSlice"
 import dashboardReducer from "../views/admin/dashboardSlice"
 import dashboardTableReducer from "../ui/dashboardTableSlice"
+import updateReducer from "../views/admin/updateSlice"
+import recommendationsTableReducer from "../views/admin/recommendationsTableSlice"
 
 export default configureStore({
   reducer: {
@@ -22,5 +24,8 @@ export default configureStore({
     form: formReducer,
     dashboard: dashboardReducer,
     dashboardTable: dashboardTableReducer,
+    update: updateReducer,
+    recommendationsTable: recommendationsTableReducer,
+
   },
 })

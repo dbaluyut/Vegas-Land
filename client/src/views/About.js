@@ -26,7 +26,7 @@ export default function About() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <section className={styles.icons}>
+            <section className={styles.aboutIcons}>
               <a href="#">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
@@ -37,19 +37,19 @@ export default function About() {
             </section>
           </div>
           <div className={styles.imageContainer}>
-            {/* <img
+            <img
               className={styles.profileImage}
               src="https://images.unsplash.com/photo-1571772805064-207c8435df79?ixlib=rb-1.2.1&auto=format&fit=crop&w=977&q=80"
-            /> */}
+            />
           </div>
         </div>
 
         <div className={styles.section2}>
           <div className={styles.imageContainer}>
-            {/* <img
+            <img
               className={styles.profileImage}
               src="https://images.unsplash.com/photo-1571772805064-207c8435df79?ixlib=rb-1.2.1&auto=format&fit=crop&w=977&q=80"
-            /> */}
+            />
           </div>
           <div className={styles.discription}>
             <p className={styles.name}>Name</p>
@@ -66,7 +66,7 @@ export default function About() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <section  className={styles.icons}>
+            <section  className={styles.aboutIcons}>
               <a href="#">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
@@ -94,7 +94,7 @@ export default function About() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <section  className={styles.icons}>
+            <section  className={styles.aboutIcons}>
               <a href="#">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
@@ -105,10 +105,10 @@ export default function About() {
             </section>
           </div>
           <div className={styles.imageContainer}>
-            {/* <img
+            <img
              className={styles.profileImage}
               src="https://images.unsplash.com/photo-1571772805064-207c8435df79?ixlib=rb-1.2.1&auto=format&fit=crop&w=977&q=80"
-            /> */}
+            />
           </div>
         </div>
       </div>
