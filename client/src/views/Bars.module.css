@@ -29,7 +29,7 @@
   width: 20%;
   overflow: scroll;
   cursor: pointer;
-  padding-top: 12vh;
+  padding-top: 13vh;
 }
 
 .sidebarItem {
@@ -122,6 +122,10 @@
 
 .descContainer p {
   font-weight: 300;
+}
+
+.itemDesc {
+  margin-top: 2rem;
 }
 
 .labelsContainer {

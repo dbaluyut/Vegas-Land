@@ -2,7 +2,11 @@ import React, { useEffect } from "react"
 import { Navbar } from "../ui/Navbar"
 import { Footer } from "../ui/Footer"
 import styles from "./Restaurants.module.css"
-import { selectRestaurants, getRestaurants, getLocations } from "./restaurantsSlice"
+import {
+  selectRestaurants,
+  getRestaurants,
+  getLocations,
+} from "./restaurantsSlice"
 import { useSelector, useDispatch } from "react-redux"
 
 export default function Restaurants() {
@@ -63,21 +67,22 @@ export default function Restaurants() {
                 <h1 className={styles.imageTitle}>{item.title}</h1>
               </section>
               <section className={`${styles.section2} ${styles.static}`}>
-                
                 <div className={styles.descContainer}>
                   <h2>{item.title}</h2>
-              <p>{item.street_1} {item.city}, {item.state} {item.zip}</p>
-              <a href={item.link}>{item.link}</a>
-                  <p>{item.desc}</p>
-                {/* </div> */}
-                <div className={styles.labelsContainer}>
-                  {/* <h3>Services:</h3> */}
-                  {item.labels.map((label) => (
-                    <div className={styles.labels}>
-                      <p>{label.desc}</p>
-                    </div>
-                  ))}
-                </div>
+                  <p>
+                    {item.street_1}, {item.city}, {item.state} {item.zip}
+                  </p>
+                  <a href={item.link}>{item.link}</a>
+                  <p className={styles.itemDesc}>{item.desc}</p>
+                  {/* </div> */}
+                  <div className={styles.labelsContainer}>
+                    {/* <h3>Services:</h3> */}
+                    {item.labels.map((label) => (
+                      <div className={styles.labels}>
+                        <p>{label.desc}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 {/* <div className={styles.addressLinkContainer}>
                   <div className={styles.address}></div>
