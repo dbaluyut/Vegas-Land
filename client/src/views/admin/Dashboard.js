@@ -20,17 +20,11 @@ export default function Dashboard() {
         <div className={styles.dashLogo}>
           <img src={"./assets/logo-062.svg"}></img>
         </div>
-<<<<<<< HEAD
         <a href="http://localhost:3000/dashboard">Venues</a>
         <a href="http://localhost:3000/update">Update</a>
         <a href="http://localhost:3000/RecommendationsTables">
           Recommendations
         </a>
-=======
-        <a className={styles.dashSideBarTag} href="http://localhost:3000/dashboard">Venues</a>
-        <a className={styles.dashSideBarTag} href="http://localhost:3000/update">Update</a>
-        <a className={styles.dashSideBarTag} href="http://localhost:3000/RecommendationsTable">RecommendationsTables</a>
->>>>>>> fdf042b37ab603ab338fc17b49d4cea091f6787b
       </div>
       <div className={styles.dashTable}>
         <DashboardTable />

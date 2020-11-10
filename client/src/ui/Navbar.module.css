@@ -6,11 +6,11 @@
 
 nav {
   display: flex;
-  justify-content: space-around;
+  padding-left: 17%;
   align-items: center;
   min-height: 4rem;
   background-color: #ff9900;
-
+  padding-right: 2%;
   width: 100%;
 }
 .navWrapper {
@@ -27,7 +27,7 @@ nav {
 
 .logo {
   position: absolute !important;
-  left: 142px !important;
+  left: 4.5% !important;
   /* top: 1.3rem ; */
 
 }
@@ -39,13 +39,48 @@ nav {
 
 .nav_links {
   display: flex;
-  justify-content: space-around;
-  /* width: ; */
-  padding: 0.5rem 2rem;
+  justify-content: space-between;
+  flex-grow: 1;
+  
 }
 .nav_links li {
   list-style: none;
 }
+
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  /* margin-top: 1rem; */
+  padding-top: 2rem;
+  background: #ff9900;
+  display: none;
+  min-width: 5rem;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+/* .barsDropdown {
+  padding-top: 10px;
+} */
+
+.restaurantDropdown {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .nav_links a {
   text-decoration: none;
   font-size: 20px;
