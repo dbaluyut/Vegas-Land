@@ -9,13 +9,13 @@ export function Footer() {
         <div className={styles.footerItem}>
           <ul className={styles.social_links}>
             <li>
-              <i class="fa fa-facebook"></i>
+              <i className={styles.footerIcon} class="fa fa-facebook"></i>
             </li>
             <li>
-              <i class="fa fa-twitter"></i>
+              <i className={styles.footerIcon} class="fa fa-twitter"></i>
             </li>
             <li>
-              <i class="fa fa-instagram"></i>
+              <i  className={styles.footerIcon} class="fa fa-instagram"></i>
             </li>
           </ul>
           <ul className={styles.navbar_links}>

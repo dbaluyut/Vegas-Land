@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
+import { useHistory } from "react-router-dom";
 import { Navbar } from "../ui/Navbar"
 import { Footer } from "../ui/Footer"
 
@@ -14,6 +15,7 @@ import {
 import styles from "./Recommendations.module.css"
 
 export default function Recommendations() {
+  const history = useHistory();
   const dispatch = useDispatch()
   const recommendations = useSelector(selectRecommendations)
 
@@ -28,11 +30,21 @@ export default function Recommendations() {
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(addRecommendations({ text, name, email }))
+    history.push("/formSubmissionFeedback");
 
     setName("")
     setEmail("")
     setText("")
   }
+
+
+  // function handle(e) {
+  //   e.preventDefault();
+  //   login(userInput, passwordInput).then((resp) => {
+      
+  //   });
+  // }
+
 
   // function handleUpdate(name, desc) {
   //   dispatch(updateRecommendations({ name, desc }));
