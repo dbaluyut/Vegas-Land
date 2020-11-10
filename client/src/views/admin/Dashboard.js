@@ -22,7 +22,7 @@ export default function Dashboard() {
         </div>
         <a href="http://localhost:3000/dashboard">Venues</a>
         <a href="http://localhost:3000/update">Update</a>
-        <a href="http://localhost:3000/RecommendationsTables">
+        <a href="http://localhost:3000/RecommendationsTable">
           Recommendations
         </a>
       </div>
