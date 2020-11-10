@@ -5,6 +5,7 @@ import "./App.css"
 
 import Login from "./views/admin/Login"
 import AuthRoute from "./features/authentication/AuthRoute"
+import Logout from "./views/admin/Logout"
 
 import WelcomeScreen from "./views/WelcomeScreen"
 import About from "./views/About"
@@ -65,6 +66,9 @@ function App() {
         <AuthRoute path="/RecommendationsTable">
           <RecommendationsTable />
         </AuthRoute>
+        <Route path="/logout">
+          <Logout />
+        </Route>
       </Switch>
     </Router>
   )

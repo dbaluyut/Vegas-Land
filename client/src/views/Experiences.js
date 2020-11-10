@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react"
-import styles from "./Experiences.module.css"
-import { Navbar } from "../ui/Navbar"
-import { Footer } from "../ui/Footer"
-import { Card } from "../ui/Card"
-import { selectExperiences, getExperiences } from "./experiencesSlice"
-import { useSelector, useDispatch } from "react-redux"
+import React, { useEffect, useState } from "react";
+import styles from "./Experiences.module.css";
+import { Navbar } from "../ui/Navbar";
+import { Footer } from "../ui/Footer";
+import { Card } from "../ui/Card";
+import { selectExperiences, getExperiences } from "./experiencesSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Experiences() {
-  const experiences = useSelector(selectExperiences)
-  const dispatch = useDispatch()
-  const [activeItem, setActiveItem] = useState(null)
-console.log(activeItem)
+  const experiences = useSelector(selectExperiences);
+  const dispatch = useDispatch();
+  const [activeItem, setActiveItem] = useState(null);
+  console.log(activeItem);
   useEffect(() => {
-    dispatch(getExperiences())
-  }, [])
+    dispatch(getExperiences());
+  }, []);
 
   return (
     <div>
@@ -26,8 +26,14 @@ console.log(activeItem)
             <button onClick={() => setActiveItem(null)}>&times;</button>
             <h3 className={styles.modalLabel}>{activeItem.title}</h3>
             <p className={styles.modalDesc}>{activeItem.desc}</p>
-            <p className={styles.address} >{activeItem.street_1} {activeItem.city}, {activeItem.state} {activeItem.zip}</p>
-            <a className={styles.modalLink}href={activeItem.link}>{activeItem.link}</a>
+            <p className={styles.address}>
+              {activeItem.street_1} {activeItem.city}, {activeItem.state}{" "}
+              {activeItem.zip}
+            </p>
+            <span className={styles.readMore}>Read more here:</span>{" "}
+            <a className={styles.modalLink} href={activeItem.link}>
+              {activeItem.link}
+            </a>
           </div>
         </div>
       ) : null}
@@ -51,5 +57,5 @@ console.log(activeItem)
       </div>
       <Footer />
     </div>
-  )
+  );
 }

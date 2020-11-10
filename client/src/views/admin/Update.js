@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import styles from "./Dashboard.module.css"
-import { useForm } from "../../hooks/form"
-import { getVenue, updateVenue, selectUpdate } from "./updateSlice.js"
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import styles from "./Dashboard.module.css";
+import { useForm } from "../../hooks/form";
+import { getVenue, updateVenue, selectUpdate } from "./updateSlice.js";
 
 export default function Update() {
-  const dispatch = useDispatch()
-  const venues = useSelector(selectUpdate)
+  const dispatch = useDispatch();
+  const venues = useSelector(selectUpdate);
 
   useEffect(() => {
-    dispatch(getVenue())
-  }, [])
+    dispatch(getVenue());
+  }, []);
 
   const [venueForm, setVenueForm, resetForm, updateForm] = useForm({
     title: "",
@@ -18,21 +18,21 @@ export default function Update() {
     type: "",
     link: "",
     id: null,
-  })
+  });
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     // console.log(venueForm)
-    dispatch(updateVenue(venueForm))
+    dispatch(updateVenue(venueForm));
   }
   useEffect(() => {
     if (venues.length) {
-      updateForm(venues[0])
+      updateForm(venues[0]);
     }
-  }, [venues])
+  }, [venues]);
 
   function handleVenueChange(index) {
-    updateForm(venues[index])
+    updateForm(venues[index]);
   }
 
   return (
@@ -43,9 +43,8 @@ export default function Update() {
         </div>
         <a href="http://localhost:3000/dashboard">Venues</a>
         <a href="http://localhost:3000/update">Update</a>
-        <a href="http://localhost:3000/RecommendationsTable">
-          Recommendations
-        </a>
+        <a href="http://localhost:3000/RecommendationsTable">Recommendations</a>
+        <a href="http://localhost:3000/logout">Logout</a>
       </div>
       <div className={styles.dashUpdateForm}>
         <form onSubmit={handleSubmit} className={styles.formContainer}>
@@ -107,5 +106,5 @@ export default function Update() {
         </form>
       </div>
     </div>
-  )
+  );
 }
