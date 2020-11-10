@@ -37,8 +37,14 @@ export const getVenue = () => (dispatch) => {
 
 export const updateVenue = (venue) => (dispatch) => {
   axios
-    .patch("/api/venues/" + venue.id, venue)
+    .patch("/api/venues/" + venue.id, {
+      title: venue.title,
+      desc: venue.desc,
+      type: venue.type,
+      link: venue.link,
+    })
     .then((r) => dispatch(getVenue()))
+  console.log(venue)
 }
 
 export const selectUpdate = (state) => state.update.venues

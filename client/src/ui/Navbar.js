@@ -1,19 +1,8 @@
-import { React, useState } from "react"
-
-import Bars from "../views/Bars"
-import Restaurants from "../views/Restaurants"
-import Experiences from "../views/Experiences"
-import About from "../views/About"
-import Recommendations from "../views/Recommendations"
+import { React } from "react"
 
 import styles from "./Navbar.module.css"
 
 export function Navbar() {
-
-  
-  
-  
-
   return (
     <div
       className={styles.navWrapper}

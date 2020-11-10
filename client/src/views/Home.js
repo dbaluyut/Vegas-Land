@@ -1,13 +1,13 @@
-import React from "react";
-import Highlights from "../features/highlights/Highlights";
+import React from "react"
+import Highlights from "../features/highlights/Highlights"
 
-import { Navbar } from "../ui/Navbar";
-import { Footer } from "../ui/Footer";
-import styles from "./Home.module.css";
+import { Navbar } from "../ui/Navbar"
+import { Footer } from "../ui/Footer"
+import styles from "./Home.module.css"
 
 export default function Home() {
   return (
-    <>
+    <div>
       <div className={styles.splashContainer}>
         <div classNAme={styles.splash}>
           {/* <div className={styles.overlay}></div> */}
@@ -23,6 +23,6 @@ export default function Home() {
         <Highlights></Highlights>
         <Footer />
       </div>
-    </>
-  );
+    </div>
+  )
 }
