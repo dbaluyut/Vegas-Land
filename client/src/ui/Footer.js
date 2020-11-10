@@ -1,12 +1,6 @@
-import React from "react";
+import React from "react"
 
-import Bars from "../views/Bars";
-import Restaurants from "../views/Restaurants";
-import Experiences from "../views/Experiences";
-import About from "../views/About";
-import Recommendations from "../views/Recommendations";
-
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.css"
 
 export function Footer() {
   return (
@@ -50,7 +44,7 @@ export function Footer() {
         {/* recommendation form  */}
       </div>
     </div>
-  );
+  )
 }
 
 // text-align: center; */

@@ -8,7 +8,6 @@ import {
   withGoogleMap,
   Marker,
   InfoWindow,
-  Polygon,
 } from "react-google-maps"
 import mapStyles from "./mapStyles"
 

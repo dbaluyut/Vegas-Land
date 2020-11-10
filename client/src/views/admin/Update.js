@@ -1,39 +1,20 @@
 import React, { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-// import { DashboardTable } from "../../ui/DashboardTable"
 import styles from "./Update.module.css"
 import { useForm } from "../../hooks/form"
 
-import {
-  display,
-  getVenue,
-  // addVenue,
-  updateVenue,
-  selectUpdate,
-} from "./updateSlice.js"
+import { getVenue, updateVenue, selectUpdate } from "./updateSlice.js"
 
 export default function Update() {
   const dispatch = useDispatch()
   const venues = useSelector(selectUpdate)
-  const [title, setTitle] = useState("")
-  const [desc, setDesc] = useState("")
-  const [location_id, setLocation_id] = useState("")
-  const [type, setType] = useState("")
-  const [link, setLink] = useState("")
-
-  const [activeVenue, setActiveVenue] = useState("")
 
   useEffect(() => {
     dispatch(getVenue())
   }, [])
 
-  function handleUpdateVenue(venue) {
-    dispatch(updateVenue(venue))
-  }
-
   const [venueForm, setVenueForm, resetForm, updateForm] = useForm({
     title: "",
-    location_id: "",
     desc: "",
     type: "",
     link: "",
@@ -42,10 +23,8 @@ export default function Update() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(venueForm)
-    updateVenue(venueForm)
-    // handleUpdateVenue(venueForm)
-    // resetForm()
+    // console.log(venueForm)
+    dispatch(updateVenue(venueForm))
   }
   useEffect(() => {
     if (venues.length) {
@@ -85,6 +64,13 @@ export default function Update() {
             <option value="restaurant">Restaurant</option>
             <option value="experience">Experience</option>
           </select>
+          <input
+            type="text"
+            name="link"
+            value={venueForm.link}
+            onChange={setVenueForm}
+          />
+          <button type="submit">save</button>
         </form>
       </div>
     </div>

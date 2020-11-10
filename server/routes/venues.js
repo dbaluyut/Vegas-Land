@@ -4,11 +4,15 @@ const router = express.Router()
 const conn = require("../db")
 
 router.get("/venues", async (req, res) => {
-  const venues = await conn.raw(`SELECT * FROM venues;`)
+  const venues = await conn.raw(`SELECT * FROM venues
+  order by id;`)
   res.json(venues.rows)
 })
-router.get("/venues/admin", async (req, res) => {
-  const venues = await conn.raw(`SELECT * FROM venues;`)
+
+router.get("/venues/:id", async (req, res) => {
+  const venues = await conn.raw(
+    `SELECT * FROM venues where id=${req.params.id};`
+  )
   res.json(venues.rows)
 })
 
