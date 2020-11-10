@@ -25,7 +25,7 @@ import Dashboard from "./views/admin/Dashboard"
 import Update from "./views/admin/Update"
 import Recommendations from "./views/Recommendations"
 import RecommendationsTable from "./views/admin/RecommendationsTable"
-
+import Feedback from "./views/Feedback"
 import HappyHour from "./views/HappyHour"
 
 function App() {
@@ -56,6 +56,9 @@ function App() {
 
         <Route path="/recommendations">
           <Recommendations />
+        </Route>
+        <Route path="/formSubmissionFeedback">
+          <Feedback />
         </Route>
 
         {/* admin */}
