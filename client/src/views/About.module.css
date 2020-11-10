@@ -73,6 +73,17 @@
   margin-right: 80px;
 }
 
- .aboutIcons {
+ .aboutIcons i {
+margin-right: 10px;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-weight: 400;
+  background: #c3dedf;
+  padding: 13px 16px;
+  border-radius: 50%;
+  color: rgb(31, 30, 30);
+}
+.aboutIcons {
+  display: flex;
   margin: 10px 38%;
+
 }

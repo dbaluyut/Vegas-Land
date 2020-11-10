@@ -38,14 +38,7 @@
   font-family: oregano;
   color: #000;
 }
-i {
-  /* font-size: 15px;
-    border-radius: 50px; */
-
-  background: #c3dedf;
-  padding: 13px 16px;
-  border-radius: 50%;
-}
+/*  */
 li {
   list-style: none;
 }
@@ -72,3 +65,14 @@ li {
 }
 
 /*  */
+
+
+
+ .social_links i {
+ 
+  font: normal normal normal 14px/1 FontAwesome;
+  font-weight: 400;
+  background: #c3dedf;
+  padding: 13px 16px;
+  border-radius: 50%;
+}
