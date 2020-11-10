@@ -1,19 +1,8 @@
-import { React, useState } from "react"
-
-import Bars from "../views/Bars"
-import Restaurants from "../views/Restaurants"
-import Experiences from "../views/Experiences"
-import About from "../views/About"
-import Recommendations from "../views/Recommendations"
+import { React } from "react"
 
 import styles from "./Navbar.module.css"
 
 export function Navbar() {
-
-  
-  
-  
-
   return (
     <div
       className={styles.navWrapper}
@@ -29,7 +18,6 @@ export function Navbar() {
         <ul className={styles.nav_links}>
           <li>
             <a href="http://localhost:3000/bars">Bars</a>
-            
           </li>
           <li>
             <a href="http://localhost:3000/restaurants">Restaurants</a>

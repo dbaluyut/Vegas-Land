@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import styles from "./RecommendationsTable.module.css";
+import React, { useState, useEffect } from "react"
+import styles from "./RecommendationsTable.module.css"
 import {
   selectRecommendationsTable,
   getRecommendationsTable,
-} from "./recommendationsTableSlice";
-import { useSelector, useDispatch } from "react-redux";
+} from "./recommendationsTableSlice"
+import { useSelector, useDispatch } from "react-redux"
 
 // export default function RecommendationsTable(){
 //     return <h1>Recommend</h1>
 // }
 
 export default function RecommendationsTable() {
-  const recommendationsTable = useSelector(selectRecommendationsTable);
+  const recommendationsTable = useSelector(selectRecommendationsTable)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getRecommendationsTable());
-  }, []);
-  console.log(recommendationsTable);
+    dispatch(getRecommendationsTable())
+  }, [])
+  console.log(recommendationsTable)
 
   //   function handleDelete(item) {
   //     dispatch(removeTableItem(item.id))
@@ -30,7 +30,6 @@ export default function RecommendationsTable() {
           <th>Name</th>
           <th>Email</th>
           <th>Desc</th>
-         
         </tr>
       </thead>
       <tbody>
@@ -52,5 +51,5 @@ export default function RecommendationsTable() {
         ))}
       </tbody>
     </table>
-  );
+  )
 }
