@@ -56,7 +56,7 @@ export default function Recommendations() {
 
       <div className={styles.container}>
         <form className={styles.contact} onSubmit={handleSubmit}>
-          <h3 className={styles.formName}>VegasLand Contact Form</h3>
+          <h3 className={styles.formName}>Any Recommendations? Send suggestions here!</h3>
 
           <fieldset>
             <input

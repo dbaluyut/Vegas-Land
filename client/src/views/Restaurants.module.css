@@ -97,7 +97,7 @@
 .section2 {
   position: relative;
   color: black;
-  border: solid 5px black;
+  /* border: solid 5px black; */
 }
 
 .descContainer {

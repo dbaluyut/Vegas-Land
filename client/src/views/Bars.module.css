@@ -108,7 +108,7 @@
 .section2 {
   position: relative;
   color: black;
-  border: solid 3px black;
+  /* border: solid 3px black; */
 }
 
 .descContainer {

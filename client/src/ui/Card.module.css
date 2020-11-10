@@ -17,6 +17,10 @@
   padding-bottom: 100%;
 }
 
+/* .card:hover {
+  filter: brightness(50%);
+} */
+
 .card .content {
   position: absolute;
   left: 0;
