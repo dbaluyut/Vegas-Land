@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Smythe&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
@@ -25,10 +28,14 @@ nav {
   z-index: 2;
 }
 
+a {
+  text-decoration: none;
+}
+
 .logo {
   position: absolute !important;
-  left: 4.5% !important;
-  /* top: 1.3rem ; */
+  left: 3.9% !important;
+  top: -0.8rem ;
 
 }
 
@@ -57,6 +64,7 @@ ul li ul {
   background: #ff9900;
   display: none;
   min-width: 5rem;
+  padding: 30px 10px 0px 10px;
 }
 
 ul li:hover > ul,
@@ -81,21 +89,25 @@ ul li ul li {
   padding-bottom: 20px;
 }
 
-.nav_links a {
-  text-decoration: none;
-  font-size: 20px;
-  font-family: "Cherry Cream Soda";
+.nav_links span {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Life Savers", cursive;
   color: white;
   letter-spacing: 1px;
-  padding: 10px;
+  /* padding: 10px 10px 0 10px; */
 }
 
-.nav_links a:active {
-  color: black;
+.nav_links span:hover {
+  border-bottom: solid 3px #f86604;
+}
+
+.nav_links span:active {
+  border-bottom: solid 3px #f87204;
 }
 
 .active {
-  color: black;
+  border-bottom: solid 3px #f87204;
 }
 
 .burger {
@@ -124,7 +136,7 @@ ul li ul li {
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .nav_links {
     position: absolute;
     right: 0px;
@@ -148,4 +160,4 @@ ul li ul li {
 
 .nav-active {
   transform: translateX(0%);
-}
+} */
