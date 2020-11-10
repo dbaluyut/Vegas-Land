@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Navbar } from "../ui/Navbar";
-import { Footer } from "../ui/Footer";
+import React, { useState, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { Navbar } from "../ui/Navbar"
+import { Footer } from "../ui/Footer"
 
 import {
   display,
@@ -9,29 +9,29 @@ import {
   addRecommendations,
   selectRecommendations,
   selectNewRecommendations,
-} from "./recommendationsSlice.js";
+} from "./recommendationsSlice.js"
 
-import styles from "./Recommendations.module.css";
+import styles from "./Recommendations.module.css"
 
 export default function Recommendations() {
-  const dispatch = useDispatch();
-  const recommendations = useSelector(selectRecommendations);
+  const dispatch = useDispatch()
+  const recommendations = useSelector(selectRecommendations)
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [text, setText] = useState("");
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [text, setText] = useState("")
 
   useEffect(() => {
-    dispatch(getRecommendations());
-  }, []);
+    dispatch(getRecommendations())
+  }, [])
 
   function handleSubmit(e) {
-    e.preventDefault();
-    dispatch(addRecommendations(text, name, email));
+    e.preventDefault()
+    dispatch(addRecommendations(text, name, email))
 
-    setName("");
-    setEmail("");
-    setText("");
+    setName("")
+    setEmail("")
+    setText("")
   }
 
   // function handleUpdate(name, desc) {
@@ -44,7 +44,7 @@ export default function Recommendations() {
 
       <div className={styles.container}>
         <form className={styles.contact} onSubmit={handleSubmit}>
-          <h3>VegasLand Contact Form</h3>
+          <h3 className={styles.formName}>VegasLand Contact Form</h3>
 
           <fieldset>
             <input
@@ -88,10 +88,9 @@ export default function Recommendations() {
             </button>
           </fieldset>
         </form>
-        
       </div>
 
       <Footer />
     </div>
-  );
+  )
 }
