@@ -23,9 +23,13 @@ router.get("/venues/experiences", async (req, res) => {
   res.json(venues.rows);
 });
 
+
+
 router.get("/venues/restaurants", async (req, res) => {
-  const venues = await conn.raw(`select galleries.image, venues.title, venues.desc, venues.id from venues
+  const venues = await conn.raw(`select galleries.image, venues.title, venues.desc, venues.id, venues.link, locations.street_1, locations.city,
+   locations.state, locations.zip from venues
   inner join galleries on galleries.venue_id=venues.id
+  inner join locations on locations.id=venues.location_id
     where type='restaurant'`);
     const venuesList = venues.rows;
 

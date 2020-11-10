@@ -52,6 +52,15 @@ nav {
   font-family: "Cherry Cream Soda";
   color: white;
   letter-spacing: 1px;
+  padding: 10px;
+}
+
+.nav_links a:active {
+  color: black;
+}
+
+.active {
+  color: black;
 }
 
 .burger {

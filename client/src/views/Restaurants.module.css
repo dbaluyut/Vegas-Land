@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smythe&display=swap');
 
 * {
   margin: 0;
@@ -20,11 +21,12 @@
 
 .contentContainer {
   display: flex;
+  height: 100vh;
 }
 
 .sidebar {
   height: 100vh;
-  width: 25%;
+  width: 20%;
   overflow: scroll;
   cursor: pointer;
   padding-top: 12vh;
@@ -43,6 +45,9 @@
   color: #3b8979;
   padding-top: 0.87rem;
   padding-bottom: 0.87rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidebarItemTitle {
@@ -70,7 +75,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 2px;
-  width: 75%;
+  width: 80%;
 }
 
 .section {
@@ -84,47 +89,61 @@
 }
 
 .imageTitle {
-  font-family: Yesteryear;
+  font-family: Smythe;
   font-size: 68px;
   text-shadow: 0 0 10px #000;
 }
 
 .section2 {
   position: relative;
-  height: 50vh;
-  display: flex;
-  
-  /* align-items: center; */
-  justify-content: center;
   color: black;
-  font-family: "Life Savers", cursive;
-  border: solid 3px black;
-
-  /* text-shadow: 0 0 5px #000; */
-  /* background-image: url("https://i.pinimg.com/originals/0a/59/17/0a5917be17d3602f6aa078bd02381972.jpg"); */
-}
-
-.section2 p {
-  font-family: "Life Savers", cursive;
-  font-weight: 600;
+  border: solid 5px black;
 }
 
 .descContainer {
-  line-height: 3;
-  background-color: #969499;
+  line-height: 2;
+  background-color: #75A99A;
   color: white;
+  padding: 5%;
+  text-align: justify;
+  width: 100%;
+}
+
+.descContainer p {
+  font-weight: 300;
 }
 
 .labelsContainer {
   display: flex;
-  flex-direction: column;
-  /* position: absolute; */
+  flex-wrap: nowrap;
+  padding-top: 3%;
+}
+
+.labels {
+  display: flex;
+  padding-right: 1.1rem;
+
+}
+
+/* .addressLinkContainer {
   height: 100px;
-  width: 20%;
+  width: 30%;
+  position: absolute;
   bottom: 0;
   right: 0;
-  /* border: solid 1px black; */
 }
+
+.address {
+  width: 100%;
+  height: 50%;
+  border: solid 1px black
+}
+
+.link {
+  width: 100%;
+  height: 50%;
+  border: solid 1px black;
+} */
 
 /* .parallax::after {
 
@@ -158,9 +177,9 @@
   background-size: cover;
 } */
 
-.footer {
+/* .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   display: inline-block;
-}
+} */
