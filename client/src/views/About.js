@@ -9,7 +9,7 @@ export default function About() {
     <div>
       <Navbar />
       {/* <h1>About page</h1> */}
-      <div>
+      <div className={styles.aboutContainer}>
         <div className={styles.section1}>
           <div className={styles.discription}>
             <p className={styles.name}>Name</p>
@@ -45,9 +45,9 @@ export default function About() {
         </div>
 
         <div className={styles.section2}>
-          <div className={styles.imageContainer}>
+          <div className={styles.imageContainer2}>
             <img
-              className={styles.profileImage}
+              className={styles.profileImage2}
               src="https://images.unsplash.com/photo-1571772805064-207c8435df79?ixlib=rb-1.2.1&auto=format&fit=crop&w=977&q=80"
             />
           </div>

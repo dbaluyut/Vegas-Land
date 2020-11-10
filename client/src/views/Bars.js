@@ -18,7 +18,7 @@ export default function Bars() {
   function scrollTo(id) {
     console.log(refs[id].current)
     refs[id].current?.scrollIntoView({
-      behavior: 'smooth'
+      behavior: "smooth",
     })
   }
 
@@ -43,8 +43,11 @@ export default function Bars() {
           className={styles.sidebar}
         >
           {bars.map((item) => (
-            <li className={styles.sidebarItem} onClick={() => scrollTo(item.id)}>
-             <div className={styles.sidebarItemTitle}>{item.title}</div>
+            <li
+              className={styles.sidebarItem}
+              onClick={() => scrollTo(item.id)}
+            >
+              <div className={styles.sidebarItemTitle}>{item.title}</div>
             </li>
           ))}
         </ul>
@@ -56,34 +59,35 @@ export default function Bars() {
                 className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
                 style={{
                   backgroundImage: `url(${item.image})`,
-
                 }}
               >
                 <h1 className={styles.imageTitle}>{item.title}</h1>
               </section>
               <section className={`${styles.section2} ${styles.static}`}>
-              <div className={styles.descContainer}>
+                <div className={styles.descContainer}>
                   <h2>{item.title}</h2>
-                  <p>{item.desc}</p>
-                
-                <div className={styles.labelsContainer}>
-                  {item.labels.map((label) => (
-                    <div className={styles.labels}>
-                    <p>{label.desc}</p>
+                  <p>
+                    {item.street_1}, {item.city}, {item.state} {item.zip}
+                  </p>
+                  <a href={item.link}>{item.link}</a>
+                  <p className={styles.itemDesc}>{item.desc}</p>
+
+                  <div className={styles.labelsContainer}>
+                    {item.labels.map((label) => (
+                      <div className={styles.labels}>
+                        <p>{label.desc}</p>
+                      </div>
+                    ))}
                   </div>
-                  ))}
-                </div>
                 </div>
               </section>
             </div>
           ))}
         </main>
-       
-      </div> 
+      </div>
       <div className={styles.footer}>
-          <Footer />
-        </div>
+        <Footer />
+      </div>
     </div>
   )
 }
-

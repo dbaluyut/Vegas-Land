@@ -66,10 +66,10 @@ export default function Restaurants() {
                 <div className={styles.descContainer}>
                   <h2>{item.title}</h2>
                   <p>
-                    {item.street_1} {item.city}, {item.state} {item.zip}
+                    {item.street_1}, {item.city}, {item.state} {item.zip}
                   </p>
                   <a href={item.link}>{item.link}</a>
-                  <p>{item.desc}</p>
+                  <p className={styles.itemDesc}>{item.desc}</p>
                   {/* </div> */}
                   <div className={styles.labelsContainer}>
                     {/* <h3>Services:</h3> */}
