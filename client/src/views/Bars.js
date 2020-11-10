@@ -59,21 +59,30 @@ export default function Bars() {
 
                 }}
               >
-                <h1>{item.title}</h1>
+                <h1 className={styles.imageTitle}>{item.title}</h1>
               </section>
               <section className={`${styles.section2} ${styles.static}`}>
-                <p>{item.desc}</p>
-                {item.labels.map((label) => (
-                  <p>{label.desc}</p>
-                ))}
+              <div className={styles.descContainer}>
+                  <h2>{item.title}</h2>
+                  <p>{item.desc}</p>
+                
+                <div className={styles.labelsContainer}>
+                  {item.labels.map((label) => (
+                    <div className={styles.labels}>
+                    <p>{label.desc}</p>
+                  </div>
+                  ))}
+                </div>
+                </div>
               </section>
             </div>
           ))}
         </main>
-        {/* <div className={styles.footer}>
+       
+      </div> 
+      <div className={styles.footer}>
           <Footer />
-        </div> */}
-      </div>
+        </div>
     </div>
   )
 }

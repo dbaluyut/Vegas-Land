@@ -21,13 +21,13 @@
   background: rgb(50%, 50%, 50%);
 }
 
-h2 {
+.card h2 {
   color: white;
   text-align: center;
   margin-bottom: 60px;
 }
 
-h2:before {
+.card h2:before {
   content: "";
   position: absolute;
   width: 80%;
