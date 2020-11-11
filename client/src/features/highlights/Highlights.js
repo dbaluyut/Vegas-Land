@@ -25,8 +25,10 @@ export default function Highlights() {
   // console.log(venues[0].image)
   return (
     <div>
+      
       {venues.length > 0 ? (
         <div className={styles.hlContainer}>
+          <h3>Highlights of the Week</h3>
           <div
             onClick={() => handle(venues[0])}
             className={styles.gridItem1}
