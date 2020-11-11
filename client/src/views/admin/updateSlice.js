@@ -21,12 +21,12 @@ export const getVenue = () => (dispatch) => {
 }
 
 // export const addVenue = (venue) => (dispatch) => {
-//   console.log(venue)
+//   // console.log(venue)
 //   axios
 //     .post("api/venues", {
 //       title: venue.title,
 //       desc: venue.desc,
-//       location_id: venue.location_id,
+//       // location_id: venue.location_id,
 //       type: venue.type,
 //       link: venue.link,
 //     })
