@@ -30,7 +30,7 @@ export default function Restaurants() {
   }, [])
 
   useEffect(() => {
-    if (restaurants && params.id) {
+    if (restaurants.length && params.id) {
       scrollTo(params.id)
     }
   }, [restaurants])

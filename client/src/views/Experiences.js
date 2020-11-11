@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"
 import styles from "./Experiences.module.css";
 import { Navbar } from "../ui/Navbar";
 import { Footer } from "../ui/Footer";
@@ -9,11 +10,18 @@ import { useSelector, useDispatch } from "react-redux";
 export default function Experiences() {
   const experiences = useSelector(selectExperiences);
   const dispatch = useDispatch();
+  const params = useParams()
   const [activeItem, setActiveItem] = useState(null);
   console.log(activeItem);
   useEffect(() => {
     dispatch(getExperiences());
   }, []);
+
+  useEffect(() => {
+    if (experiences.length && params.id) {
+      setActiveItem(params.id)
+    }
+  }, [experiences])
 
   return (
     <div>
