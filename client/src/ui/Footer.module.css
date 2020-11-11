@@ -6,8 +6,8 @@
 
 .footerContainer {
   height: fit-content;
-  position: relative;
-  bottom: 0px;
+  /* position: relative;
+  bottom: 0px; */
   padding-top: 2rem;
 }
 

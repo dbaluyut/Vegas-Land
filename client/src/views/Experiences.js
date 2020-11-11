@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import styles from "./Experiences.module.css";
-import { Navbar } from "../ui/Navbar";
-import { Footer } from "../ui/Footer";
-import { Card } from "../ui/Card";
-import { selectExperiences, getExperiences } from "./experiencesSlice";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import styles from "./Experiences.module.css"
+import { Navbar } from "../ui/Navbar"
+import { Footer } from "../ui/Footer"
+import { Card } from "../ui/Card"
+import { selectExperiences, getExperiences } from "./experiencesSlice"
+import { useSelector, useDispatch } from "react-redux"
 
 export default function Experiences() {
-  const experiences = useSelector(selectExperiences);
-  const dispatch = useDispatch();
-  const params = useParams();
-  const [activeItem, setActiveItem] = useState(null);
-  console.log(activeItem);
+  const experiences = useSelector(selectExperiences)
+  const dispatch = useDispatch()
+  const params = useParams()
+  const [activeItem, setActiveItem] = useState(null)
+  console.log(activeItem)
   useEffect(() => {
-    dispatch(getExperiences());
-  }, []);
+    dispatch(getExperiences())
+  }, [])
 
   useEffect(() => {
     if (experiences.length && params.id) {
-      setActiveItem(params.id);
+      const found = experiences.find((experience) => experience.id == params.id)
+      setActiveItem(found)
     }
   }, [experiences]);
 
@@ -67,7 +68,7 @@ export default function Experiences() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 //
 
