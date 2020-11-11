@@ -28,7 +28,16 @@ export default function Home() {
         className={styles.contentWrapper}
       >
         <Navbar />
-        <div className={styles.homeBanner}></div>
+        <div className={styles.homeBanner}>
+          <h1>Welcome to VegasLand</h1>
+          <img className={styles.bannerImg1} src="./assets/hoverMarker-01.svg"></img>
+          <img className={styles.bannerImg4} src="./assets/hoverMarker-01.svg"></img>
+          <img className={styles.bannerImg2} src="./assets/hoverMarker-02.svg"></img>
+          {/* <img className={styles.bannerImg5} src="./assets/hoverMarker-02.svg"></img> */}
+          <img className={styles.bannerImg3} src="./assets/hoverMarker-03.svg"></img>
+          <img className={styles.bannerImg6} src="./assets/hoverMarker-03.svg"></img>
+        </div>
+        {/* <h3>Highlights of the Week</h3> */}
         <Highlights></Highlights>
         <Footer />
       </div>

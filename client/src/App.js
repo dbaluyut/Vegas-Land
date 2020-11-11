@@ -34,13 +34,13 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/bars">
+        <Route path="/bars/:id?">
           <Bars />
         </Route>
-        <Route path="/restaurants">
+        <Route path="/restaurants/:id?">
           <Restaurants />
         </Route>
-        <Route path="/experiences">
+        <Route path="/experiences/:id?">
           <Experiences />
         </Route>
         <Route path="/happyhour">
