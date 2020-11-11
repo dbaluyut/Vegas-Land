@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { DashboardTable } from "../../ui/DashboardTable";
 import styles from "./Dashboard.module.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../features/authentication/auth";
 import { getVenue, selectDashboard } from "./dashboardSlice.js";
@@ -45,9 +45,9 @@ export default function Dashboard() {
         <Link to="RecommendationsTable">
           <span>Recommendations</span>
         </Link>
-        <button className={styles.logOutBtn} onClick={handleClick}>
+        <Link to="logout"  onClick={handleClick}>
           Log Out
-        </button>
+        </Link>
       </div>
       <div className={styles.dashTable}>
         <DashboardTable />
