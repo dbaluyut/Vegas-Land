@@ -27,6 +27,7 @@ export default function Update() {
     e.preventDefault()
     // console.log(venueForm)
     dispatch(updateVenue(venueForm))
+    history.push("/dashboard")
   }
   useEffect(() => {
     if (venues.length) {
@@ -51,7 +52,7 @@ export default function Update() {
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
-      <Link to="/home">
+        <Link to="/home">
           <div className={styles.dashLogo}>
             <img src={"./assets/logo-062.svg"}></img>
           </div>
@@ -130,6 +131,7 @@ export default function Update() {
               onChange={setVenueForm}
             />
           </div>
+
           <button type="submit" className={styles.formBtn}>
             Save
           </button>
