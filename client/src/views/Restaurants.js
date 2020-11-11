@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useParams } from "react-router-dom"
 import { Navbar } from "../ui/Navbar"
 import { Footer } from "../ui/Footer"
 import styles from "./Restaurants.module.css"
@@ -8,6 +9,8 @@ import { useSelector, useDispatch } from "react-redux"
 export default function Restaurants() {
   const restaurants = useSelector(selectRestaurants)
   const dispatch = useDispatch()
+  const params = useParams()
+  console.log(params)
 
   function NameMe(acc, current) {
     acc[current.id] = React.createRef()
@@ -25,6 +28,12 @@ export default function Restaurants() {
   useEffect(() => {
     dispatch(getRestaurants())
   }, [])
+
+  useEffect(() => {
+    if (restaurants && params.id) {
+      scrollTo(params.id)
+    }
+  }, [restaurants])
   console.log(restaurants)
   return (
     <div className={styles.fullContainer}>

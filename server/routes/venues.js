@@ -18,7 +18,7 @@ router.get("/venues", async (req, res) => {
 // })
 
 router.get("/venues/highlights", async (req, res) => {
-  const venues = await conn.raw(`select galleries.image, venues.title from venues
+  const venues = await conn.raw(`select venues.id, galleries.image, venues.title, venues.type from venues
   inner join galleries on galleries.venue_id=venues.id
   where venues.id in(1,21,14,2,7,3,42)
  `)
