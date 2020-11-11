@@ -70,7 +70,7 @@ router.get("/venues/bars", async (req, res) => {
 
   for (let venue of venuesList) {
     const labels = await conn.raw(
-      `select labels.desc from venues
+      `select labels.desc, labels.icon from venues
       inner join venue_labels on venue_labels.venue_id=venues.id
       inner join labels on venue_labels.label_id=labels.id
       where venues.id = ?`,
