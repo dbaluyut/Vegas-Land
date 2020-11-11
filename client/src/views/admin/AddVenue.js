@@ -2,17 +2,39 @@ import React, { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import styles from "./Dashboard.module.css"
 import { useForm } from "../../hooks/form"
-import { addVenue } from "./addVenueSlice.js"
+import {
+  addVenue,
+  addLocation,
+  getVenue,
+  selectUpdate,
+  getLocations,
+  selectLocation,
+} from "./addVenueSlice.js"
+import { Link, useHistory } from "react-router-dom"
+import { useAuth } from "../../features/authentication/auth"
 
 export default function AddVenue() {
   const dispatch = useDispatch()
+  const venues = useSelector(selectUpdate)
+  const locations = useSelector(selectLocation)
+  const history = useHistory()
+  const { logout } = useAuth()
+
+  console.log(locations)
+  useEffect(() => {
+    dispatch(getVenue())
+  }, [])
+
+  useEffect(() => {
+    dispatch(getLocations())
+  }, [])
 
   const [venueForm, setVenueForm, resetForm, updateForm] = useForm({
     title: "",
     desc: "",
     type: "",
     link: "",
-
+    location_id: venues.length + 1,
     street_1: "",
     street_2: "",
     city: "",
@@ -24,19 +46,40 @@ export default function AddVenue() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(venueForm)
+    dispatch(addLocation(venueForm))
+    dispatch(getLocations())
+    console.log(locations)
+
     dispatch(addVenue(venueForm))
   }
 
+  function handleClick() {
+    logout().then((resp) => {
+      console.log("test")
+      history.push("/logout")
+    })
+  }
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
         <div className={styles.dashLogo}>
           <img src={"./assets/logo-062.svg"}></img>
         </div>
-        <a href="http://localhost:3000/dashboard">Venues</a>
-        <a href="http://localhost:3000/update">Update</a>
-        <a href="http://localhost:3000/RecommendationsTable">Recommendations</a>
+        <Link to="dashboard">
+          <span>Venues</span>
+        </Link>
+        <Link to="/update">
+          <span>Update</span>
+        </Link>
+        <Link to="RecommendationsTable">
+          <span>Recommendations</span>
+        </Link>
+        <Link to="addVenue">
+          <span>Add Venue Form</span>
+        </Link>
+        <Link to="logout" onClick={handleClick}>
+          Log Out
+        </Link>
       </div>
       <div className={styles.dashAddForm}>
         <h3>Add Venue Form</h3>
@@ -64,6 +107,9 @@ export default function AddVenue() {
             <label>Type:</label>
             <br />
             <select name="type" onChange={setVenueForm}>
+              <option value="" selected>
+                Select Type
+              </option>
               <option value="bar">Bar</option>
               <option value="restaurant">Restaurant</option>
               <option value="experience">Experience</option>
@@ -148,6 +194,11 @@ export default function AddVenue() {
               // value={venueForm.link}
               onChange={setVenueForm}
             />
+          </div>
+          <div className={styles.dashFormItem}>
+            <label>Location ID:</label>
+            <br />
+            <input type="text" name="location_id" value={venues.length + 1} />
           </div>
           <button type="submit" className={styles.formBtn}>
             Submit

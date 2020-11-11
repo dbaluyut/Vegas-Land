@@ -21,15 +21,4 @@ router.post("/locations", async (req, res) => {
   res.json({ message: "location added" })
 })
 
-router.post("/venues", async (req, res) => {
-  const venue = await conn("venues").insert({
-    title: req.body.title,
-    desc: req.body.desc,
-    // location_id: req.body.location_id,
-    type: req.body.type,
-    link: req.body.link,
-  })
-  res.json({ message: "venue added" })
-})
-
 module.exports = router

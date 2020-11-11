@@ -10,16 +10,25 @@ export default function Home() {
     <div>
       <div className={styles.splashContainer}>
         <div classNAme={styles.splash}>
-          {/* <div className={styles.overlay}></div> */}
-
           <div className={styles.welcome}></div>
 
           <img className={styles.wlogo} src={"./assets/logo-062.svg"}></img>
         </div>
-        <div className={styles.chevron}><i class="fas fa-chevron-down fa-7x"></i></div>
+        <div className={styles.chevron}>
+          <i class="fas fa-chevron-down fa-7x"></i>
+        </div>
       </div>
-      <div className={styles.contentWrapper}>
+      <div
+        style={{
+          backgroundImage: `url(${"./assets/footer-bg1.svg"})`,
+          backgroundPosition: "center bottom",
+          width: "100vw",
+          backgroundRepeat: "no-repeat",
+        }}
+        className={styles.contentWrapper}
+      >
         <Navbar />
+        <div className={styles.homeBanner}></div>
         <Highlights></Highlights>
         <Footer />
       </div>

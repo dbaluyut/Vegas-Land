@@ -5,6 +5,9 @@ import {
   getRecommendationsTable,
 } from "./recommendationsTableSlice"
 import { useSelector, useDispatch } from "react-redux"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
+import { useAuth } from "../../features/authentication/auth"
 
 // export default function RecommendationsTable(){
 //     return <h1>Recommend</h1>
@@ -23,33 +26,64 @@ export default function RecommendationsTable() {
   //     dispatch(removeTableItem(item.id))
   //   }
 
+  const history = useHistory()
+  const { logout } = useAuth()
+
+  function handleClick() {
+    logout().then((resp) => {
+      console.log("test")
+      history.push("/logout")
+    })
+  }
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Desc</th>
-        </tr>
-      </thead>
-      <tbody>
-        {recommendationsTable.map((item) => (
-          <tr>
-            <td className={styles.tableName} data-column="Name">
-              {item.name}
-            </td>
-            <td className={styles.tableEmail} data-column="Email">
-              {item.email}
-            </td>
-            <td className={styles.tableDesc} data-column="Desc">
-              {item.desc}
-            </td>
-            {/* <td className={styles.tableType} data-column="Type">{item.type}</td>
-      <td className={styles.tableLink} data-column="Link"><a href={item.link}>{item.link}</a></td>
-      <td className={styles.tableRemove} data-column="Remove"><button onClick={() => handleDelete(item)}>x</button></td> */}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className={styles.dashContainer}>
+      <div className={styles.dashSideBar}>
+        <div className={styles.dashLogo}>
+          <img src={"./assets/logo-062.svg"}></img>
+        </div>
+        <Link to="dashboard">
+          <span>Venues</span>
+        </Link>
+        <Link to="/update">
+          <span>Update</span>
+        </Link>
+        <Link to="RecommendationsTable">
+          <span>Recommendations</span>
+        </Link>
+        <Link to="addVenue">
+          <span>Add Venue Form</span>
+        </Link>
+        <Link to="logout" onClick={handleClick}>
+          Log Out
+        </Link>
+      </div>
+      <div className={styles.dashTable}>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Desc</th>
+            </tr>
+          </thead>
+          <tbody>
+            {recommendationsTable.map((item) => (
+              <tr>
+                <td className={styles.tableName} data-column="Name">
+                  {item.name}
+                </td>
+                <td className={styles.tableEmail} data-column="Email">
+                  {item.email}
+                </td>
+                <td className={styles.tableDesc} data-column="Desc">
+                  {item.desc}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   )
 }

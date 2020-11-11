@@ -27,7 +27,7 @@ export default function Login() {
     // </form>
     <div className={styles.container}>
     <div className={styles.card}>
-      <h2>Log-In</h2>
+      <div><h2>Log-In</h2></div>
 
       <form onSubmit={handle}>
         <div className={styles.input_border}>

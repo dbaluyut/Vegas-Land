@@ -53,7 +53,7 @@ export default function Bars() {
         </ul>
         <main className={styles.wrapper}>
           {bars.map((item) => (
-            <div id={item.id} ref={refs[item.id]}>
+            <div id={item.id} ref={refs[item.id]} key={item.id}>
               {console.log(item.id)}
               <section
                 className={`${styles.section} ${styles.parallax} ${styles.bg1}`}

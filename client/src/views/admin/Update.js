@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import styles from "./Dashboard.module.css"
 import { useForm } from "../../hooks/form"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import { getVenue, updateVenue, selectUpdate } from "./updateSlice.js"
+import { useHistory } from "react-router-dom"
+import { useAuth } from "../../features/authentication/auth"
 
 export default function Update() {
   const dispatch = useDispatch()
@@ -35,17 +38,40 @@ export default function Update() {
     updateForm(venues[index])
   }
 
+  const history = useHistory()
+  const { logout } = useAuth()
+
+  function handleClick() {
+    logout().then((resp) => {
+      console.log("test")
+      history.push("/logout")
+    })
+  }
+
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
         <div className={styles.dashLogo}>
           <img src={"./assets/logo-062.svg"}></img>
         </div>
-        <a href="http://localhost:3000/dashboard">Venues</a>
-        <a href="http://localhost:3000/update">Update</a>
-        <a href="http://localhost:3000/RecommendationsTable">Recommendations</a>
+        <Link to="dashboard">
+          <span>Venues</span>
+        </Link>
+        <Link to="/update">
+          <span>Update</span>
+        </Link>
+        <Link to="RecommendationsTable">
+          <span>Recommendations</span>
+        </Link>
+        <Link to="addVenue">
+          <span>Add Venue Form</span>
+        </Link>
+        <Link to="logout" onClick={handleClick}>
+          Log Out
+        </Link>
       </div>
       <div className={styles.dashUpdateForm}>
+        <h3>Update Venue Form</h3>
         <form onSubmit={handleSubmit} className={styles.formContainer}>
           <div className={styles.dashFormItem}>
             <label>Venue:</label>
@@ -84,6 +110,9 @@ export default function Update() {
             <label>Type:</label>
             <br />
             <select name="type" value={venueForm.type} onChange={setVenueForm}>
+              <option value="" selected>
+                Select Type
+              </option>
               <option value="bar">Bar</option>
               <option value="restaurant">Restaurant</option>
               <option value="experience">Experience</option>
