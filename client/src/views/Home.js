@@ -15,7 +15,7 @@ export default function Home() {
           <img className={styles.wlogo} src={"./assets/logo-062.svg"}></img>
         </div>
         <div className={styles.chevron}>
-          <i class="fas fa-chevron-down fa-7x"></i>
+          <i class="fas fa-chevron-down fa-5x"></i>
         </div>
       </div>
       <div

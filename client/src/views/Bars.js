@@ -34,6 +34,10 @@ export default function Bars() {
       scrollTo(params.id)
     }
   }, [bars])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   console.log(bars)
   return (
     <div className={styles.fullContainer}>
