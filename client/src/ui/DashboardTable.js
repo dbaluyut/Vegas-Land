@@ -43,7 +43,7 @@ export function DashboardTable() {
       <td className={styles.tableLocation} data-column="Location I.D.">{item.location_id}</td>
       <td className={styles.tableType} data-column="Type">{item.type}</td>
       <td className={styles.tableLink} data-column="Link"><a href={item.link}>{item.link}</a></td>
-      <td className={styles.tableRemove} data-column="Remove"><button onClick={() => handleDelete(item)}>x</button></td>
+      <td className={styles.tableRemove} data-column="Remove"><button onClick={() => handleDelete(item)}>&times;</button></td>
     </tr>
     ))}
   </tbody>

@@ -33,6 +33,7 @@ export default function About() {
 
               <a href="#">
                 <i class="fa fa-github-square" aria-hidden="true"></i>
+                
               </a>
             </section>
           </div>

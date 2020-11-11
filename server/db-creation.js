@@ -46,7 +46,7 @@ async function main() {
   await conn.schema.createTable(`labels`, (table) => {
     table.increments("id")
     table.string("desc", 255)
-    table.string("icon", 255)
+    table.text("icon")
   })
 
   await conn.schema.createTable(`admins`, (table) => {
@@ -81,7 +81,7 @@ async function main() {
 
   //DB INSERT LABELS
 
-  await conn("labels").insert({ desc: "Masks Required", icon: "" })
+  await conn("labels").insert({ desc: "Masks Required", icon: "fa fa-github-square" })
   await conn("labels").insert({ desc: "Takeout", icon: "" })
   await conn("labels").insert({ desc: "Sit-down", icon: "" })
   await conn("labels").insert({ desc: "Curbside Pickup", icon: "" })
