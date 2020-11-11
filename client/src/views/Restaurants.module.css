@@ -113,6 +113,17 @@
   font-weight: 300;
 }
 
+.descContainer a {
+  text-decoration: none;
+  color:#fff;
+  font-weight: 300;
+}
+
+.descContainer a:hover{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .itemDesc {
   margin-top: 2rem;
 }

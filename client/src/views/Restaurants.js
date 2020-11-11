@@ -1,40 +1,44 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Navbar } from "../ui/Navbar";
-import { Footer } from "../ui/Footer";
-import styles from "./Restaurants.module.css";
-import { selectRestaurants, getRestaurants } from "./restaurantsSlice";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { Navbar } from "../ui/Navbar"
+import { Footer } from "../ui/Footer"
+import styles from "./Restaurants.module.css"
+import { selectRestaurants, getRestaurants } from "./restaurantsSlice"
+import { useSelector, useDispatch } from "react-redux"
 
 export default function Restaurants() {
-  const restaurants = useSelector(selectRestaurants);
-  const dispatch = useDispatch();
-  const params = useParams();
-  console.log(params);
+  const restaurants = useSelector(selectRestaurants)
+  const dispatch = useDispatch()
+  const params = useParams()
+  console.log(params)
 
   function NameMe(acc, current) {
-    acc[current.id] = React.createRef();
-    return acc;
+    acc[current.id] = React.createRef()
+    return acc
   }
-  const refs = restaurants.reduce(NameMe, {});
+  const refs = restaurants.reduce(NameMe, {})
 
   function scrollTo(id) {
-    console.log(refs[id].current);
+    console.log(refs[id].current)
     refs[id].current?.scrollIntoView({
       behavior: "smooth",
-    });
+    })
   }
 
   useEffect(() => {
-    dispatch(getRestaurants());
-  }, []);
+    dispatch(getRestaurants())
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   useEffect(() => {
     if (restaurants.length && params.id) {
       scrollTo(params.id)
     }
-  }, [restaurants]);
-  console.log(restaurants);
+  }, [restaurants])
+  console.log(restaurants)
   return (
     <div className={styles.fullContainer}>
       <div className={styles.header}>
@@ -86,7 +90,7 @@ export default function Restaurants() {
                       <div className={styles.labels}>
                         <i className={label.icon}></i>
                         <p>-{label.desc}</p>
-                        
+
                         {console.log(label)}
                       </div>
                     ))}
@@ -105,5 +109,5 @@ export default function Restaurants() {
         <Footer />
       </div>
     </div>
-  );
+  )
 }

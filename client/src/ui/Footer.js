@@ -10,7 +10,7 @@ export function Footer() {
           <ul className={styles.social_links}>
             <li>
               <i
-                style={{ padding: "16px 21px" }}
+                style={{ padding: "10px 14px" }}
                 id="facebook"
                 className={`${styles.footerIcon} ${styles.facebookIcon}`}
                 class="fa fa-facebook"
@@ -18,14 +18,14 @@ export function Footer() {
             </li>
             <li>
               <i
-                style={{ padding: "16px 18px" }}
+                style={{ padding: "10px 11px" }}
                 className={`${styles.footerIcon} ${styles.twitterIcon}`}
                 class="fa fa-twitter"
               ></i>
             </li>
             <li>
               <i
-              style={{ padding: "16px 19px" }}
+                style={{ padding: "10px 12px" }}
                 className={`${styles.footerIcon} ${styles.instaIcon}`}
                 class="fa fa-instagram"
               ></i>
@@ -38,29 +38,27 @@ export function Footer() {
               </Link>
             </li>
             <li>
-            <Link to="restaurants">
+              <Link to="restaurants">
                 <span>Restaurants</span>
               </Link>
             </li>
             <li>
-            <Link to="experiences">
+              <Link to="experiences">
                 <span>Experiences</span>
               </Link>
             </li>
             <li>
-            <Link to="about">
+              <Link to="about">
                 <span>Our Team</span>
               </Link>
             </li>
           </ul>
           <div className={styles.agreements}>
             <p>Terms of Use</p>
-            <p>Privacy Policy</p> 
-            <p >&#169; 2020 Warriors</p>
+            <p>Privacy Policy</p>
+            <p>&#169; 2020 Warriors</p>
           </div>
-          <div>
-           
-          </div>
+          <div></div>
         </div>
       </div>
     </div>
