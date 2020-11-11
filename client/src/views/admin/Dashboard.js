@@ -45,9 +45,9 @@ export default function Dashboard() {
         <Link to="RecommendationsTable">
           <span>Recommendations</span>
         </Link>
-        <button className={styles.logOutBtn} onClick={handleClick}>
+        <Link to="logout"  onClick={handleClick}>
           Log Out
-        </button>
+        </Link>
       </div>
       <div className={styles.dashTable}>
         <DashboardTable />
