@@ -10,6 +10,7 @@ import formReducer from "../views/recommendationsSlice"
 import dashboardReducer from "../views/admin/dashboardSlice"
 import dashboardTableReducer from "../ui/dashboardTableSlice"
 import updateReducer from "../views/admin/updateSlice"
+import addVenueReducer from "../views/admin/addVenueSlice"
 import recommendationsTableReducer from "../views/admin/recommendationsTableSlice"
 
 export default configureStore({
@@ -26,6 +27,6 @@ export default configureStore({
     dashboardTable: dashboardTableReducer,
     update: updateReducer,
     recommendationsTable: recommendationsTableReducer,
-
+    addvenue: addVenueReducer,
   },
 })

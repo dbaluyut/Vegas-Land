@@ -18,6 +18,7 @@ import Recommendations from "./views/Recommendations"
 import RecommendationsTable from "./views/admin/RecommendationsTable"
 import Feedback from "./views/Feedback"
 import HappyHour from "./views/HappyHour"
+import AddVenue from "./views/admin/AddVenue"
 
 function App() {
   return (
@@ -64,6 +65,9 @@ function App() {
         </AuthRoute>
         <AuthRoute path="/RecommendationsTable">
           <RecommendationsTable />
+        </AuthRoute>
+        <AuthRoute path="/addvenue">
+          <AddVenue />
         </AuthRoute>
       </Switch>
     </Router>
