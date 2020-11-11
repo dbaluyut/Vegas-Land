@@ -5,58 +5,31 @@
 }
 
 .footerContainer {
-  /* display: grid;
-  grid-template-columns: ;
-  height: 0px; */
-
-  /* display: grid;  */
   height: fit-content;
   position: relative;
   bottom: 0px;
-  /* background: white; */
-}
-
-/* .footerItem {
-  margin: auto;
-  width: 50%;
-} */
-.social_links {
-  display: flex;
-  justify-content: space-around;
-  padding: 15px 41%;
-  font-size: 15px;
+  padding-top: 2rem;
 }
 
 .navbar_links {
   display: flex;
   justify-content: space-around;
-  padding: 7px 35%;
+  padding: 7px 41%;
 }
 .navbar_links a {
-  /* text-decoration: none; */
-  font-size: 15px;
-  font-family: oregano;
+  text-decoration: underline;
+  font-size: 12px;
   color: #000;
 }
-/*  */
+
 li {
   list-style: none;
 }
 .agreements {
-  font-size: 15px;
+  font-size: 12px;
   display: flex;
   justify-content: space-around;
-  padding: 7px 39%;
-}
-
-.trademark {
-  /* display: flex;
-  padding: 7px 35%;
-  font-size: 15px; */
-  text-align: center;
-  /* padding: 5px 30%; */
-  padding: 0px 31%;
-  font-size: 12px;
+  padding: 7px 40%;
 }
 
 .footerBg {
@@ -64,15 +37,18 @@ li {
   bottom: 50rem;
 }
 
-/*  */
+.social_links {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 44%;
+  font-size: 12px;
+}
 
-
-
- .social_links i {
- 
-  font: normal normal normal 14px/1 FontAwesome;
+.social_links i {
+  font: normal normal normal 15px/1 FontAwesome;
   font-weight: 400;
   background: #c3dedf;
-  padding: 13px 16px;
+  padding: 16px 17px;
   border-radius: 50%;
+  color: rgb(31, 30, 30);
 }

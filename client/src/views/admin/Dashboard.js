@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { DashboardTable } from "../../ui/DashboardTable";
 import styles from "./Dashboard.module.css";
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../features/authentication/auth";
 import { getVenue, selectDashboard } from "./dashboardSlice.js";
@@ -33,9 +33,11 @@ export default function Dashboard() {
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
-        <div className={styles.dashLogo}>
-          <img src={"./assets/logo-062.svg"}></img>
-        </div>
+        <Link to="/home">
+          <div className={styles.dashLogo}>
+            <img src={"./assets/logo-062.svg"}></img>
+          </div>
+        </Link>
         <Link to="dashboard">
           <span>Venues</span>
         </Link>
@@ -45,7 +47,7 @@ export default function Dashboard() {
         <Link to="RecommendationsTable">
           <span>Recommendations</span>
         </Link>
-        <Link to="logout"  onClick={handleClick}>
+        <Link to="logout" onClick={handleClick}>
           Log Out
         </Link>
       </div>

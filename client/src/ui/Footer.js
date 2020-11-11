@@ -1,6 +1,6 @@
-import React from "react"
-
-import styles from "./Footer.module.css"
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import styles from "./Footer.module.css";
 
 export function Footer() {
   return (
@@ -9,53 +9,62 @@ export function Footer() {
         <div className={styles.footerItem}>
           <ul className={styles.social_links}>
             <li>
-              <i className={styles.footerIcon} class="fa fa-facebook"></i>
+              <i
+                style={{ padding: "16px 21px" }}
+                id="facebook"
+                className={`${styles.footerIcon} ${styles.facebookIcon}`}
+                class="fa fa-facebook"
+              ></i>
             </li>
             <li>
-              <i className={styles.footerIcon} class="fa fa-twitter"></i>
+              <i
+                style={{ padding: "16px 18px" }}
+                className={`${styles.footerIcon} ${styles.twitterIcon}`}
+                class="fa fa-twitter"
+              ></i>
             </li>
             <li>
-              <i  className={styles.footerIcon} class="fa fa-instagram"></i>
+              <i
+              style={{ padding: "16px 19px" }}
+                className={`${styles.footerIcon} ${styles.instaIcon}`}
+                class="fa fa-instagram"
+              ></i>
             </li>
           </ul>
           <ul className={styles.navbar_links}>
             <li>
-              <a href="http://localhost:3000/bars">Bars</a>
+              <Link to="bars">
+                <span>Bars</span>
+              </Link>
             </li>
             <li>
-              <a href="http://localhost:3000/restaurants">Restaurants</a>
+            <Link to="restaurants">
+                <span>Restaurants</span>
+              </Link>
             </li>
             <li>
-              <a href="http://localhost:3000/experiences">Experiences</a>
+            <Link to="experiences">
+                <span>Experiences</span>
+              </Link>
             </li>
             <li>
-              <a href="http://localhost:3000/about">Our Team</a>
+            <Link to="about">
+                <span>Our Team</span>
+              </Link>
             </li>
           </ul>
           <div className={styles.agreements}>
             <p>Terms of Use</p>
-            <p>Privacy Policy</p>
+            <p>Privacy Policy</p> 
+            <p >&#169; 2020 Warriors</p>
           </div>
           <div>
-            <p className={styles.trademark}>&#169; 2020 Warriors</p>
+           
           </div>
         </div>
-
-        {/* recommendation form  */}
       </div>
     </div>
-  )
+  );
 }
 
-// text-align: center; */
-//     /* padding: 5px 30%; */
-//     padding: 0px 31%;
-//     font-size: 12px;
-
-// $(".js-expand").click(function() {
-//     if ($('#email').val()) {
-//       //validate form
-//     } else {
-//       $(".js-hiddenform").slideDown();
-//     }
-//   });
+//  ;

@@ -84,7 +84,10 @@ export default function Restaurants() {
                     {/* <h3>Services:</h3> */}
                     {item.labels.map((label) => (
                       <div className={styles.labels}>
-                        <p>{label.desc}</p>
+                        <i className={label.icon}></i>
+                        <p>-{label.desc}</p>
+                        
+                        {console.log(label)}
                       </div>
                     ))}
                   </div>

@@ -39,9 +39,11 @@ export default function RecommendationsTable() {
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
-        <div className={styles.dashLogo}>
-          <img src={"./assets/logo-062.svg"}></img>
-        </div>
+      <Link to="/home">
+          <div className={styles.dashLogo}>
+            <img src={"./assets/logo-062.svg"}></img>
+          </div>
+        </Link>
         <Link to="dashboard">
           <span>Venues</span>
         </Link>
