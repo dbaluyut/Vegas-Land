@@ -106,6 +106,7 @@ export default function HappyHrList() {
       </h1> */}
       <div className={styles.wrapper}>
         <div className={styles.listContainer}>
+          <h3 className={styles.listTitle}>Active Happy Hour</h3>
           {filtered.map((item) => {
             return (
               <div

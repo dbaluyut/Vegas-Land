@@ -22,7 +22,7 @@ export default function Experiences() {
       const found = experiences.find((experience) => experience.id == params.id)
       setActiveItem(found)
     }
-  }, [experiences])
+  }, [experiences]);
 
   return (
     <div>
@@ -33,13 +33,15 @@ export default function Experiences() {
         <div className={styles.modalContainer}>
           <div className={styles.modal}>
             <button onClick={() => setActiveItem(null)}>&times;</button>
+
             <h3 className={styles.modalLabel}>{activeItem.title}</h3>
+
             <p className={styles.modalDesc}>{activeItem.desc}</p>
             <p className={styles.address}>
-              {activeItem.street_1} {activeItem.city}, {activeItem.state}{" "}
+              {activeItem.street_1} {activeItem.city}, {activeItem.state}
               {activeItem.zip}
             </p>
-            <span className={styles.readMore}>Read more here:</span>{" "}
+            <span className={styles.readMore}>Read more here:</span>
             <a className={styles.modalLink} href={activeItem.link}>
               {activeItem.link}
             </a>
@@ -68,3 +70,7 @@ export default function Experiences() {
     </div>
   )
 }
+//
+
+
+{/* <div backgroundImage={activeItem.image} > */}
