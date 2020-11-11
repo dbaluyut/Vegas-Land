@@ -31,7 +31,7 @@ export default function Restaurants() {
 
   useEffect(() => {
     if (restaurants.length && params.id) {
-      scrollTo(params.id);
+      scrollTo(params.id)
     }
   }, [restaurants]);
   console.log(restaurants);

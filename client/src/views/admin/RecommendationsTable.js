@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from "react";
-import styles from "./RecommendationsTable.module.css";
+import React, { useState, useEffect } from "react"
+import styles from "./RecommendationsTable.module.css"
 import {
   selectRecommendationsTable,
   getRecommendationsTable,
-} from "./recommendationsTableSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { useAuth } from "../../features/authentication/auth";
+} from "./recommendationsTableSlice"
+import { useSelector, useDispatch } from "react-redux"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
+import { useAuth } from "../../features/authentication/auth"
 
 // export default function RecommendationsTable(){
 //     return <h1>Recommend</h1>
 // }
 
 export default function RecommendationsTable() {
-  const recommendationsTable = useSelector(selectRecommendationsTable);
+  const recommendationsTable = useSelector(selectRecommendationsTable)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getRecommendationsTable());
-  }, []);
-  console.log(recommendationsTable);
+    dispatch(getRecommendationsTable())
+  }, [])
+  console.log(recommendationsTable)
 
   //   function handleDelete(item) {
   //     dispatch(removeTableItem(item.id))
   //   }
 
-  const history = useHistory();
-  const { logout } = useAuth();
+  const history = useHistory()
+  const { logout } = useAuth()
 
   function handleClick() {
     logout().then((resp) => {
-      console.log("test");
-      history.push("/logout");
-    });
+      console.log("test")
+      history.push("/logout")
+    })
   }
 
   return (
@@ -52,6 +52,9 @@ export default function RecommendationsTable() {
         </Link>
         <Link to="RecommendationsTable">
           <span>Recommendations</span>
+        </Link>
+        <Link to="addVenue">
+          <span>Add Venue Form</span>
         </Link>
         <Link to="logout" onClick={handleClick}>
           Log Out
@@ -84,5 +87,5 @@ export default function RecommendationsTable() {
         </table>
       </div>
     </div>
-  );
+  )
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useParams } from "react-router-dom"
 import { Navbar } from "../ui/Navbar"
 import { Footer } from "../ui/Footer"
 import styles from "./Restaurants.module.css"
@@ -8,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux"
 export default function Bars() {
   const bars = useSelector(selectBars)
   const dispatch = useDispatch()
+  const params = useParams()
 
   function NameMe(acc, current) {
     acc[current.id] = React.createRef()
@@ -26,6 +28,12 @@ export default function Bars() {
     dispatch(getBars())
     dispatch(getBarImages())
   }, [])
+
+  useEffect(() => {
+    if (bars.length && params.id) {
+      scrollTo(params.id)
+    }
+  }, [bars])
   console.log(bars)
   return (
     <div className={styles.fullContainer}>
@@ -53,7 +61,7 @@ export default function Bars() {
         </ul>
         <main className={styles.wrapper}>
           {bars.map((item) => (
-            <div id={item.id} ref={refs[item.id]}>
+            <div id={item.id} ref={refs[item.id]} key={item.id}>
               {console.log(item.id)}
               <section
                 className={`${styles.section} ${styles.parallax} ${styles.bg1}`}
