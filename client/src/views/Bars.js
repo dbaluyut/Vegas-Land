@@ -10,7 +10,7 @@ export default function Bars() {
   const bars = useSelector(selectBars)
   const dispatch = useDispatch()
   const params = useParams()
-
+  console.log(bars[0])
   function NameMe(acc, current) {
     acc[current.id] = React.createRef()
     return acc
@@ -87,6 +87,10 @@ export default function Bars() {
                   <div className={styles.labelsContainer}>
                     {item.labels.map((label) => (
                       <div className={styles.labels}>
+                        <img
+                          classsName={styles.labelIcon}
+                          src={label.icon}
+                        ></img>
                         <p>{label.desc}</p>
                       </div>
                     ))}

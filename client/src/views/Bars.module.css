@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Smythe&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yesteryear&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Smythe&display=swap");
 
 * {
   margin: 0;
@@ -42,9 +42,9 @@
   margin-right: auto;
   border-radius: 10px;
   text-decoration: none; */
-  color: #3B8979;
-  padding-top: .87rem;
-  padding-bottom: .87rem;
+  color: #3b8979;
+  padding-top: 0.87rem;
+  padding-bottom: 0.87rem;
   width: 300px;
   overflow: hidden;
   white-space: nowrap;
@@ -55,7 +55,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  font-family: 'Life Savers', cursive;
+  font-family: "Life Savers", cursive;
   font-weight: 600;
   overflow: hidden;
   white-space: nowrap;
@@ -69,7 +69,7 @@
   font-size: 20px;
 }
 
-.contentContainer ul:hover li:not(:hover) { 
+.contentContainer ul:hover li:not(:hover) {
   backdrop-filter: brightness(0.5);
 }
 
@@ -113,7 +113,7 @@
 
 .descContainer {
   line-height: 2;
-  background-color: #75A99A;
+  background-color: #75a99a;
   color: white;
   padding: 5%;
   text-align: justify;
@@ -137,7 +137,6 @@
 .labels {
   display: flex;
   padding-right: 1.1rem;
-
 }
 
 /* .section2::after {
@@ -166,7 +165,7 @@
 
 /* The styling for the static div. */
 .static {
-  background-image: url('https://i.pinimg.com/originals/0a/59/17/0a5917be17d3602f6aa078bd02381972.jpg');
+  background-image: url("https://i.pinimg.com/originals/0a/59/17/0a5917be17d3602f6aa078bd02381972.jpg");
 }
 
 /* Sets the actual background images */
@@ -181,4 +180,3 @@
   width: 100%;
   display:inline-block;
 } */
-

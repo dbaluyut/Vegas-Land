@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&family=Life+Savers&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Smythe&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Yesteryear&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Smythe&display=swap");
 
 * {
   margin: 0;
@@ -102,7 +102,7 @@
 
 .descContainer {
   line-height: 2;
-  background-color: #75A99A;
+  background-color: #75a99a;
   color: white;
   padding: 5%;
   text-align: justify;
@@ -115,11 +115,11 @@
 
 .descContainer a {
   text-decoration: none;
-  color:#fff;
+  color: #fff;
   font-weight: 300;
 }
 
-.descContainer a:hover{
+.descContainer a:hover {
   text-decoration: underline;
   font-weight: bold;
 }
@@ -130,14 +130,13 @@
 
 .labelsContainer {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding-top: 3%;
 }
 
 .labels {
   display: flex;
   padding-right: 1.1rem;
-
 }
 
 /* .addressLinkContainer {
@@ -198,3 +197,8 @@
   width: 100%;
   display: inline-block;
 } */
+
+.labels img {
+  width: 30px;
+  margin-right: 0.25rem;
+}

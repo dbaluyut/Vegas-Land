@@ -81,16 +81,46 @@ async function main() {
 
   //DB INSERT LABELS
 
-  await conn("labels").insert({ desc: "Masks Required", icon: "fa fa-github-square" })
-  await conn("labels").insert({ desc: "Takeout", icon: "" })
-  await conn("labels").insert({ desc: "Sit-down", icon: "" })
-  await conn("labels").insert({ desc: "Curbside Pickup", icon: "" })
-  await conn("labels").insert({ desc: "Limited Capacity", icon: "" })
-  await conn("labels").insert({ desc: "Social Distancing Enforced", icon: "" })
-  await conn("labels").insert({ desc: "Sanitize", icon: "" })
-  await conn("labels").insert({ desc: "Outdoor Seating", icon: "" })
-  await conn("labels").insert({ desc: "Pet-Friendly", icon: "" })
-  await conn("labels").insert({ desc: "Delivery", icon: "" })
+  await conn("labels").insert({
+    desc: "Masks Required",
+    icon: "./assets/mask.svg",
+  })
+  await conn("labels").insert({
+    desc: "Takeout",
+    icon: "./assets/take-out.svg",
+  })
+  await conn("labels").insert({
+    desc: "Sit-down",
+    icon: "./assets/sit-down.svg",
+  })
+  await conn("labels").insert({
+    desc: "Curbside Pickup",
+    icon: "./assets/curb-side.svg",
+  })
+  await conn("labels").insert({
+    desc: "Limited Capacity",
+    icon: "./assets/socialdistance.svg",
+  })
+  await conn("labels").insert({
+    desc: "Social Distancing Enforced",
+    icon: "./assets/socialdistance.svg",
+  })
+  await conn("labels").insert({
+    desc: "Sanitize",
+    icon: "./assets/sanitize.svg",
+  })
+  await conn("labels").insert({
+    desc: "Outdoor Seating",
+    icon: "./assets/outdoor-seating.svg",
+  })
+  await conn("labels").insert({
+    desc: "Pet-Friendly",
+    icon: "/assets/pet-friendly.svg",
+  })
+  await conn("labels").insert({
+    desc: "Delivery",
+    icon: "./assets/delivery.svg",
+  })
 
   const salt = createSalt(20)
 
@@ -848,7 +878,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Mob Museum",
-    desc: "The Mob Museum provides a world-class, interactive journey through true stories. From the birth of the Mob, to today’s headlines. Shadows and whispers. G-Men and Made Men. Whether you like it or not, this is American history. Located steps from Fremont Street, the Museum provides an experience unlike any other.",
+    desc:
+      "The Mob Museum provides a world-class, interactive journey through true stories. From the birth of the Mob, to today’s headlines. Shadows and whispers. G-Men and Made Men. Whether you like it or not, this is American history. Located steps from Fremont Street, the Museum provides an experience unlike any other.",
     location_id: 30,
     type: "experience",
     link: "https://themobmuseum.org/",
@@ -856,7 +887,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Neon Museum",
-    desc: "Founded in 1996, The Neon Museum is a non-profit 501 (c) 3 organization dedicated to collecting, preserving, studying and exhibiting iconic Las Vegas signs for educational, historic, arts and cultural enrichment. The Neon Museum campus includes the outdoor exhibition space known as the Neon Boneyard, a visitors’ center hou`sed inside the former La Concha Motel lobby and the Neon Boneyard North Gallery which houses additional rescued signs and is available for weddings, special events, photo shoots and educational programs. ",
+    desc:
+      "Founded in 1996, The Neon Museum is a non-profit 501 (c) 3 organization dedicated to collecting, preserving, studying and exhibiting iconic Las Vegas signs for educational, historic, arts and cultural enrichment. The Neon Museum campus includes the outdoor exhibition space known as the Neon Boneyard, a visitors’ center hou`sed inside the former La Concha Motel lobby and the Neon Boneyard North Gallery which houses additional rescued signs and is available for weddings, special events, photo shoots and educational programs. ",
     location_id: 31,
     type: "experience",
     link: "https://www.neonmuseum.org/",
@@ -864,7 +896,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Pour in the Alley",
-    desc: "In Fergusons Downtown's newest tasting you will get two 750ml bottles of Mezcal: the infamous 400 Conejos and delicious Creyente! Fergusons Downtown has also teamed up with Tacotarian, a booming plant-based bar and restaurant in the Arts District that is creating a delicious tasting meal to complement each one of these special mezcals! Join Tacotarian's owner Carlos Corral and brand ambassador Breelyn Shekley of 400 Conejos & Creyente as they taste with you and educate you on all things Mezcal with plant-based Mexican food! ",
+    desc:
+      "In Fergusons Downtown's newest tasting you will get two 750ml bottles of Mezcal: the infamous 400 Conejos and delicious Creyente! Fergusons Downtown has also teamed up with Tacotarian, a booming plant-based bar and restaurant in the Arts District that is creating a delicious tasting meal to complement each one of these special mezcals! Join Tacotarian's owner Carlos Corral and brand ambassador Breelyn Shekley of 400 Conejos & Creyente as they taste with you and educate you on all things Mezcal with plant-based Mexican food! ",
     location_id: 32,
     type: "experience",
     link: "https://www.fergusonsdowntown.com/pour-in-the-alley",
@@ -872,7 +905,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Market in the Alley",
-    desc: "In 2017, Fergusons Downtown Co-Founder, Jen Taler, created   Market in the Alley that would showcase local artisans and vintage curators. While working on renovating the historic 1940’s Fergusons Motel, Jen started hosting an outdoor Market to bring together the community and support for the creators around Las Vegas before the opening of the renovated motel. Her vision was when the renovated motel opened, the old hotel rooms would be small shops owned by locals, embracing the building’s original architecture and design but outfitted to fit each business’s personality.",
+    desc:
+      "In 2017, Fergusons Downtown Co-Founder, Jen Taler, created   Market in the Alley that would showcase local artisans and vintage curators. While working on renovating the historic 1940’s Fergusons Motel, Jen started hosting an outdoor Market to bring together the community and support for the creators around Las Vegas before the opening of the renovated motel. Her vision was when the renovated motel opened, the old hotel rooms would be small shops owned by locals, embracing the building’s original architecture and design but outfitted to fit each business’s personality.",
     location_id: 33,
     type: "experience",
     link: "https://www.fergusonsdowntown.com/market-in-the-alley",
@@ -880,7 +914,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Pawn Plaza",
-    desc: "Rick Harrison’s Pawn Plaza is a 2 story retail center in Downtown Las Vegas right next door to the World Famous Gold & Silver Pawn Shop, home of “Pawn Stars!” Home to restaurants, attractions and the best place to go to see Rick Harrison and Chumlee!",
+    desc:
+      "Rick Harrison’s Pawn Plaza is a 2 story retail center in Downtown Las Vegas right next door to the World Famous Gold & Silver Pawn Shop, home of “Pawn Stars!” Home to restaurants, attractions and the best place to go to see Rick Harrison and Chumlee!",
     location_id: 34,
     type: "experience",
     link: "https://pawnplaza.com/",
@@ -888,7 +923,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Gold & Silver Pawn Shop",
-    desc: "The shop is open every day from 10am - 5pm, we are only closed on Christmas and Thanksgiving, and our Pawn Window for selling is open 24 hours a day. It is always free to visit the Pawn Shop and parking is also free. We are one of the top non-gaming tourist attractions so you can easily just take a cab or ride share here as well. Feel free to take as many pictures as you wish, however due to state law we ask that you refrain from taking pictures toward the pawn counter on your immediate left as you enter and no videos in the shop.",
+    desc:
+      "The shop is open every day from 10am - 5pm, we are only closed on Christmas and Thanksgiving, and our Pawn Window for selling is open 24 hours a day. It is always free to visit the Pawn Shop and parking is also free. We are one of the top non-gaming tourist attractions so you can easily just take a cab or ride share here as well. Feel free to take as many pictures as you wish, however due to state law we ask that you refrain from taking pictures toward the pawn counter on your immediate left as you enter and no videos in the shop.",
     location_id: 35,
     type: "shop",
     link: "https://gspawn.com/",
@@ -896,7 +932,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Zak Bagan's The Haunted Museum",
-    desc: "Zak Bagans developed a profound interest in the paranormal when he was just 10 years old, scouring nearby garage sales with his mom in search of odd and spooky collectibles. His fascination with the unusual evolved into a life-long pursuit for answers about the afterlife, not merely through the study of earth-bound energy, but also through years of science-based research using a multitude of specially engineered equipment to measure fluctuations in the environment… more specifically, to communicate with the dead.Now a pioneer in the paranormal field, Bagans is giving everyone a chance to experience the spine-chilling vibe of the spirit world at the new Zak Bagans’ The Haunted Museum located in downtown Las Vegas.",
+    desc:
+      "Zak Bagans developed a profound interest in the paranormal when he was just 10 years old, scouring nearby garage sales with his mom in search of odd and spooky collectibles. His fascination with the unusual evolved into a life-long pursuit for answers about the afterlife, not merely through the study of earth-bound energy, but also through years of science-based research using a multitude of specially engineered equipment to measure fluctuations in the environment… more specifically, to communicate with the dead.Now a pioneer in the paranormal field, Bagans is giving everyone a chance to experience the spine-chilling vibe of the spirit world at the new Zak Bagans’ The Haunted Museum located in downtown Las Vegas.",
     location_id: 36,
     type: "experience",
     link: "https://thehauntedmuseum.com/",
@@ -904,7 +941,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "11th St Records",
-    desc: "Located at the corner of Fremont and 11th in Downtown Las Vegas, 11th Street Records is a hub for music fans, vinyl collectors, musicians and their audiences. We love records. Everything about them. We buy them, sell them, trade them, and, in our in-store studio, record them. We believe record stores are important because of what they’ve meant to any music scene that ever meant anything to us. We seek to be a resource that engages both sides of the musical equation, artists and audiences alike. We are evangelists for vinyl, for what it provides to the listener, and for what it provides to the artists. We want to help sell records for independent labels and bands, and help independent bands make records. We support bands coming through town on tour, and do what we can to make sure they come back. We host vinyl listening parties, in-store performances, stream in-studio performances on our 11th Street Sessions webcast, and seek to do anything and everything we can to return the record store to its traditional, rightful place at the center of any thriving musical community. When you buy records at 11th Street you are part of those efforts, as well as supporting an industry of creative people producing art you can own and collect affordably, most of which is manufactured in the USA. There are lots of reasons to feel good about every vinyl record purchase you make, and there aren’t many things you can buy these days that deliver on so many levels.38. Fremont Street Experience",
+    desc:
+      "Located at the corner of Fremont and 11th in Downtown Las Vegas, 11th Street Records is a hub for music fans, vinyl collectors, musicians and their audiences. We love records. Everything about them. We buy them, sell them, trade them, and, in our in-store studio, record them. We believe record stores are important because of what they’ve meant to any music scene that ever meant anything to us. We seek to be a resource that engages both sides of the musical equation, artists and audiences alike. We are evangelists for vinyl, for what it provides to the listener, and for what it provides to the artists. We want to help sell records for independent labels and bands, and help independent bands make records. We support bands coming through town on tour, and do what we can to make sure they come back. We host vinyl listening parties, in-store performances, stream in-studio performances on our 11th Street Sessions webcast, and seek to do anything and everything we can to return the record store to its traditional, rightful place at the center of any thriving musical community. When you buy records at 11th Street you are part of those efforts, as well as supporting an industry of creative people producing art you can own and collect affordably, most of which is manufactured in the USA. There are lots of reasons to feel good about every vinyl record purchase you make, and there aren’t many things you can buy these days that deliver on so many levels.38. Fremont Street Experience",
     location_id: 37,
     type: "shop",
     link: "http://www.11thstreetrecords.com/",
@@ -920,7 +958,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Slotzilla Zipline",
-    desc: "SlotZilla is a 11-story slot machine-inspired zip line attraction and is one of the best things to do in Las Vegas. The multi-million-dollar SlotZilla is the world’s largest slot machine and features Las Vegas icons such as over-sized dice, a martini glass, pink flamingo, coins, video reels, a giant arm and two showgirls.",
+    desc:
+      "SlotZilla is a 11-story slot machine-inspired zip line attraction and is one of the best things to do in Las Vegas. The multi-million-dollar SlotZilla is the world’s largest slot machine and features Las Vegas icons such as over-sized dice, a martini glass, pink flamingo, coins, video reels, a giant arm and two showgirls.",
     location_id: 39,
     type: "experience",
     link:
@@ -929,7 +968,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Viva Vision Lightshow",
-    desc: "The free light shows at Fremont Street Experience are a must-see in Las Vegas! More than 24 million Las Vegas visitors a year take in the Viva Vision light shows at Fremont Street Experience. Guests can enjoy a variety of light shows with high-resolution imagery and state-of-the-art, 600,000-watt, concert-quality sound. The newly-upgraded Viva Vision screen is made up of 49.3 million energy-efficient LED lamps. Viva Vision light shows feature music from The Killers, Imagine Dragons, Tiesto, Steve Aoki, Green Day, Linkin Park and others.",
+    desc:
+      "The free light shows at Fremont Street Experience are a must-see in Las Vegas! More than 24 million Las Vegas visitors a year take in the Viva Vision light shows at Fremont Street Experience. Guests can enjoy a variety of light shows with high-resolution imagery and state-of-the-art, 600,000-watt, concert-quality sound. The newly-upgraded Viva Vision screen is made up of 49.3 million energy-efficient LED lamps. Viva Vision light shows feature music from The Killers, Imagine Dragons, Tiesto, Steve Aoki, Green Day, Linkin Park and others.",
     location_id: 40,
     type: "experience",
     link: "https://vegasexperience.com/viva-vision-light-show/",
@@ -937,7 +977,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Metropolitan Gallery/Art Museum",
-    desc: "The Metropolitan Gallery Art Museum offers a great place for creatives to network and obtain services. The Museum hosts over 17,000 square feet of presentable exhibition space for visitors to enjoy and creatives to showcase their work. The museum also offers fine art services such as framing, printing, exhibiting, electronic and imaging services for creative professionals. ",
+    desc:
+      "The Metropolitan Gallery Art Museum offers a great place for creatives to network and obtain services. The Museum hosts over 17,000 square feet of presentable exhibition space for visitors to enjoy and creatives to showcase their work. The museum also offers fine art services such as framing, printing, exhibiting, electronic and imaging services for creative professionals. ",
     location_id: 41,
     type: "experience",
     link: "https://www.mglv.org/",
@@ -945,7 +986,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Axehole",
-    desc: "Our professional trainers can teach you how to throw an axe, spear, or ninja stars, then arrange a game for you and your friends. Its good fun...Come throw with us! We would be thrilled to meet you. Ages 10 and up are welcome. Mark it off your Bucket List or add it, either way when you leave hands down you will love it! Downtown on Fremont Street, Las Vegas No experience needed. Professional trainers will get anyone hitting Bulls Eye's in no time! Covid 19: Axehole trainers are highly qualified and committed to keeping the thrill of axe throwing as safe as possible. Here's how: Social distancing of 6 feet between groups, trainers, Axe lanes and tables. We are temporarily reducing our capacity by 50%. Lanes extend out 27 FT Hand sanitizer at every lane for customers and staff. Masks for customers are available upon request. Axes and all other equipment will be washed and sanitized between sessions. Compliance with all governmental COVID-19 regulations and best practices.",
+    desc:
+      "Our professional trainers can teach you how to throw an axe, spear, or ninja stars, then arrange a game for you and your friends. Its good fun...Come throw with us! We would be thrilled to meet you. Ages 10 and up are welcome. Mark it off your Bucket List or add it, either way when you leave hands down you will love it! Downtown on Fremont Street, Las Vegas No experience needed. Professional trainers will get anyone hitting Bulls Eye's in no time! Covid 19: Axehole trainers are highly qualified and committed to keeping the thrill of axe throwing as safe as possible. Here's how: Social distancing of 6 feet between groups, trainers, Axe lanes and tables. We are temporarily reducing our capacity by 50%. Lanes extend out 27 FT Hand sanitizer at every lane for customers and staff. Masks for customers are available upon request. Axes and all other equipment will be washed and sanitized between sessions. Compliance with all governmental COVID-19 regulations and best practices.",
     location_id: 42,
     type: "experience",
     link: "https://axeholevegas.com/",
@@ -953,7 +995,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Cannabition Cannabis Museum",
-    desc: "Cannabition will be a 10,000 square-foot journey featuring more than 20 unique, cannabis inspired art installations celebrating the arts, culture, history, and celebration of the medical and recreational cannabis experience. Whether you’re a local cannabis lover, visiting with friends, or taking your team on a fun trip, Cannabition is the perfect place to learn, explore, and embrace the mainstreaming of cannabis culture.Cannabition cannabis museum provides an immersive, “Instagrammable” experience designed for education, entertainment and hundreds of unique photo opportunities in spaces designed for great picture taking.    ",
+    desc:
+      "Cannabition will be a 10,000 square-foot journey featuring more than 20 unique, cannabis inspired art installations celebrating the arts, culture, history, and celebration of the medical and recreational cannabis experience. Whether you’re a local cannabis lover, visiting with friends, or taking your team on a fun trip, Cannabition is the perfect place to learn, explore, and embrace the mainstreaming of cannabis culture.Cannabition cannabis museum provides an immersive, “Instagrammable” experience designed for education, entertainment and hundreds of unique photo opportunities in spaces designed for great picture taking.    ",
     location_id: 43,
     type: "experience",
     link: "https://cannabition.com/visit/",
@@ -961,7 +1004,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Big Rig Jig",
-    desc: "Big Rig Jig is constructed from two discarded tanker trucks. The work serves both as a sculpture and an architectural space: visitors may enter the lower truck, climb through the tankers, and emerge to a viewing platform between the rear axles, forty-two feet in the air. Most recently exhibited in the U.K. for Banksy’s Dismaland show, it is now permanently installed in Las Vegas by Tony Hsieh. The work was made possible by a grant from Burning Man, as well as generous gifts from Peter and Gwen Norton, Todd Koons, and numerous donations received over the internet.",
+    desc:
+      "Big Rig Jig is constructed from two discarded tanker trucks. The work serves both as a sculpture and an architectural space: visitors may enter the lower truck, climb through the tankers, and emerge to a viewing platform between the rear axles, forty-two feet in the air. Most recently exhibited in the U.K. for Banksy’s Dismaland show, it is now permanently installed in Las Vegas by Tony Hsieh. The work was made possible by a grant from Burning Man, as well as generous gifts from Peter and Gwen Norton, Todd Koons, and numerous donations received over the internet.",
     location_id: 44,
     type: "experience",
     link: null,
@@ -969,7 +1013,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Southern Nevada Museum of Fine Art",
-    desc: "Founded in 2002, the Metropolitan Gallery Art Museum is a non-profit 501c3 organization which moved downtown to the Neonopolis in 2008. It presently features over 20,000 square feet of exhibit area, with a main gallery, a special exhibitions gallery, and a small works gallery. The Metropolitan Gallery and Art Museum (formerly The Southern Nevada Museum of Fine Art) provides exhibit space for local, regional and International artists to display their current work.",
+    desc:
+      "Founded in 2002, the Metropolitan Gallery Art Museum is a non-profit 501c3 organization which moved downtown to the Neonopolis in 2008. It presently features over 20,000 square feet of exhibit area, with a main gallery, a special exhibitions gallery, and a small works gallery. The Metropolitan Gallery and Art Museum (formerly The Southern Nevada Museum of Fine Art) provides exhibit space for local, regional and International artists to display their current work.",
     location_id: 45,
     type: "experience",
     link: "http://snmfa.com/",
@@ -977,7 +1022,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Vintage Vegas Antiques and Collectibles",
-    desc: "The New Vintage Vegas has a great selection of: Antiques Mantiques Vintage Clothing Oddities Collectibles Mid Century Furnishings Military Items Casino Items Vintage Toys And just cool stuff. Established in 2012, they have been in business for just a few years and have a great customer following. They have been in and provided props for major motion pictures such as The Hangover 3 and Last Vegas. They are also in a few TV shows such as American Restoration and Spike TV's new antique hunters show, Thrift Hunters. ",
+    desc:
+      "The New Vintage Vegas has a great selection of: Antiques Mantiques Vintage Clothing Oddities Collectibles Mid Century Furnishings Military Items Casino Items Vintage Toys And just cool stuff. Established in 2012, they have been in business for just a few years and have a great customer following. They have been in and provided props for major motion pictures such as The Hangover 3 and Last Vegas. They are also in a few TV shows such as American Restoration and Spike TV's new antique hunters show, Thrift Hunters. ",
     location_id: 46,
     type: "shop",
     link: "https://vintagevegas.com/",
@@ -985,7 +1031,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Retro Vegas LLC",
-    desc: "This is the home of mid-century modern history, style and all that’s fabulous about Las Vegas. Retro Vegas is full of vintage art, lighting and mid-mod furnishings and accessories. There are treasures and objet d’art to fit every budget and space. We have many pieces that are full of historical significance from some of the most spectacular homes in town. From Danish Modern to Hollywood Regency, our inventory changes all the time. For glitz, glamour and fun, check out Retro Vegas. ",
+    desc:
+      "This is the home of mid-century modern history, style and all that’s fabulous about Las Vegas. Retro Vegas is full of vintage art, lighting and mid-mod furnishings and accessories. There are treasures and objet d’art to fit every budget and space. We have many pieces that are full of historical significance from some of the most spectacular homes in town. From Danish Modern to Hollywood Regency, our inventory changes all the time. For glitz, glamour and fun, check out Retro Vegas. ",
     location_id: 47,
     type: "shop",
     link: "http://www.retro-vegas.com/",
@@ -993,7 +1040,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Art District",
-    desc: "Some of our neighborhood shops have already begun the road to recovery with social distancing in place. In addition to our restaurants, who have managed to remain open for curbside pickup and delivery, we can now welcome the following retailers back to the new normal",
+    desc:
+      "Some of our neighborhood shops have already begun the road to recovery with social distancing in place. In addition to our restaurants, who have managed to remain open for curbside pickup and delivery, we can now welcome the following retailers back to the new normal",
     location_id: 48,
     type: "experience",
     link: "https://www.18b.org/",
@@ -1001,7 +1049,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Fabrizio Banquet Hall",
-    desc: "The story of how we came to be was born out of necessity. We saw that there was a real need in the Las Vegas community for a venue that possessed extreme opulence off the strip but still conveniently located to where all the action was. Creating a unique and charming experience using your imagination is the key to our success. Possibilities and not imitations is why we like to say that at Fabrizio we are the place where events are without any limitations. We are centrally located in the valley, residing in the heart of the arts district in downtown Las Vegas. Fabrizio has a modern decor with Italian finishes and lavishly adorned crystal chandeliers that playfully light up the ballroom and welcome you in the foyer. Creating memories requires the right amount of taste, elegance and style. Don’t just organize a party to remember. Indulge in an unforgettable experience that will leave an imprint on the hearts and minds of your friends and loved ones forever.",
+    desc:
+      "The story of how we came to be was born out of necessity. We saw that there was a real need in the Las Vegas community for a venue that possessed extreme opulence off the strip but still conveniently located to where all the action was. Creating a unique and charming experience using your imagination is the key to our success. Possibilities and not imitations is why we like to say that at Fabrizio we are the place where events are without any limitations. We are centrally located in the valley, residing in the heart of the arts district in downtown Las Vegas. Fabrizio has a modern decor with Italian finishes and lavishly adorned crystal chandeliers that playfully light up the ballroom and welcome you in the foyer. Creating memories requires the right amount of taste, elegance and style. Don’t just organize a party to remember. Indulge in an unforgettable experience that will leave an imprint on the hearts and minds of your friends and loved ones forever.",
     location_id: 49,
     type: "experience",
     link: "https://www.fabriziovegas.com/",
@@ -1017,7 +1066,8 @@ async function main() {
 
   await conn("venues").insert({
     title: "Bender Jamboree",
-    desc: "This decision does not come easy for us. We had hoped to see all your smiling faces sooner than later. Our goal has always been to find a venue for the Jamboree with the ideal combination of venue quality, hotel size & amenities, and overall affordability. We were unable to find the perfect home in time for a 2020 event. Rather than produce an event that does not meet our standards, we have decided to return strong with the best Bender Jamboree ever in 2021",
+    desc:
+      "This decision does not come easy for us. We had hoped to see all your smiling faces sooner than later. Our goal has always been to find a venue for the Jamboree with the ideal combination of venue quality, hotel size & amenities, and overall affordability. We were unable to find the perfect home in time for a 2020 event. Rather than produce an event that does not meet our standards, we have decided to return strong with the best Bender Jamboree ever in 2021",
     location_id: 51,
     type: "experience",
     link: "http://benderjamboree.com/",
