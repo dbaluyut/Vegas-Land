@@ -22,7 +22,7 @@ export default function Experiences() {
       const found = experiences.find((experience) => experience.id == params.id)
       setActiveItem(found)
     }
-  }, [experiences]);
+  }, [experiences])
 
   return (
     <div>
@@ -32,10 +32,22 @@ export default function Experiences() {
       {activeItem ? (
         <div className={styles.modalContainer}>
           <div className={styles.modal}>
-            <button onClick={() => setActiveItem(null)}>&times;</button>
-
-            <h3 className={styles.modalLabel}>{activeItem.title}</h3>
-
+            <button
+              className={styles.closeModal}
+              onClick={() => setActiveItem(null)}
+            >
+              &times;
+            </button>
+            <div
+              style={{
+                backgroundImage: `url(${activeItem.image})`,
+                backgroundPosition: 'center',
+              }}
+              className={styles.modalLabelContainer}
+            >
+              <h3 className={styles.modalLabel}>{activeItem.title}</h3>
+            </div>
+            <div className={styles.modalContent}>
             <p className={styles.modalDesc}>{activeItem.desc}</p>
             <p className={styles.address}>
               {activeItem.street_1} {activeItem.city}, {activeItem.state}
@@ -45,6 +57,7 @@ export default function Experiences() {
             <a className={styles.modalLink} href={activeItem.link}>
               {activeItem.link}
             </a>
+            </div>
           </div>
         </div>
       ) : null}
@@ -72,5 +85,6 @@ export default function Experiences() {
 }
 //
 
-
-{/* <div backgroundImage={activeItem.image} > */}
+{
+  /* <div backgroundImage={activeItem.image} > */
+}

@@ -13,7 +13,7 @@ export function Navbar() {
       }}
     >
       <nav>
-        <Link to="/home">
+        <Link to="/">
         <div className={styles.logo}>
           <img className={styles.logoImage} src={"./assets/logo-062.svg"}></img>
         </div>
