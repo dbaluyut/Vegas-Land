@@ -10,10 +10,11 @@ import {
   getLocations,
   selectLocation,
 } from "./addVenueSlice.js"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory, useLocation } from "react-router-dom"
 import { useAuth } from "../../features/authentication/auth"
 
 export default function AddVenue() {
+  const location = useLocation()
   const dispatch = useDispatch()
   const venues = useSelector(selectUpdate)
   const locations = useSelector(selectLocation)
@@ -69,17 +70,18 @@ export default function AddVenue() {
           </div>
         </Link>
         <Link to="dashboard">
-          <span>Venues</span>
-        </Link>
-        <Link to="/update">
-          <span>Update</span>
-        </Link>
-        <Link to="RecommendationsTable">
-          <span>Recommendations</span>
+        <span className={window.location.pathname == '/dashboard' ? styles.activeNav : ""}>Venues</span>
         </Link>
         <Link to="addVenue">
-          <span>Add Venue Form</span>
+        <span className={window.location.pathname == '/addVenue' ? styles.activeNav : ""}>Add Venue</span>
         </Link>
+        <Link to="/update">
+        <span className={window.location.pathname == '/update' ? styles.activeNav : ""}>Update Venue</span>
+        </Link>
+        <Link to="RecommendationsTable">
+        <span className={window.location.pathname == '/RecommendationsTable' ? styles.activeNav : ""}>Recommendations</span>
+        </Link>
+        
         <Link to="logout" onClick={handleClick}>
           Log Out
         </Link>

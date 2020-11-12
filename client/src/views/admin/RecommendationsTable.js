@@ -6,7 +6,7 @@ import {
 } from "./recommendationsTableSlice"
 import { useSelector, useDispatch } from "react-redux"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import { useHistory } from "react-router-dom"
+import { useHistory, useLocation } from "react-router-dom"
 import { useAuth } from "../../features/authentication/auth"
 
 // export default function RecommendationsTable(){
@@ -14,6 +14,7 @@ import { useAuth } from "../../features/authentication/auth"
 // }
 
 export default function RecommendationsTable() {
+  const location = useLocation()
   const recommendationsTable = useSelector(selectRecommendationsTable)
 
   const dispatch = useDispatch()
@@ -47,15 +48,16 @@ export default function RecommendationsTable() {
         <Link to="dashboard">
           <span>Venues</span>
         </Link>
+        <Link to="addVenue">
+          <span>Add Venue </span>
+        </Link>
         <Link to="/update">
-          <span>Update</span>
+          <span>Update Venue</span>
         </Link>
         <Link to="RecommendationsTable">
-          <span>Recommendations</span>
+        <span className={window.location.pathname == '/RecommendationsTable' ? styles.activeNav : ""}>Recommendations</span>
         </Link>
-        <Link to="addVenue">
-          <span>Add Venue Form</span>
-        </Link>
+        
         <Link to="logout" onClick={handleClick}>
           Log Out
         </Link>

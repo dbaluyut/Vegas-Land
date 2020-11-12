@@ -113,8 +113,6 @@ ul li ul li {
   margin: 5px;
 }
 
-
-
 @media (max-width: 1024px) {
   .nav_links {
     /* display: flex;
@@ -148,3 +146,7 @@ ul li ul li {
 .nav-active {
   transform: translateX(0%);
 } */
+
+.activeNav {
+  border-bottom: 3px solid #f87204;
+}
