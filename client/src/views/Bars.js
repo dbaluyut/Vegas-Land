@@ -10,7 +10,7 @@ export default function Bars() {
   const bars = useSelector(selectBars)
   const dispatch = useDispatch()
   const params = useParams()
-  console.log(bars[0])
+  console.log(bars)
   function NameMe(acc, current) {
     acc[current.id] = React.createRef()
     return acc

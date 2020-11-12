@@ -10,6 +10,12 @@ router.get("/venues", async (req, res) => {
   res.json(venues.rows)
 })
 
+router.get("/venues/newbars", async (req, res) => {
+  const venues = await conn.raw(`SELECT * FROM venues where type='bar'
+  ;`)
+  res.json(venues.rows)
+})
+
 // router.get("/venues/:id", async (req, res) => {
 //   const venues = await conn.raw(
 //     `SELECT * FROM venues where id=${req.params.id};`
@@ -67,6 +73,7 @@ router.get("/venues/bars", async (req, res) => {
     where type='bar'`)
 
   const venuesList = venues.rows
+  console.log(venuesList)
 
   for (let venue of venuesList) {
     const labels = await conn.raw(
@@ -88,14 +95,30 @@ router.get("/venues/bars", async (req, res) => {
 // VENUES POST REQUEST
 
 router.post("/venues", async (req, res) => {
-  const venue = await conn("venues").insert({
+  const newVenue = {
     title: req.body.title,
     desc: req.body.desc,
     location_id: req.body.location_id,
     type: req.body.type,
     link: req.body.link,
-  })
-  res.json({ message: "venue added" })
+  }
+
+  const venue = await conn("venues")
+    .insert(newVenue)
+    .returning("id")
+    .then(async (id) => {
+      const gallery = await conn("galleries").insert({
+        venue_id: id[0],
+        image: "http://placehold.it/250x250",
+      })
+      res.json({
+        message: "venue added",
+        venue: {
+          ...newVenue,
+          id: id[0],
+        },
+      })
+    })
 })
 
 // VENUES PATCH REQUEST
