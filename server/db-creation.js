@@ -1073,13 +1073,56 @@ async function main() {
     link: "http://benderjamboree.com/",
   })
 
+  //DEMO HOURS
+  await conn("happy_hr").insert({
+    venue_id: 3,
+    happy_hr_start: 900,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 6,
+    happy_hr_start: 900,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 23,
+    happy_hr_start: 900,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 25,
+    happy_hr_start: 900,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 20,
+    happy_hr_start: 900,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
+  await conn("happy_hr").insert({
+    venue_id: 24,
+    happy_hr_start: 900,
+    happy_hr_stop: 2300,
+    day: 3,
+  })
+
   //DB INSERT HAPPY HOURS
 
   await conn("happy_hr").insert({
     venue_id: 1,
     happy_hr_start: 900,
     happy_hr_stop: 2300,
-    day: 5,
+    day: 1,
   })
 
   await conn("happy_hr").insert({
