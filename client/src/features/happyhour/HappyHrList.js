@@ -10,7 +10,7 @@ import {
   InfoWindow,
 } from "react-google-maps"
 import mapStyles from "./mapStyles"
-import moment from "moment"
+
 export default function HappyHrList() {
   const list = useSelector(selectHappyHrList)
   const dispatch = useDispatch()
