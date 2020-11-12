@@ -59,7 +59,7 @@ function App() {
         <AuthRoute path="/dashboard">
           <Dashboard />
         </AuthRoute>
-        <AuthRoute path="/update">
+        <AuthRoute path="/update/:id?">
           <Update />
         </AuthRoute>
         <AuthRoute path="/RecommendationsTable">
