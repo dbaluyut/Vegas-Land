@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import styles from "./Dashboard.module.css"
 import { useForm } from "../../hooks/form"
@@ -10,6 +11,7 @@ import { useAuth } from "../../features/authentication/auth"
 export default function Update() {
   const dispatch = useDispatch()
   const venues = useSelector(selectUpdate)
+  const { id } = useParams()
 
   useEffect(() => {
     dispatch(getVenue())
@@ -31,7 +33,8 @@ export default function Update() {
   }
   useEffect(() => {
     if (venues.length) {
-      updateForm(venues[0])
+      const index = id ? venues.findIndex((venue) => venue.id == id) : 0
+      updateForm(venues[index])
     }
   }, [venues])
 
@@ -44,7 +47,6 @@ export default function Update() {
 
   function handleClick() {
     logout().then((resp) => {
-      console.log("test")
       history.push("/logout")
     })
   }
@@ -52,7 +54,7 @@ export default function Update() {
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
-      <Link to="/">
+        <Link to="/">
           <div className={styles.dashLogo}>
             <img src={"./assets/logo-062.svg"}></img>
           </div>
@@ -73,12 +75,11 @@ export default function Update() {
           Log Out
         </Link>
       </div>
-     
+
       <div className={styles.dashUpdateForm}>
-        
         <form onSubmit={handleSubmit} className={styles.formContainer}>
           <div className={styles.dashFormItem}>
-              <h1 className={styles.adminHeader2}>Update Venue Form</h1>
+            <h1 className={styles.adminHeader2}>Update Venue Form</h1>
             <label>Venue:</label>
             <br />
             <select
@@ -86,7 +87,11 @@ export default function Update() {
               onChange={(e) => handleVenueChange(e.target.value)}
             >
               {venues.map((venue, index) => (
-                <option key={"venue-" + venue.id} value={index}>
+                <option
+                  key={"venue-" + venue.id}
+                  value={index}
+                  selected={venueForm.id == venue.id}
+                >
                   {venue.title}
                 </option>
               ))}
