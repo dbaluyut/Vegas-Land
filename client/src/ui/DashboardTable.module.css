@@ -71,15 +71,17 @@ a:active {
   color: blue;
 }
 
-.tableRemove {
+.tableActions {
   width: 10%;
   
 }
-.tableRemove button {
+.tableActions button {
   padding: 2px 8px;
   font-size: 20px;
   border: 0;
-  background-color: inherit;
+	background-color: inherit;
+	cursor: pointer;
+	margin-left: 20px;
 }
 
 /* 
