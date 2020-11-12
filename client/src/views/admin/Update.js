@@ -27,6 +27,7 @@ export default function Update() {
     e.preventDefault()
     // console.log(venueForm)
     dispatch(updateVenue(venueForm))
+    history.push("/dashboard")
   }
   useEffect(() => {
     if (venues.length) {
@@ -132,6 +133,7 @@ export default function Update() {
               onChange={setVenueForm}
             />
           </div>
+
           <button type="submit" className={styles.formBtn}>
             Save
           </button>

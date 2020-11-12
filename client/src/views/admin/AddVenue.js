@@ -51,6 +51,7 @@ export default function AddVenue() {
     console.log(locations)
     dispatch(addVenue(venueForm))
     alert("venue has been added")
+    history.push("/dashboard")
   }
 
   function handleClick() {

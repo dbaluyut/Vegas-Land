@@ -10,6 +10,12 @@ router.get("/venues", async (req, res) => {
   res.json(venues.rows)
 })
 
+router.get("/venues/newbars", async (req, res) => {
+  const venues = await conn.raw(`SELECT * FROM venues where type='bar'
+  ;`)
+  res.json(venues.rows)
+})
+
 // router.get("/venues/:id", async (req, res) => {
 //   const venues = await conn.raw(
 //     `SELECT * FROM venues where id=${req.params.id};`
@@ -26,7 +32,7 @@ router.get("/venues/highlights", async (req, res) => {
 })
 
 router.get("/venues/experiences", async (req, res) => {
-  const venues = await conn.raw(`select galleries.image, venues.title, venues.desc, venues.link, locations.street_1, locations.city, locations.state, locations.zip from venues
+  const venues = await conn.raw(`select galleries.image, venues.title, venues.id, venues.desc, venues.link, locations.street_1, locations.city, locations.state, locations.zip from venues
   inner join galleries on galleries.venue_id=venues.id
   inner join locations on locations.id=venues.location_id
     where type='experience'
@@ -67,10 +73,11 @@ router.get("/venues/bars", async (req, res) => {
     where type='bar'`)
 
   const venuesList = venues.rows
+  console.log(venuesList)
 
   for (let venue of venuesList) {
     const labels = await conn.raw(
-      `select labels.desc from venues
+      `select labels.desc, labels.icon from venues
       inner join venue_labels on venue_labels.venue_id=venues.id
       inner join labels on venue_labels.label_id=labels.id
       where venues.id = ?`,
@@ -88,14 +95,30 @@ router.get("/venues/bars", async (req, res) => {
 // VENUES POST REQUEST
 
 router.post("/venues", async (req, res) => {
-  const venue = await conn("venues").insert({
+  const newVenue = {
     title: req.body.title,
     desc: req.body.desc,
     location_id: req.body.location_id,
     type: req.body.type,
     link: req.body.link,
-  })
-  res.json({ message: "venue added" })
+  }
+
+  const venue = await conn("venues")
+    .insert(newVenue)
+    .returning("id")
+    .then(async (id) => {
+      const gallery = await conn("galleries").insert({
+        venue_id: id[0],
+        image: "http://placehold.it/250x250",
+      })
+      res.json({
+        message: "venue added",
+        venue: {
+          ...newVenue,
+          id: id[0],
+        },
+      })
+    })
 })
 
 // VENUES PATCH REQUEST

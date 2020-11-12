@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import styles from "./Experiences.module.css";
-import { Navbar } from "../ui/Navbar";
-import { Footer } from "../ui/Footer";
-import { Card } from "../ui/Card";
-import { selectExperiences, getExperiences } from "./experiencesSlice";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import styles from "./Experiences.module.css"
+import { Navbar } from "../ui/Navbar"
+import { Footer } from "../ui/Footer"
+import { Card } from "../ui/Card"
+import { selectExperiences, getExperiences } from "./experiencesSlice"
+import { useSelector, useDispatch } from "react-redux"
 
 export default function Experiences() {
-  const experiences = useSelector(selectExperiences);
-  const dispatch = useDispatch();
-  const params = useParams();
-  const [activeItem, setActiveItem] = useState(null);
-  console.log(activeItem);
+  const experiences = useSelector(selectExperiences)
+  const dispatch = useDispatch()
+  const params = useParams()
+  const [activeItem, setActiveItem] = useState(null)
+  console.log(activeItem)
   useEffect(() => {
-    dispatch(getExperiences());
-  }, []);
+    dispatch(getExperiences())
+  }, [])
 
   useEffect(() => {
     if (experiences.length && params.id) {
-      setActiveItem(params.id);
+      const found = experiences.find((experience) => experience.id == params.id)
+      setActiveItem(found)
     }
-  }, [experiences]);
+  }, [experiences])
 
   return (
     <div>
@@ -31,10 +32,22 @@ export default function Experiences() {
       {activeItem ? (
         <div className={styles.modalContainer}>
           <div className={styles.modal}>
-            <button onClick={() => setActiveItem(null)}>&times;</button>
-
-            <h3 className={styles.modalLabel}>{activeItem.title}</h3>
-
+            <button
+              className={styles.closeModal}
+              onClick={() => setActiveItem(null)}
+            >
+              &times;
+            </button>
+            <div
+              style={{
+                backgroundImage: `url(${activeItem.image})`,
+                backgroundPosition: 'center',
+              }}
+              className={styles.modalLabelContainer}
+            >
+              <h3 className={styles.modalLabel}>{activeItem.title}</h3>
+            </div>
+            <div className={styles.modalContent}>
             <p className={styles.modalDesc}>{activeItem.desc}</p>
             <p className={styles.address}>
               {activeItem.street_1} {activeItem.city}, {activeItem.state}
@@ -44,6 +57,7 @@ export default function Experiences() {
             <a className={styles.modalLink} href={activeItem.link}>
               {activeItem.link}
             </a>
+            </div>
           </div>
         </div>
       ) : null}
@@ -67,9 +81,10 @@ export default function Experiences() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 //
 
-
-{/* <div backgroundImage={activeItem.image} > */}
+{
+  /* <div backgroundImage={activeItem.image} > */
+}

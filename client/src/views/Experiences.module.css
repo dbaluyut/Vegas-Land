@@ -23,6 +23,8 @@
   z-index: 1;
 }
 
+
+
 /* .card {
   
   position: relative;
@@ -58,19 +60,36 @@
   border: none;
   background: #fff;
   color: #2b2929;
-  padding: 30px;
-  box-shadow:         7px 7px 20px 0px rgba(50, 50, 50, 0.75);
+  /* padding: 30px; */
+  /* box-shadow: 5px 5px 5px  rgba(50, 50, 50, 0.75); */
+  -webkit-box-shadow: 0 0 10px black;
+        box-shadow: 0 0 10px black;
+}
+
+.modalLabelContainer {
+  height: 15vh;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal button {
-  padding: 10px;
+  /* padding: 10px; */
   position: absolute;
   top: 0px;
   right: 10px;
   cursor: pointer;
-  background: white;
+  background: transparent;
   border: none;
   font-size: 31px;
+  color: white;
+  text-shadow: 0 0 10px #000;
+  /* border: solid 1px black; */
+}
+
+.modalContent {
+  padding: 1rem;
 }
 
 .modalDesc {
@@ -94,10 +113,12 @@
   margin: 20px 0px;
 }
 .modalLabel {
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
   margin: 0 10%;
+  color: white;
+  text-shadow: 0 0 10px #000;
 }
 
 .readMore{
