@@ -2471,7 +2471,7 @@ async function main() {
   await conn("galleries").insert({
     venue_id: 36,
     image:
-      "https://findgeekspots.com/wp-content/uploads/2018/12/Zak-Bagans%E2%80%99-The-Haunted-Museum.jpg",
+      "https://www.reviewjournal.com/wp-content/uploads/2017/09/9218162_web1_hauntedmuseum-sep14-17-bh-001.jpg?crop=1",
   })
 
   await conn("galleries").insert({
