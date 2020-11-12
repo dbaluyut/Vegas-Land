@@ -48,24 +48,26 @@ export default function AddVenue() {
     e.preventDefault()
     dispatch(addLocation(venueForm))
     dispatch(getLocations())
-    
-
+    console.log(locations)
     dispatch(addVenue(venueForm))
+    alert("venue has been added")
     history.push("/dashboard")
   }
 
   function handleClick() {
     logout().then((resp) => {
-      console.log("test")
+      // console.log("test")
       history.push("/logout")
     })
   }
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
-        <div className={styles.dashLogo}>
-          <img src={"./assets/logo-062.svg"}></img>
-        </div>
+      <Link to="/">
+          <div className={styles.dashLogo}>
+            <img src={"./assets/logo-062.svg"}></img>
+          </div>
+        </Link>
         <Link to="dashboard">
           <span>Venues</span>
         </Link>
@@ -83,16 +85,18 @@ export default function AddVenue() {
         </Link>
       </div>
       <div className={styles.dashAddForm}>
-        <h3>Add Venue Form</h3>
+     
         <form onSubmit={handleSubmit} className={styles.formContainer}>
           <div className={styles.dashFormItem}>
+          <h1 className={styles.adminHeader3}>Add Venue Form</h1>
             <label>Title:</label>
             <br />
             <input
               type="text"
               name="title"
               // value={venueForm.title}
-              onChange={setVenueForm}
+              onChange={ setVenueForm}
+              // onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className={styles.dashFormItem}>
@@ -159,12 +163,60 @@ export default function AddVenue() {
           <div className={styles.dashFormItem}>
             <label>State:</label>
             <br />
-            <input
-              type="text"
-              name="state"
-              // value={venueForm.link}
-              onChange={setVenueForm}
-            />
+            <select name="state"  onChange={setVenueForm}>
+	<option value="AL">Alabama</option>
+	<option value="AK">Alaska</option>
+	<option value="AZ">Arizona</option>
+	<option value="AR">Arkansas</option>
+	<option value="CA">California</option>
+	<option value="CO">Colorado</option>
+	<option value="CT">Connecticut</option>
+	<option value="DE">Delaware</option>
+	<option value="DC">District Of Columbia</option>
+	<option value="FL">Florida</option>
+	<option value="GA">Georgia</option>
+	<option value="HI">Hawaii</option>
+	<option value="ID">Idaho</option>
+	<option value="IL">Illinois</option>
+	<option value="IN">Indiana</option>
+	<option value="IA">Iowa</option>
+	<option value="KS">Kansas</option>
+	<option value="KY">Kentucky</option>
+	<option value="LA">Louisiana</option>
+	<option value="ME">Maine</option>
+	<option value="MD">Maryland</option>
+	<option value="MA">Massachusetts</option>
+	<option value="MI">Michigan</option>
+	<option value="MN">Minnesota</option>
+	<option value="MS">Mississippi</option>
+	<option value="MO">Missouri</option>
+	<option value="MT">Montana</option>
+	<option value="NE">Nebraska</option>
+	<option value="NV">Nevada</option>
+	<option value="NH">New Hampshire</option>
+	<option value="NJ">New Jersey</option>
+	<option value="NM">New Mexico</option>
+	<option value="NY">New York</option>
+	<option value="NC">North Carolina</option>
+	<option value="ND">North Dakota</option>
+	<option value="OH">Ohio</option>
+	<option value="OK">Oklahoma</option>
+	<option value="OR">Oregon</option>
+	<option value="PA">Pennsylvania</option>
+	<option value="RI">Rhode Island</option>
+	<option value="SC">South Carolina</option>
+	<option value="SD">South Dakota</option>
+	<option value="TN">Tennessee</option>
+	<option value="TX">Texas</option>
+	<option value="UT">Utah</option>
+	<option value="VT">Vermont</option>
+	<option value="VA">Virginia</option>
+	<option value="WA">Washington</option>
+	<option value="WV">West Virginia</option>
+	<option value="WI">Wisconsin</option>
+	<option value="WY">Wyoming</option>
+</select>				
+            
           </div>
           <div className={styles.dashFormItem}>
             <label>Zip:</label>

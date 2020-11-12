@@ -33,7 +33,7 @@ export default function Dashboard() {
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
-        <Link to="/home">
+        <Link to="/">
           <div className={styles.dashLogo}>
             <img src={"./assets/logo-062.svg"}></img>
           </div>
@@ -55,6 +55,7 @@ export default function Dashboard() {
         </Link>
       </div>
       <div className={styles.dashTable}>
+        <h1 className={styles.adminHeader}>Venues</h1>
         <DashboardTable />
       </div>
     </div>

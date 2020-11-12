@@ -104,3 +104,23 @@
 .formBtn:hover {
   cursor: pointer;
 }
+
+.adminHeader {
+  font-weight: 500;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 5rem;
+}
+
+.adminHeader2 {
+  font-weight: 500;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.adminHeader3{
+  font-weight: 500;
+  text-align: left;
+  padding-bottom:5px;
+  margin-top: 2rem;
+}
