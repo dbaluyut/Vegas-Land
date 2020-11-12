@@ -10,7 +10,7 @@ import {
   InfoWindow,
 } from "react-google-maps"
 import mapStyles from "./mapStyles"
-
+import moment from "moment"
 export default function HappyHrList() {
   const list = useSelector(selectHappyHrList)
   const dispatch = useDispatch()
@@ -34,6 +34,45 @@ export default function HappyHrList() {
   }, [])
   console.log(currentTime)
   console.log(list)
+
+  function convertTime(milTime) {
+    if (milTime > 1200) {
+      let newTime = (milTime - 1200).toString()
+      console.log(newTime)
+      if (newTime.length === 3) {
+        return (
+          newTime.slice(0, 1) +
+          ":" +
+          newTime.slice(newTime.length - 2, newTime.length) +
+          "pm"
+        )
+      } else
+        return (
+          newTime.slice(0, 2) +
+          ":" +
+          newTime.slice(newTime.length - 2, newTime.length) +
+          "pm"
+        )
+    } else if (milTime === 1200) {
+      return "12:00pm"
+    } else if (milTime < 1000) {
+      let newTime = milTime.toString()
+      return (
+        newTime.slice(0, 1) +
+        ":" +
+        newTime.slice(newTime.length - 2, newTime.length) +
+        "am"
+      )
+    } else if (milTime < 1201 && milTime > 1000) {
+      let newTime = milTime.toString()
+      return (
+        newTime.slice(0, 2) +
+        ":" +
+        newTime.slice(newTime.length - 2, newTime.length) +
+        "am"
+      )
+    }
+  }
 
   // MAP SECTION
   const [selectedVenue, setSelectedVenue] = useState(null)
@@ -68,7 +107,7 @@ export default function HappyHrList() {
               lat: Number(selectedVenue.lat),
               lng: Number(selectedVenue.lng),
             }}
-            // onCloseClick={() => setSelectedVenue(null)}
+            onCloseClick={() => setSelectedVenue(null)}
           >
             <div>
               <div className={styles.hhrBox} key={selectedVenue.id}>
@@ -85,8 +124,8 @@ export default function HappyHrList() {
                   <h3>{selectedVenue.title}</h3>
                   <li>{selectedVenue.street_1}</li>
                   <li>
-                    {selectedVenue.happy_hr_start} to{" "}
-                    {selectedVenue.happy_hr_stop}
+                    {convertTime(selectedVenue.happy_hr_start)} to{" "}
+                    {convertTime(selectedVenue.happy_hr_stop)}
                   </li>
                 </div>
               </div>
@@ -101,12 +140,9 @@ export default function HappyHrList() {
 
   return (
     <div>
-      {/* <h1>
-        current time {hr}:{min}
-      </h1> */}
       <div className={styles.wrapper}>
         <div className={styles.listContainer}>
-          <h3 className={styles.listTitle}>Active Happy Hour</h3>
+          <h3 className={styles.listTitle}>Active Happy Hours:</h3>
           {filtered.map((item) => {
             return (
               <div
@@ -129,7 +165,9 @@ export default function HappyHrList() {
                   <h3>{item.title}</h3>
                   <li>{item.street_1}</li>
                   <li>
-                    {item.happy_hr_start} to {item.happy_hr_stop}
+                    {convertTime(item.happy_hr_start)}
+                    {" to "}
+                    {convertTime(item.happy_hr_stop)}
                   </li>
                 </div>
               </div>

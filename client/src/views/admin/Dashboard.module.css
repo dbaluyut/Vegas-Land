@@ -122,14 +122,11 @@
   font-weight: 500;
   text-align: left;
   padding-bottom: 5px;
-  margin-top: 2rem;
+margin-top: 6rem;
 }
 
 .activeNav {
   border-bottom: 3px solid #f87204;
 }
 
-/* .activeNav2 {
-  border-bottom: 3px solid #f87204;
-  margin-left: -16px;
-} */
+

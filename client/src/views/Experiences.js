@@ -28,7 +28,9 @@ export default function Experiences() {
     <div>
       <div className={styles.header}>
         <Navbar />
+        
       </div>
+      
       {activeItem ? (
         <div className={styles.modalContainer}>
           <div className={styles.modal}>
@@ -41,28 +43,28 @@ export default function Experiences() {
             <div
               style={{
                 backgroundImage: `url(${activeItem.image})`,
-                backgroundPosition: 'center',
+                backgroundPosition: "center",
               }}
               className={styles.modalLabelContainer}
-            >
-              <h3 className={styles.modalLabel}>{activeItem.title}</h3>
-            </div>
+            ></div>
+            <h3 className={styles.modalLabel}>{activeItem.title}</h3>
             <div className={styles.modalContent}>
-            <p className={styles.modalDesc}>{activeItem.desc}</p>
-            <p className={styles.address}>
-              {activeItem.street_1} {activeItem.city}, {activeItem.state}
-              {activeItem.zip}
-            </p>
-            <span className={styles.readMore}>Read more here:</span>
-            <a className={styles.modalLink} href={activeItem.link}>
-              {activeItem.link}
-            </a>
+              <p className={styles.modalDesc}>{activeItem.desc}</p>
+              <p className={styles.address}>
+                {activeItem.street_1} {activeItem.city}, {activeItem.state}
+                {activeItem.zip}
+              </p>
+              <span className={styles.readMore}>Read more here:</span>
+              <a className={styles.modalLink} href={activeItem.link}>
+                {activeItem.link}
+              </a>
             </div>
           </div>
         </div>
       ) : null}
 
       <div className={styles.container}>
+      
         {experiences.map((item) => (
           <Card
             backgroundImage={item.image}
