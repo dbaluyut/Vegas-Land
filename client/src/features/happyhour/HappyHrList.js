@@ -68,7 +68,7 @@ export default function HappyHrList() {
               lat: Number(selectedVenue.lat),
               lng: Number(selectedVenue.lng),
             }}
-            // onCloseClick={() => setSelectedVenue(null)}
+            onCloseClick={() => setSelectedVenue(null)}
           >
             <div>
               <div className={styles.hhrBox} key={selectedVenue.id}>
