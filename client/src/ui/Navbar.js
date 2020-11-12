@@ -1,9 +1,15 @@
 import { React } from "react"
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import styles from "./Navbar.module.css"
 
 export function Navbar() {
+  
+
+  const location = useLocation()
+    
+    
+  console.log(window.location.pathname)
   return (
     <div
       className={styles.navWrapper}
@@ -28,22 +34,23 @@ export function Navbar() {
           </li>
           <li>
             <Link to="/experiences">
-            <span>Experiences</span>
+            <span className={window.location.pathname == '/experiences' ? styles.activeNav : ""}>Experiences</span>
+            {/* {location.pathname} */}
             </Link>
           </li>
           <li>
             <Link to="/happyhour">
-            <span>Happy Hours</span>
+            <span className={window.location.pathname == '/happyhour' ? styles.activeNav : ""}>Happy Hours</span>
             </Link>
           </li>
           <li>
             <Link to="/about">
-            <span>Our Team</span>
+            <span className={window.location.pathname == '/about' ? styles.activeNav : ""} >Our Team</span>
             </Link>
           </li>
           <li>
             <Link to="/recommendations">
-            <span>Recommendations</span>
+            <span className={window.location.pathname == '/recommendations' ? styles.activeNav : ""}>Recommendations</span>
             </Link>
           </li>
         </ul>

@@ -60,14 +60,14 @@ export default function Update() {
         <Link to="dashboard">
           <span>Venues</span>
         </Link>
+         <Link to="addVenue">
+          <span>Add Venue </span>
+        </Link>
         <Link to="/update">
-          <span>Update</span>
+        <span className={window.location.pathname == '/update' ? styles.activeNav : ""}>Update Venue</span>
         </Link>
         <Link to="RecommendationsTable">
           <span>Recommendations</span>
-        </Link>
-        <Link to="addVenue">
-          <span>Add Venue Form</span>
         </Link>
         <Link to="logout" onClick={handleClick}>
           Log Out

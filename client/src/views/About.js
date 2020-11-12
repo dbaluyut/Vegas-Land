@@ -13,7 +13,7 @@ export default function About() {
         <div className={styles.section1}>
           <div className={styles.discription}>
             <p className={styles.name}>Name</p>
-            <p className={styles.title}>Jr. Web Developer</p>
+            <p className={styles.title}>Web Developer</p>
             <p className={styles.bio}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -54,7 +54,7 @@ export default function About() {
           </div>
           <div className={styles.discription}>
             <p className={styles.name}>Name</p>
-            <p className={styles.title}>Jr. Web Developer</p>
+            <p className={styles.title}>Web Developer</p>
             <p className={styles.bio}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -82,7 +82,7 @@ export default function About() {
         <div className={styles.section3}>
           <div className={styles.discription}>
             <p className={styles.name}>Name</p>
-            <p className={styles.title}>Jr. Web Developer</p>
+            <p className={styles.title}>Web Developer</p>
             <p className={styles.bio}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
