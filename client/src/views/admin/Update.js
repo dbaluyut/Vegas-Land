@@ -52,7 +52,7 @@ export default function Update() {
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
-        <Link to="/home">
+      <Link to="/">
           <div className={styles.dashLogo}>
             <img src={"./assets/logo-062.svg"}></img>
           </div>
@@ -73,10 +73,12 @@ export default function Update() {
           Log Out
         </Link>
       </div>
+     
       <div className={styles.dashUpdateForm}>
-        <h3>Update Venue Form</h3>
+        
         <form onSubmit={handleSubmit} className={styles.formContainer}>
           <div className={styles.dashFormItem}>
+              <h1 className={styles.adminHeader2}>Update Venue Form</h1>
             <label>Venue:</label>
             <br />
             <select

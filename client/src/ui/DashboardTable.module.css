@@ -53,8 +53,33 @@ th {
   width: 15%;
 }
 
+.tableLink a:visited {
+  text-decoration: none;
+  color: blue;
+}
+.tableLink a:hover {
+  text-decoration: none;
+  color: blue;
+}
+.tableLink a:focus {
+  text-decoration: none;
+  color: blue;
+}
+.tableLink a:hover,
+a:active {
+  text-decoration: none;
+  color: blue;
+}
+
 .tableRemove {
   width: 10%;
+  
+}
+.tableRemove button {
+  padding: 2px 8px;
+  font-size: 20px;
+  border: 0;
+  background-color: inherit;
 }
 
 /* 
