@@ -48,9 +48,10 @@ export default function AddVenue() {
     e.preventDefault()
     dispatch(addLocation(venueForm))
     dispatch(getLocations())
-    console.log(locations)
+    
 
     dispatch(addVenue(venueForm))
+    history.push("/dashboard")
   }
 
   function handleClick() {
