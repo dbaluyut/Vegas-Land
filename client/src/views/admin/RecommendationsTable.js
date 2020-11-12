@@ -39,7 +39,7 @@ export default function RecommendationsTable() {
   return (
     <div className={styles.dashContainer}>
       <div className={styles.dashSideBar}>
-      <Link to="/home">
+      <Link to="/">
           <div className={styles.dashLogo}>
             <img src={"./assets/logo-062.svg"}></img>
           </div>
@@ -61,6 +61,7 @@ export default function RecommendationsTable() {
         </Link>
       </div>
       <div className={styles.dashTable}>
+        <h1 className={styles.adminHeader}>Recommendations Table</h1>
         <table>
           <thead>
             <tr>
