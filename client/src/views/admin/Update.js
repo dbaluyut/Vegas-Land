@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import styles from "./Dashboard.module.css"
 import { useForm } from "../../hooks/form"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import { getVenue, updateVenue, selectUpdate } from "./updateSlice.js"
 import { useHistory } from "react-router-dom"
 import { useAuth } from "../../features/authentication/auth"
+import DashSidebar from "./DashSidebar"
 
 export default function Update() {
   const dispatch = useDispatch()
@@ -53,28 +53,7 @@ export default function Update() {
 
   return (
     <div className={styles.dashContainer}>
-      <div className={styles.dashSideBar}>
-        <Link to="/">
-          <div className={styles.dashLogo}>
-            <img src={"./assets/logo-062.svg"}></img>
-          </div>
-        </Link>
-        <Link to="dashboard">
-          <span>Venues</span>
-        </Link>
-         <Link to="addVenue">
-          <span>Add Venue </span>
-        </Link>
-        <Link to="/update">
-        <span className={window.location.pathname == '/update' ? styles.activeNav : ""}>Update Venue</span>
-        </Link>
-        <Link to="RecommendationsTable">
-          <span>Recommendations</span>
-        </Link>
-        <Link to="logout" onClick={handleClick}>
-          Log Out
-        </Link>
-      </div>
+      <DashSidebar />
 
       <div className={styles.dashUpdateForm}>
         <form onSubmit={handleSubmit} className={styles.formContainer}>

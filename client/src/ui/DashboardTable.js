@@ -66,6 +66,14 @@ export function DashboardTable() {
               <button onClick={() => handleUpdate(item)}>
                 <i class="fas fa-edit"></i>
               </button>
+              <button
+                style={{
+                  marginLeft: "5px",
+                }}
+                className={styles.viewBtn}
+              >
+                <i class="far fa-eye"></i>
+              </button>
             </td>
           </tr>
         ))}
