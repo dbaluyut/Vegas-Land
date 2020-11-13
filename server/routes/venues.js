@@ -109,7 +109,8 @@ router.post("/venues", async (req, res) => {
     .then(async (id) => {
       const gallery = await conn("galleries").insert({
         venue_id: id[0],
-        image: "https://i.pinimg.com/originals/66/46/32/664632aada8327014297b719b228f4f2.jpg",
+        image:
+          "https://i.pinimg.com/originals/66/46/32/664632aada8327014297b719b228f4f2.jpg",
       })
       res.json({
         message: "venue added",
