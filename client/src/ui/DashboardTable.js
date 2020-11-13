@@ -26,6 +26,16 @@ export function DashboardTable() {
     history.push("/update/" + venue.id)
   }
 
+  function handleView(venue) {
+    if (venue.type == "restaurant") {
+      history.push("/restaurants/" + venue.id)
+    } else if (venue.type == "bar") {
+      history.push("/bars/" + venue.id)
+    } else {
+      history.push("/experiences/" + venue.id)
+    }
+  }
+
   return (
     <table>
       <thead>
@@ -67,6 +77,7 @@ export function DashboardTable() {
                 <i class="fas fa-edit"></i>
               </button>
               <button
+              onClick={() => handleView(item)}
                 style={{
                   marginLeft: "5px",
                 }}
