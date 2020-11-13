@@ -36,7 +36,7 @@ export default function AddVenue() {
     desc: "",
     type: "",
     link: "",
-    location_id: venues.length + 1,
+    location_id: "",
     street_1: "",
     street_2: "",
     city: "",
@@ -48,20 +48,15 @@ export default function AddVenue() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    dispatch(addLocation(venueForm))
-    dispatch(getLocations())
-    console.log(locations)
     dispatch(addVenue(venueForm))
+    dispatch(getVenue())
+
+    dispatch(addLocation(venueForm))
+    console.log(locations)
     alert("venue has been added")
     history.push("/dashboard")
   }
 
-  function handleClick() {
-    logout().then((resp) => {
-      // console.log("test")
-      history.push("/logout")
-    })
-  }
   return (
     <div className={styles.dashContainer}>
       <DashSidebar />
@@ -230,7 +225,12 @@ export default function AddVenue() {
           <div className={styles.dashFormItem}>
             <label>Location ID:</label>
             <br />
-            <input type="text" name="location_id" value={venues.length + 1} />
+            <input
+              type="text"
+              name="location_id"
+              placeholder={venues.length + 1}
+              onChange={setVenueForm}
+            />
           </div>
           <button type="submit" className={styles.formBtn}>
             Submit
