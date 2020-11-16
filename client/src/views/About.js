@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 
-import { Navbar } from "../ui/Navbar"
-import { Footer } from "../ui/Footer"
-import styles from "./About.module.css"
+import { Navbar } from "../ui/Navbar";
+import { Footer } from "../ui/Footer";
+import styles from "./About.module.css";
 
 export default function About() {
   return (
@@ -15,17 +15,20 @@ export default function About() {
             <p className={styles.name}>Name</p>
             <p className={styles.title}>Web Developer</p>
             <p className={styles.bio}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Bereket Girma is a Web Developer based in Las Vegas. She's built
+              web applications using Node.js and React and has a solid
+              foundation in web design and development. She recently completed
+              PunchCode’s web development bootcamp. Before moving into
+              development, she worked in the Health sector, where she managed
+              and converted voice recordings that physicians and other
+              healthcare workers make into written reports. When she is not
+              coding, she enjoys spending time with family and learning
+              different cultures and their languages. Right now she is looking
+              for a suitable position with a company where outstanding
+              performance is recognised and where she can work on a variety of
+              projects.
             </p>
-            <p className={styles.bio}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+
             <section className={styles.aboutIcons}>
               <a href="#">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
@@ -52,9 +55,16 @@ export default function About() {
             <p className={styles.name}>Will Stoddard</p>
             <p className={styles.title}>Web Developer</p>
             <p className={styles.bio}>
-            Will is a web developer born and raised in Las Vegas, NV. He is a recent graduate of Punchcode, a full stack coding bootcamp. Through the program, he grew a love for all things Javascript, as well as how to build beautiful web applications using React, Redux, Node JS and Express. Before becoming a programmer, he worked in hospitality on the Las Vegas Strip for 7 years. When he's not coding, he enjoy reading and writing fiction, as well as studying film.
+              Will is a web developer born and raised in Las Vegas, NV. He is a
+              recent graduate of Punchcode, a full stack coding bootcamp.
+              Through the program, he grew a love for all things Javascript, as
+              well as how to build beautiful web applications using React,
+              Redux, Node JS and Express. Before becoming a programmer, he
+              worked in hospitality on the Las Vegas Strip for 7 years. When
+              he's not coding, he enjoy reading and writing fiction, as well as
+              studying film.
             </p>
-           
+
             <section className={styles.aboutIcons}>
               <a href="#">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
@@ -108,5 +118,5 @@ export default function About() {
       </div>
       <Footer />
     </div>
-  )
+  );
 }
